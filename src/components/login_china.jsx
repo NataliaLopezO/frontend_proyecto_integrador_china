@@ -71,7 +71,7 @@ export const Formulario = () => {
               >
                 <div>
                   <img
-                    src={china_templo}
+                    src="/images/login_logo.jpg"
                     className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                     width="200px"
                     alt="profile"
