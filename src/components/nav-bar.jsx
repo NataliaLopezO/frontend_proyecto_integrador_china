@@ -9,7 +9,7 @@ export function Nav_bar() {
       <nav className="navbar navbar-expand-sm navbar-light bg-light fixed-top">
         <a className="navbar-brand" href="#">
           <img
-            src="../src/images/templo-chino.png"
+            src="/images/templo-chino.png"
             width="30"
             height="30"
             className="d-inline-block align-top"

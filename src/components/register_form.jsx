@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import china_templo from "../images/login_logo.jpg"; 
 import "../scss/registro_style.css";
 
 export function Register_form() {
@@ -112,7 +111,7 @@ export function Register_form() {
               >
                 <div>
                   <img
-                    src= {china_templo}
+                    src= "/images/login_logo.jpg"
                     className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                     width="200px"
                     alt="profile"
