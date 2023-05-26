@@ -26,7 +26,7 @@ function App() {
       <Route path='/logout' element ={<Logout_template/>} />
       <Route path='/next' element ={<Next/>} />
       <Route path='/register' element ={<Register_template/>} />
-      <Route path='/inicio' element ={<Page_init/>} />
+      <Route path='/' element ={<Page_init/>} />
       <Route path='/profile' element ={<User_profile/>} />
       <Route path='/sobre-nosotros' element ={<Sobre_nosotros/>} />
       <Route path='/faq' element ={<FAQ/>} />

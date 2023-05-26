@@ -19,7 +19,7 @@ export const Logout_china = () => {
         console.log("Logout exitoso");
         sessionStorage.removeItem("username");
         sessionStorage.removeItem("email");
-        navigate("/inicio");
+        navigate("/");
         
          //navigate
         // Realizar cualquier acción adicional necesaria, como redirigir al usuario a la página de inicio de sesión.

@@ -54,7 +54,7 @@ export const Formulario = () => {
   };
 
   const redireccionarInicio= () => {
-    navigate('/inicio'); // Redireccionar a la página de registro
+    navigate('/'); // Redireccionar a la página de registro
   };
 
   return (
