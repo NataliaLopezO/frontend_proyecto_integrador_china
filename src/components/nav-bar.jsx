@@ -25,7 +25,7 @@ export function Nav_bar() {
             <li className="nav-item">
               <NavLink
                 exact="true"
-                to="/inicio"
+                to="/"
                 className="nav-link"
                 activeclassname="active"
               >

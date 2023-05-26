@@ -93,7 +93,7 @@ export function Register_form() {
   };
 
   const redireccionarInicio= () => {
-    navigate('/inicio'); // Redireccionar a la página de registro
+    navigate('/'); // Redireccionar a la página de registro
   };
 
   return (
