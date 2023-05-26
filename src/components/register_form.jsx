@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import china_templo from "../images/login_logo.jpg"; 
-import "../scss/login_china_style.css";
+import "../scss/registro_style.css";
 
 export function Register_form() {
   const { register, watch } = useForm();
@@ -99,7 +99,7 @@ export function Register_form() {
   };
 
   return (
-    <div className="padre text-center">
+    <div className="padre-registro text-center">
       <div className="container text-center">
         <div className="row">
           <div className="col-md-6 offset-md-3">
