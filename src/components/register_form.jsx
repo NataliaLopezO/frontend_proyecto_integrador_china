@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import { loginLogo } from './src/images/login_logo.jpg';
 
 export function Register_form() {
   const { register, watch } = useForm();
@@ -111,7 +110,7 @@ export function Register_form() {
               >
                 <div>
                   <img
-                    src= {loginLogo}
+                    src= {require("./src/images/login_logo.jpg")}
                     className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                     width="200px"
                     alt="profile"
