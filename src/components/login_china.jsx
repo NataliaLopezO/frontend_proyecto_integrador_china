@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "../scss/login_china_style.css";
 //import 'bootstrap/dist/css/bootstrap'
 import { api } from "../api/register_api";
-import china_templo from "../images/login_logo.jpg"; // Ruta relativa de la imagen
+//import china_templo from "../images/login_logo.jpg"; // Ruta relativa de la imagen
 
 const getStoredUsername = () => {
   return sessionStorage.getItem("username");
