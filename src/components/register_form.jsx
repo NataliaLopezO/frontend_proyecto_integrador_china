@@ -61,22 +61,22 @@ export function Register_form() {
   // Verificar si todos los campos requeridos están completos
   const isFormComplete = !!username && !!email && !!password;
 
-  const imagen=  "https://cdn-icons-png.flaticon.com/512/190/190615.png"
-  const imagen2= "https://cdn-icons-png.flaticon.com/512/190/190614.png"
-  const imagen3= "https://cdn-icons-png.flaticon.com/512/2397/2397449.png"
-  const imagen4= "https://cdn-icons-png.flaticon.com/512/315/315051.png"
-  const imagen5= "https://cdn-icons-png.flaticon.com/512/1496/1496771.png"
-  const imagen6= "https://img.freepik.com/premium-vector/chinese-new-year-vector-flat-icon-chinese-fan-web-sites-apps-books-adverts-articles-other-places-vibrant-illustration_387335-297.jpg?w=2000"
-  const imagen7= "https://img.freepik.com/premium-vector/chinese-new-year-vector-flat-icon-flat-chinese-dragon-mask-web-sites-apps-books-adverts-articles-other-places-vibrant-illustration_387335-315.jpg?w=2000"
-  const imagen8= "https://cdn-icons-png.flaticon.com/512/6457/6457808.png"
-  const imagen9= "https://i.pinimg.com/originals/a0/2d/00/a02d0002ab150a27f4d1e24e86d8e962.png"
-  const imagen10= "https://cdn-icons-png.flaticon.com/512/2456/2456138.png"
-  const imagen11= "https://cdn-icons-png.flaticon.com/512/678/678872.png"
-  const imagen12="https://cdn-icons-png.flaticon.com/512/678/678873.png"
-  const imagen13= "https://cdn-icons-png.flaticon.com/512/2456/2456042.png"
-  const imagen14= "https://cdn-icons-png.flaticon.com/512/307/307471.png"
-  const imagen15= "https://cdn-icons-png.flaticon.com/512/3447/3447845.png"
-  const imagen16= "https://cdn-icons-png.flaticon.com/512/5465/5465148.png"
+  const imagen=  "/images/perfil/imagen.png"
+  const imagen2= "/images/perfil/imagen1.png"
+  const imagen3= "/images/perfil/imagen2.png"
+  const imagen4= "/images/perfil/imagen3.png"
+  const imagen5= "/images/perfil/imagen4.png"
+  const imagen6= "/images/perfil/imagen5.avif"
+  const imagen7= "/images/perfil/imagen6.avif"
+  const imagen8= "/images/perfil/imagen7.png"
+  const imagen9= "/images/perfil/imagen8.png"
+  const imagen10= "/images/perfil/imagen9.png"
+  const imagen11= "/images/perfil/imagen10.png"
+  const imagen12= "/images/perfil/imagen11.png"
+  const imagen13= "/images/perfil/imagen12.png"
+  const imagen14= "/images/perfil/imagen13.png"
+  const imagen15= "/images/perfil/imagen14.png"
+  const imagen16= "/images/perfil/imagen15.png"
 
   const handleImage = (imageUrl) => {
     setSelectedImage(imageUrl);
