@@ -29,15 +29,13 @@ export function Ajustes() {
         </div>
       )}
       <main
-    style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
-    className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
+        style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
+        className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
       >
         <div className="settings">
           <h1 className="titulo-settings">Ajustes de Perfil</h1>
         </div>
-        <div className="formulario-settings">
           <Update_china />
-        </div>
       </main>
     </>
   );
