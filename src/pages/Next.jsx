@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 import "../scss/next_styles.css";
 
+/**
+ * Componente Next.
+ * 
+ * Este componente muestra una sección de bienvenida y preparación para comenzar
+ * un recorrido por China antigua. Muestra una imagen de perfil, el nombre de usuario
+ * y un mensaje de bienvenida. Además, incluye un botón que redirige al usuario a la
+ * página de perfil cuando se hace clic en él.
+ */
+
 export function Next() {
   const username = sessionStorage.getItem("username");
   const profilePic = sessionStorage.getItem("foto");

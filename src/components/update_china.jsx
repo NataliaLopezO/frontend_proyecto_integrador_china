@@ -5,6 +5,13 @@ import { Button, Modal } from "react-bootstrap";
 import { api } from "../api/register_api";
 import "../scss/update_style.css";
 
+
+/**
+  * Este componente maneja la actualización de información de perfil del usuario en la página "China". 
+  * Permite cambiar la foto de perfil y contraseña.
+
+*/
+
 export function Update_china() {
   const navigate = useNavigate();
   const [newPassword, setNewPassword] = useState("");
@@ -14,14 +21,26 @@ export function Update_china() {
     height: 100,
   });
 
+  /**
+  * Obtiene el nombre de usuario almacenado en la sesión.
+  * @returns {string|null} El nombre de usuario almacenado, o null si no existe.
+  */
   const getStoredUsername = () => {
     return sessionStorage.getItem("username");
   };
 
+  /**
+  * Obtiene el correo electrónico almacenado en la sesión.
+  * @returns {string|null} El correo electrónico almacenado, o null si no existe.
+  */
   const getStoredEmail = () => {
     return sessionStorage.getItem("email");
   };
 
+  /**
+  * Maneja el cambio de contraseña.
+  * @param {Event} event - El evento de cambio.
+  */
   const handlePasswordChange = (event) => {
     setNewPassword(event.target.value);
   };
@@ -30,14 +49,24 @@ export function Update_china() {
 
   const [showModal2, setShowModal2] = useState(false);
 
+  /**
+  * Abre el modal 2.
+  */
   const handleModalOpen2 = () => {
     setShowModal2(true);
   };
 
+  /**
+  * Cierra el modal 2.
+  */
   const handleModalClose2 = () => {
     setShowModal2(false);
   };
 
+  /**
+  * Maneja la selección de una imagen.
+  * @param {string} image - La URL de la imagen seleccionada.
+  */
   const handleImage = (image) => {
     setSelectedImage(image);
     const img = new Image();
@@ -46,6 +75,10 @@ export function Update_china() {
     };
     img.src = image;
   };
+
+  /**
+  * Maneja la presentación de la imagen seleccionada y realiza acciones relacionadas.
+  */
 
   const handleSubmit2 = () => {
     // AquÃ­ puedes realizar acciones con la URL de la imagen seleccionada
@@ -69,6 +102,9 @@ export function Update_china() {
       });
   };
 
+  /**
+  * Maneja el envío del formulario y actualiza la contraseña.
+  */
   const handleSubmit3 = () => {
     const contraInput = document.getElementById("contra");
     if (!contraInput.value) {
