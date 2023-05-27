@@ -31,8 +31,8 @@ export function Cultura() {
     style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
     className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
       >
-        <div className="settings">
-          <h1 className="titulo-settings">Cultura</h1>
+        <div className="cultura">
+          <h1 className="titulo-cultura">Cultura</h1>
         </div>
         <div className="formulario-settings">
           Cultura

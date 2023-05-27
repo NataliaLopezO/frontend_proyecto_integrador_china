@@ -28,16 +28,14 @@ export function Historia() {
         </div>
       )}
       <main
-    style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
-    className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
+        style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
+        className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
       >
         <div className="settings">
           <h1 className="titulo-settings">Historia</h1>
         </div>
-        <div className="formulario-settings">
-          Historia
-        </div>
+  
       </main>
-    </>
+      </>
   );
 }
