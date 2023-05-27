@@ -1,6 +1,6 @@
 import { Nav_bar } from "../components/nav-bar";
 
-export function FAQ() {
+export function FYI() {
     return (
         <>
         <Nav_bar />
