@@ -10,3 +10,14 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right bottom, #fd6969, #b34848);
 }
+
+.square-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .selected {
+    border: 2px solid rgb(0, 0, 0);
+  }

@@ -13,6 +13,10 @@ export function Register_form() {
   const [nombre, setNombre] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [selectedImage, setSelectedImage] = useState(""); // Agregado
+  const [selectedImageSize, setSelectedImageSize] = useState({
+    width: 100,
+    height: 100,
+  });
 
   const [showModal, setShowModal] = useState(false);
 
@@ -78,10 +82,15 @@ export function Register_form() {
   const imagen15= "/images/perfil/imagen14.png"
   const imagen16= "/images/perfil/imagen15.png"
 
-  const handleImage = (imageUrl) => {
-    setSelectedImage(imageUrl);
-
+  const handleImage = (image) => {
+    setSelectedImage(image);
+    const img = new Image();
+    img.onload = () => {
+      setSelectedImageSize({ width: img.width, height: img.height });
+    };
+    img.src = image;
   };
+
 
   const handleSubmit2 = () => {
     // AquÃ­ puedes realizar acciones con la URL de la imagen seleccionada
@@ -119,7 +128,7 @@ export function Register_form() {
                 </div>
 
                 <div>
-                  <button type="button" onClick={handleModalOpen2}>
+                  <button className="btn" type="button" onClick={handleModalOpen2}>
                     Escoge tu avatar
                   </button>
                 </div>
@@ -170,54 +179,271 @@ export function Register_form() {
                     Enviar
                   </Button>
 
-                  <Modal show={showModal} onHide={handleModalClose} centered backdrop="static">
-                    <Modal.Header>
-                      <Modal.Title>Registro existoso</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>¡Bienvenid@! Te has registrado con exito</Modal.Body>
-                    <Modal.Footer>
-                      <Button type="submit" variant="secondary" onClick={() => { handleModalClose(); handleSubmit(); }}>
-                        Guardar
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-
-                  <Modal show={showModal2} onHide={handleModalClose2} centered backdrop="static">
-                    <Modal.Header>
-                      <Modal.Title>Escoge tu foto de perfil</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                    <div className="image-container">
-
-                      <img src={imagen} alt="Imagen" className="square-image" style={{width:'100px', height:'100px', marginRight:'20px', marginBottom:'20px'}} onClick={() => handleImage(imagen)}/>
-                      <img src={imagen2} alt="Imagen" className="square-image" style={{width:'100px', height:'100px', marginRight:'20px',  marginBottom:'20px'}} onClick={() => handleImage(imagen2)}/>
-                      <img src={imagen3} alt="Imagen" className="square-image" style={{width:'100px', height:'100px',  marginRight:'20px',  marginBottom:'20px'}} onClick={() => handleImage(imagen3)}/>
-                      <img src={imagen4} alt="Imagen" className="square-image" style={{width:'100px', height:'100px', marginBottom:'20px'}} onClick={() => handleImage(imagen4)}/>
-                      <img src={imagen5} alt="Imagen" className="square-image" style={{width:'100px', height:'100px',marginRight:'20px', marginBottom:'20px'}} onClick={() => handleImage(imagen5)}/>
-                      <img src={imagen6} alt="Imagen" className="square-image" style={{width:'100px', height:'100px', marginRight:'20px', marginBottom:'20px'}} onClick={() => handleImage(imagen6)}/>
-                      <img src={imagen7} alt="Imagen" className="square-image" style={{width:'100px', height:'100px', marginRight:'20px', marginBottom:'20px'}} onClick={() => handleImage(imagen7)}/>
-                      <img src={imagen8} alt="Imagen" className="square-image" style={{width:'100px', height:'100px', marginBottom:'20px'}} onClick={() => handleImage(imagen8)} />
-                      <img src={imagen9} alt="Imagen" className="square-image" style={{width:'100px', height:'100px',marginRight:'20px', marginBottom:'20px' }} onClick={() => handleImage(imagen9)} />
-                      <img src={imagen10} alt="Imagen" className="square-image" style={{width:'100px', height:'100px',marginRight:'20px', marginBottom:'20px'}} onClick={() => handleImage(imagen10)}/>
-                      <img src={imagen11} alt="Imagen" className="square-image" style={{width:'100px', height:'100px',marginRight:'20px', marginBottom:'20px'}} onClick={() => handleImage(imagen11)} />
-                      <img src={imagen12} alt="Imagen" className="square-image" style={{width:'100px', height:'100px', marginBottom:'20px'}} onClick={() => handleImage(imagen12)}/>
-                      <img src={imagen13} alt="Imagen" className="square-image" style={{width:'100px', height:'100px',marginRight:'20px', marginBottom:'20px'}} onClick={() => handleImage(imagen13)} />
-                      <img src={imagen14} alt="Imagen" className="square-image" style={{width:'100px', height:'100px',marginRight:'20px', marginBottom:'20px'}} onClick={() => handleImage(imagen14)}/>
-                      <img src={imagen15} alt="Imagen" className="square-image" style={{width:'100px', height:'100px',marginRight:'20px', marginBottom:'20px'}} onClick={() => handleImage(imagen15)}/>
-                      <img src={imagen16} alt="Imagen" className="square-image" style={{width:'100px', height:'100px',marginBottom:'20px'}} onClick={() => handleImage(imagen16)}/>
-                   </div>
-
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button type="submit" variant="secondary"  onClick={() => { handleModalClose2(); handleSubmit2(); }} >
-                        Enviar
-                      </Button>
-
-                      <Button type="submit" variant="secondary" onClick={ handleModalClose2}>
-                        cerrar
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
+                  <Modal
+              show={showModal2}
+              onHide={handleModalClose2}
+              centered
+              backdrop="static"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>Escoge tu foto de perfil</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <div className="image-container text-center">
+                  {selectedImage && (
+                    <div className="selected-image-container mb-5">
+                      <h6 className="mb-5">Imagen seleccionada:</h6>
+                      <div
+                        className="selected-image-wrapper"
+                        style={{
+                          maxWidth: "100%",
+                          maxHeight: "150px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <img
+                          src={selectedImage}
+                          alt="Imagen seleccionada"
+                          className="selected-image text-center"
+                          style={{ width: "40%", height: "auto" }}
+                        />
+                      </div>
+                    </div>
+                  )}
+                  <img
+                    src={imagen2}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen2 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen2)}
+                  />
+                  <img
+                    src={imagen3}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen3 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen3)}
+                  />
+                  <img
+                    src={imagen4}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen4 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen4)}
+                  />
+                  <img
+                    src={imagen5}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen5 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen5)}
+                  />
+                  <img
+                    src={imagen6}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen6 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen6)}
+                  />
+                  <img
+                    src={imagen7}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen7 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen7)}
+                  />
+                  <img
+                    src={imagen8}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen8 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen8)}
+                  />
+                  <img
+                    src={imagen9}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen9 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen9)}
+                  />
+                  <img
+                    src={imagen10}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen10 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen10)}
+                  />
+                  <img
+                    src={imagen11}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen11 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen11)}
+                  />
+                  <img
+                    src={imagen12}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen12 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen12)}
+                  />
+                  <img
+                    src={imagen13}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen13 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen13)}
+                  />
+                  <img
+                    src={imagen14}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen14 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen14)}
+                  />
+                  <img
+                    src={imagen15}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen15 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen15)}
+                  />
+                  <img
+                    src={imagen16}
+                    alt="Imagen"
+                    className={`square-image ${
+                      selectedImage === imagen16 ? "selected" : ""
+                    }`}
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      marginRight: "20px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={() => handleImage(imagen16)}
+                  />
+                </div>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  type="submit"
+                  variant="secondary"
+                  onClick={() => {
+                    handleModalClose2();
+                    handleSubmit2();
+                  }}
+                >
+                  Enviar
+                </Button>
+                <Button
+                  type="submit"
+                  variant="secondary"
+                  onClick={handleModalClose2}
+                >
+                  Cerrar
+                </Button>
+              </Modal.Footer>
+            </Modal>
 
                 </div>
                 <div className="form-text text-dark">
