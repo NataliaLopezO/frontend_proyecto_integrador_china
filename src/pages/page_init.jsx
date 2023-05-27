@@ -4,10 +4,14 @@ import { Nav_bar } from "../components/nav-bar";
 import "../scss/page_init_style.css";
 import { Carousel } from "react-bootstrap";
 
-import encontrarImg from "/images/encontrar-img.png";
-import registroImg from "/images/registro.png";
-import temploCarousel1 from "/images/templo-carousel1.png";
-import temploCarousel2 from "/images/templo-carousel2.jpg";
+
+/**
+ * Componente Page_init.
+ * 
+ * Este componente representa la página de inicio de la aplicación. Muestra información
+ * principal y un carrusel de imágenes. También incluye enlaces a otras páginas y botones
+ * interactivos.
+ */
 
 export function Page_init() {
   return (
