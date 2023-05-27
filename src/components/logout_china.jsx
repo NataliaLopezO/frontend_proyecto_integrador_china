@@ -4,10 +4,19 @@ import "../scss/logout_boton_style.css"
 import { api } from "../api/register_api";
 import { useNavigate } from "react-router-dom";
 
-
+/**
+  * crea un botón de cierre de sesión que, al hacer clic, realiza una solicitud al servidor para cerrar la 
+  * sesión del usuario. Luego, elimina los datos de usuario almacenados en el almacenamiento de sesión y 
+  * redirige al usuario a la página de inicio ("/").
+  */
 
 export const Logout_china = () => {
   const navigate = useNavigate();
+  /**
+  * Maneja la función de cierre de sesión del usuario.
+  * Realiza una solicitud de cierre de sesión al servidor y realiza acciones adicionales,
+  * como eliminar los datos de usuario almacenados en el almacenamiento de sesión y redirigir al usuario.
+  */
   const handleLogout = () => {
     
     const storedUsername = sessionStorage.getItem("username");

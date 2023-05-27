@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "../scss/nav_bar_style.css";
 
+/**
+ * Componente de barra de navegación principal.
+ * Muestra el logotipo y los enlaces a diferentes secciones del sitio web.
+ * También incluye un enlace para iniciar sesión.
+*/
 
 export function Nav_bar() {
   return (

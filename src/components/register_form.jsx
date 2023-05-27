@@ -6,6 +6,10 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import "../scss/registro_style.css";
 
+/**
+ * Componente de formulario de registro.
+*/
+
 export function Register_form() {
   const { register, watch } = useForm();
   const navigate = useNavigate();
@@ -20,39 +24,76 @@ export function Register_form() {
 
   const [showModal, setShowModal] = useState(false);
 
+  /**
+  * Maneja el cambio en el campo de nombre de usuario.
+  * Actualiza el estado 'nombre' con el valor ingresado en el campo.
+  * @param {Object} event - El evento de cambio del campo de nombre de usuario.
+  */
   const handleUsernameChange = (event) => {
     setNombre(event.target.value);
   };
 
+  /**
+  * Maneja el cambio en el campo de contraseña.
+  * Actualiza el estado 'contraseña' con el valor ingresado en el campo.
+  * @param {Object} event - El evento de cambio del campo de contraseña.
+  */
   const handlePasswordChange = (event) => {
     setContraseña(event.target.value);
   };
-
+  
+  /**
+  * Maneja el cambio en el campo de correo electrónico.
+  * Actualiza el estado 'email' con el valor ingresado en el campo.
+  * @param {Object} event - El evento de cambio del campo de correo electrónico.
+  */
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
+  /**
+  * Maneja el envío del formulario de registro.
+  * Crea un nuevo usuario utilizando los datos ingresados en los campos.
+  * Navega a la página de inicio de sesión ("/login") después de enviar el formulario.
+  * Elimina el valor de 'foto' del almacenamiento de sesión.
+  */
   const handleSubmit = () => {
     const foto= sessionStorage.getItem("foto")
     createuser(foto, email1, nombre, contraseña);
     navigate("/login");
     sessionStorage.removeItem("foto");
   }; 
-
+  
+  /**
+  * Abre el modal.
+  * Actualiza el estado 'showModal' a true para mostrar el modal.
+  */
   const handleModalOpen = () => {
     setShowModal(true);
   };
 
+  /**
+  * Cierra el modal.
+  * Actualiza el estado 'showModal' a false para ocultar el modal.
+  */
   const handleModalClose = () => {
     setShowModal(false);
   };
 
   const [showModal2, setShowModal2] = useState(false);
 
+  /**
+  * Abre el segundo modal.
+  * Actualiza el estado 'showModal2' a true para mostrar el segundo modal.
+  */
   const handleModalOpen2 = () => {
     setShowModal2(true);
   };
 
+  /**
+  * Cierra el segundo modal.
+  * Actualiza el estado 'showModal2' a false para ocultar el segundo modal.
+  */
   const handleModalClose2 = () => {
     setShowModal2(false);
   };
@@ -82,6 +123,10 @@ export function Register_form() {
   const imagen15= "/images/perfil/imagen14.png"
   const imagen16= "/images/perfil/imagen15.png"
 
+  /**
+  * Maneja la selección de una imagen.
+  * @param {string} image - La URL de la imagen seleccionada.
+  */
   const handleImage = (image) => {
     setSelectedImage(image);
     const img = new Image();
@@ -91,17 +136,27 @@ export function Register_form() {
     img.src = image;
   };
 
-
+  /**
+  * Maneja la acción de envío de formulario.
+  * Realiza acciones con la URL de la imagen seleccionada, como mostrarla en la consola.
+  * También guarda la URL de la imagen en el almacenamiento de sesión.
+  */
   const handleSubmit2 = () => {
     // AquÃ­ puedes realizar acciones con la URL de la imagen seleccionada
     console.log("URL de la imagen seleccionada:", selectedImage);
     sessionStorage.setItem("foto", selectedImage )
   };
 
+  /**
+  * Redirecciona al usuario a la página de inicio de sesión.
+  */
   const redireccionarLogin= () => {
     navigate('/login'); // Redireccionar a la página de registro
   };
 
+  /**
+  * Redirecciona al usuario a la página de inicio.
+  */
   const redireccionarInicio= () => {
     navigate('/'); // Redireccionar a la página de registro
   };
@@ -178,6 +233,19 @@ export function Register_form() {
                   >
                     Enviar
                   </Button>
+
+
+                  <Modal show={showModal} onHide={handleModalClose} centered backdrop="static">
+                    <Modal.Header>
+                      <Modal.Title>Registro existoso</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>¡Bienvenid@! Te has registrado con exito</Modal.Body>
+                    <Modal.Footer>
+                      <Button type="submit" variant="secondary" onClick={() => { handleModalClose(); handleSubmit(); }}>
+                        Guardar
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
 
                   <Modal
               show={showModal2}
