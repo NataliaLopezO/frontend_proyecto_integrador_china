@@ -1,6 +1,13 @@
 import { Nav_bar } from "../components/nav-bar";
 import "../scss/sobre_nosotros_style.css";
 
+/**
+ * Componente Sobre_nosotros.
+ *
+ * Esta página presenta información sobre nuestra aplicación y el equipo detrás de ella.
+ * Ofrece una descripción general de la aplicación y presenta a los miembros del equipo de desarrollo.
+ */
+
 export function Sobre_nosotros() {
   return (
     <>
