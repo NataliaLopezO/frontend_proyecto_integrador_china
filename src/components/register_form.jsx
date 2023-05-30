@@ -246,6 +246,7 @@ export function Register_form() {
                       </Button>
                     </Modal.Footer>
                   </Modal>
+          
 
                   <Modal
               show={showModal2}

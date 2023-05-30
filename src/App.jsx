@@ -9,9 +9,9 @@ import {Sobre_nosotros} from './pages/sobre_nosotros'
 import {FAQ} from './pages/faq'
 import {Contacto} from './pages/contacto'
 import {Ajustes} from './pages/ajustes'
-import {Historia} from './pages/historia'
-import {Cultura} from './pages/cultura'
-import {Contribuciones} from './pages/contribuciones'
+import {Historia} from './pages/Historia/historia'
+import {Cultura} from './pages/Cultura/cultura'
+import {Contribuciones} from './pages/Contribuciones/contribuciones'
 import {Minijuegos} from './pages/minijuegos'
 
 

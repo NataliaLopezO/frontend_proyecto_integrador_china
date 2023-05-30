@@ -1,15 +1,9 @@
 import { useState } from "react";
-import { Nav_bar_perfil } from "../components/nav-bar-perfil";
+import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
 import "../scss/user_profile_style.css";
 import "../scss/boton_toggler_style.css";
 
-/**
- * Componente de contribuciones.
- * 
- * Este componente muestra la interfaz de contribuciones
- */
-
-export function Contribuciones() {
+export function Historia() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   /**
@@ -41,17 +35,14 @@ export function Contribuciones() {
         </div>
       )}
       <main
-    style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
-    className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
+        style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
+        className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
       >
         <div className="settings">
-          <h1 className="titulo-settings">Contribuciones</h1>
+          <h1 className="titulo-settings">Historia</h1>
         </div>
-        <div className="formulario-settings">
-        Contribuciones
-          
-        </div>
+  
       </main>
-    </>
+      </>
   );
 }
