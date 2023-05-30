@@ -47,8 +47,8 @@ export function Nav_bar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/faq" className="nav-link" activeclassname="active">
-                FAQ
+              <NavLink to="/fyi" className="nav-link" activeclassname="active">
+                FYI
               </NavLink>
             </li>
             <li className="nav-item">
