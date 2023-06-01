@@ -28,7 +28,7 @@ export function User_profile() {
     <>
       <button
         className={`boton-toggler ${isSidebarOpen ? "open" : ""}`}
-        style={{ marginLeft: isSidebarOpen ? "310px" : "5px" }}
+        style={{ marginLeft: isSidebarOpen ? "310px" : "5px"}}
         onClick={toggleSidebar}
       >
         <span></span>
