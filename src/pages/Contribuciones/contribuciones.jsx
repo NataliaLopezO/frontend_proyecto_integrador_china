@@ -45,7 +45,7 @@ export function Contribuciones() {
     className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
       >
         <div className="settings">
-          <h1 className="titulo-settings">Contribuciones</h1>
+          <h1 className="titulo-settings">Inventos y Contribuciones</h1>
         </div>
         <div className="formulario-settings"
           style={{
@@ -58,6 +58,7 @@ export function Contribuciones() {
           }}
         >
           <img src="/images/contribuciones-mock.png" alt="Foto" />
+          <img src="/images/contribuciones-mock-2.PNG" alt="Foto" />
         </div>
       </main>
     </>
