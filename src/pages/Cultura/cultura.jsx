@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
-import "../../scss/user_profile_style.css";
+import "../../scss/historia_style.css";
 import "../../scss/boton_toggler_style.css";
-import { Button, Modal } from "react-bootstrap";
-import Experience from "../../components/Experience";
-import { Canvas } from "@react-three/fiber";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandPointRight } from "@fortawesome/free-solid-svg-icons";
+import { Float, Text, OrbitControls } from '@react-three/drei'
+import { Canvas } from "react-three-fiber";
+
+import { Modelo } from "../../components/ModeloDragonCute";
 
 export function Cultura() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
 
   /**
    * Alternar la apertura y cierre de la barra lateral.
@@ -38,93 +42,200 @@ export function Cultura() {
     setShowModal(false);
   };
 
+  
+
+
   return (
-    <>
-      <button
-        className={`boton-toggler ${isSidebarOpen ? "open" : ""}`}
-        style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
-        onClick={toggleSidebar}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      {isSidebarOpen && (
-        <div>
-          <Nav_bar_perfil />
-          <div className="sidebar-overlay" onClick={toggleSidebar}></div>
-        </div>
-      )}
-      <main
-        style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
-        className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
-      >
-        <div className="settings">
-          <h1 className="titulo-settings">Cultura</h1>
-        </div>
-        <div
-          className="formulario-settings"
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginTop: "100px",
-          }}
+
+      <>
+        <button
+          className={`boton-toggler ${isSidebarOpen ? "open" : ""}`}
+          style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
+          onClick={toggleSidebar}
         >
-          <img src="/images/cultura-mock.png" alt="Foto" />
-        </div>
-      </main>
-
-      <div>
-        <button className="btn" type="button" onClick={handleModalOpen}>
-          ver modelo
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-      </div>
+        {isSidebarOpen && (
+          <div>
+            <Nav_bar_perfil />
+            <div className="sidebar-overlay" onClick={toggleSidebar}></div>
+          </div>
+        )}
+        <main
+          style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
+          className={`contenedor-historia ${isSidebarOpen ? "open" : ""}`}
+        >
+          <div className="historia-titulo">
+            <h1>Cultura</h1>
+          </div>
+  
+          <div className="contenido-historia">
+            <h2 className="titulo-hist">¡Bienvenido al módulo de cultura!</h2>
+            <p>¡Bienvenido a conocer sobre las costumbres en la civilización china antigua! En este módulo introductorio, exploraremos las fascinantes tradiciones y prácticas de la antigua civilización china. Con una historia milenaria y una cultura rica y diversa, China ha dejado un legado importante en el mundo. Acompáñanos en este viaje para descubrir algunas de las costumbres más destacadas que influyeron en la vida cotidiana de los antiguos chinos.
+</p>
+            <div className="contenedor-hijo-Hist-izq">
+              <img src="/images/saludochina.png" alt="" />
+              <p>
+             1. Los chinos antiguos daban gran importancia a la etiqueta y el respeto hacia los demás. 
+             El saludo más común era el saludo de cortesía, que se realizaba inclinando ligeramente 
+             la cabeza. También se valoraba mucho el respeto a los ancianos y a los líderes comunitarios.
+              </p>
+            </div>
+  
+            <div className="contenedor-hijo-Hist-der">
+              <img src="/images/festividad.jpg" alt="" />
+              <p>
+              2. China es famosa por sus coloridas festividades. Entre las más importantes 
+              se encuentra el Año Nuevo Chino, una celebración que marca el inicio del 
+              nuevo año lunar. Durante esta festividad, las familias se reúnen para 
+              disfrutar de banquetes, danzas del león y del dragón, y fuegos artificiales.
+              </p>
+            </div>
+  
+            <div className="contenedor-hijo-Hist-izq">
+              <img src="/images/taoismo.png" alt="" />
+              <p>
+                3. China es el hogar de varias escuelas de pensamiento filosófico, como
+                 el confucianismo, el taoísmo y el budismo. Estas filosofías han 
+                 influido profundamente en la mentalidad y los valores de los antiguos chinos.
+                 El confucianismo, en particular, promovía la importancia de la moral, 
+                 la virtud y las relaciones humanas armoniosas.
+              </p>
+            </div>
+  
+            <div className="contenedor-hijo-Hist-der">
+              <img src="/images/familia.png" alt="" />
+              <p>
+                4. La familia era el núcleo de la sociedad china antigua. Se valoraba la 
+                 obediencia y el respeto hacia los padres y los ancianos. Además, se seguían
+                 tradiciones como la reunión familiar durante el Festival del Barco Dragón 
+                 y el cuidado de los padres en su vejez.
+              </p>
+            </div>
 
-      <div style={{ width: "100%", height: "100%" }}>
+
+
+    <div style={{ width: "400px", height: "800px" }}>
         <Canvas
           camera={{
             fov: 45,
-            near: 0.1,
-            far: 200,
+            near: 0.03,
+            far: 800,
             position: [-1, 7, 10],
           }}
         >
-          <Experience />
+          
+          {/*Controles*/}
+<OrbitControls makeDefault />
+
+{/*Luces*/}
+<directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
+<ambientLight intensity={ 0.5 } />      
+
+
+{/*Templo Griego*/}
+<Modelo scale={20}></Modelo>
+
+
+
+{/* {/*Piso
+<mesh  position-y={-0.3} rotation-x={- Math.PI*0.5} scale={10}>
+ <planeGeometry />
+ <meshStandardMaterial/>
+</mesh>
+ */}
+
+
+
+
+
         </Canvas>
       </div>
 
-      <Modal
-        show={showModal}
-        onHide={handleModalClose}
-        centered
-        backdrop="static"
-      >
-        <Modal.Header>
-          <Modal.Title>Templo chino</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div style={{ width: "100%", height: "100%" }}>
-            <Canvas
-              camera={{
-                fov: 45,
-                near: 0.1,
-                far: 200,
-                position: [-1, 7, 10],
-              }}
+  
+            <div className="siguiente">
+              <div className="siguiente-hijo">
+                <h5 className="next">Siguiente</h5>
+  
+                <button className="boton-siguiente">
+                  <span className="button-content">
+                    <img
+                      src="/images/tradicion-icono.png"
+                      alt="Imagen"
+                      className="button-icon"
+                    />
+                  </span>
+                  Tradiciones
+                  <FontAwesomeIcon
+                    icon={faHandPointRight}
+                    style={{ color: "#000000" , marginLeft:"10px"}}
+                  />
+                </button>
+              </div>
+            </div>
+            {/*           <h2
+              className="titulo-hist"
+              style={{ marginTop: "1rem", marginBottom: "1rem" }}
             >
-              <Experience />
-            </Canvas>
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleModalClose}>
-            Cerrar
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+              Mas información sobre las dinastias
+            </h2> */}
+            {/*           <div className="botones-dinasty">
+              <button className="dinasty">
+                <span className="button-content">
+                  <img
+                    src="/images/dinastia-icono.png"
+                    alt="Imagen"
+                    className="button-icon"
+                  />
+                  XIA
+                </span>
+              </button>
+              <button className="dinasty">
+                <span className="button-content">
+                  <img
+                    src="/images/dinastia-icono.png"
+                    alt="Imagen"
+                    className="button-icon"
+                  />
+                  SHANG
+                </span>
+              </button>
+              <button className="dinasty">
+                <span className="button-content">
+                  <img
+                    src="/images/dinastia-icono.png"
+                    alt="Imagen"
+                    className="button-icon"
+                  />
+                  ZHOU
+                </span>
+              </button>
+              <button className="dinasty">
+                <span className="button-content">
+                  <img
+                    src="/images/dinastia-icono.png"
+                    alt="Imagen"
+                    className="button-icon"
+                  />
+                  QIN
+                </span>
+              </button>
+              <button className="dinasty">
+                <span className="button-content">
+                  <img
+                    src="/images/dinastia-icono.png"
+                    alt="Imagen"
+                    className="button-icon"
+                  />
+                  HAN
+                </span>
+              </button>
+            </div> */}
+</div>
+</main>
+      </>
+
   );
 }
