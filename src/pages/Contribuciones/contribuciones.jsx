@@ -2,8 +2,13 @@ import { useState } from "react";
 import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
 import "../../scss/user_profile_style.css";
 import "../../scss/boton_toggler_style.css";
+import "../../scss/contribuciones_style.css";
 import { Boton_back } from "../../components/boton-back";
 import { Boton_next } from "../../components/boton-next";
+import { ModelGato } from "../../components/Model-contribuciones";
+import { Modelo } from "../../components/ModeloDragonCute";
+import { Canvas } from "react-three-fiber";
+import { Float, Text, OrbitControls } from "@react-three/drei";
 
 
 /**
@@ -64,6 +69,8 @@ export function Contribuciones() {
         >
 
         <div className="contenido-historia">
+          
+
           <h2 className="titulo-hist">Conoce los importantes aportes a la humanidad...</h2>
           <p>
             ¡Bienvenido a conocer sobre los inventos y contribuciones de la civilización china
@@ -79,6 +86,30 @@ export function Contribuciones() {
 
           </p>
 
+          <div className = "contenido-aportes">
+
+          <div style={{ width: "400px", height: "800px" }}>
+            <Canvas
+              camera={{
+                fov: 45,
+                near: 0.01,
+                far: 200,
+                position: [-1, 7, 10],
+              }}
+            >
+            
+              <OrbitControls makeDefault />
+
+            
+              <directionalLight position={[1, 2, 3]} intensity={1.5} />
+              <ambientLight intensity={0.5} />
+
+              <Modelo scale={20}></Modelo>
+
+            
+            </Canvas>
+            </div>
+          <div className="contenido-info">
           <div className="contenedor-hijo-Hist-der">
             <img src="/images/brujula.jpg" alt="" />
             <p>
@@ -148,6 +179,10 @@ export function Contribuciones() {
               cómo ha dejado una huella duradera en la medicina tradicional y complementaria en todo el mundo.
               
             </p>
+          </div>
+
+          </div>
+
           </div>
 
           <Boton_next
