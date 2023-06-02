@@ -15,6 +15,8 @@ import {Contribuciones} from './pages/Contribuciones/contribuciones'
 import {Minijuegos} from './pages/minijuegos'
 import {Dinastias} from './pages/Historia/dinastias'
 import {Arquitectura} from './pages/Historia/arquitectura'
+import {Detalle} from './pages/Contribuciones/detalle-contribuciones'
+
 
 
 
@@ -36,7 +38,11 @@ function App() {
       <Route path='/ajustes' element ={<Ajustes/>} />
       <Route path='/historia' element ={<Historia/>} />
       <Route path='/cultura' element ={<Cultura/>} />
+
       <Route path='/contribuciones' element ={<Contribuciones/>} />
+        <Route path='/ver-contribuciones' element ={<Detalle/>} />
+        
+
       <Route path='/minijuegos' element ={<Minijuegos/>} />
       <Route path='/dinastias' element ={<Dinastias/>} />
       <Route path='/arquitectura' element ={<Arquitectura/>} />

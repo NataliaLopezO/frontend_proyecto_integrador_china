@@ -44,7 +44,7 @@ export function Sobre_nosotros() {
             <p style={{color: "grey"}}>Frontend developer</p>
           </div>
           <div className="tarjeta text-white bg-dark">
-            <img className="profile-image-pic img-thumbnail" src="/images/nataliaLopez.jpg" alt="Imagen 3" />
+            <img className="profile-image-pic img-thumbnail" src="/images/nataliaLopez.PNG" alt="Imagen 3" />
             <p>Natalia Lopez Osorio</p>
             <p style={{color: "grey"}}>Backend developer</p>
           </div>
