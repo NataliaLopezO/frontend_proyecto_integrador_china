@@ -9,12 +9,21 @@ import {Sobre_nosotros} from './pages/sobre_nosotros'
 import {FYI} from './pages/fyi'
 import {Contacto} from './pages/contacto'
 import {Ajustes} from './pages/ajustes'
+
 import {Historia} from './pages/Historia/historia'
-import {Cultura} from './pages/Cultura/cultura'
-import {Contribuciones} from './pages/Contribuciones/contribuciones'
-import {Minijuegos} from './pages/minijuegos'
 import {Dinastias} from './pages/Historia/dinastias'
 import {Arquitectura} from './pages/Historia/arquitectura'
+
+import {Cultura} from './pages/Cultura/cultura'
+import {Tradiciones} from './pages/Cultura/tradiciones'
+import {Artesanias} from './pages/Cultura/artesanias'
+import {Festividades} from './pages/Cultura/festividades'
+import {Vestimenta} from './pages/Cultura/vestimenta'
+
+import {Contribuciones} from './pages/Contribuciones/contribuciones'
+
+import {Minijuegos} from './pages/minijuegos'
+
 import {Detalle} from './pages/Contribuciones/detalle-contribuciones'
 
 
@@ -36,16 +45,23 @@ function App() {
       <Route path='/fyi' element ={<FYI/>} />
       <Route path='/contacto' element ={<Contacto/>} />
       <Route path='/ajustes' element ={<Ajustes/>} />
+
       <Route path='/historia' element ={<Historia/>} />
+        <Route path='/dinastias' element ={<Dinastias/>} />
+        <Route path='/arquitectura' element ={<Arquitectura/>} />
+
       <Route path='/cultura' element ={<Cultura/>} />
+        <Route path='/tradiciones' element ={<Tradiciones/>} />
+        <Route path='/artesanias' element ={<Artesanias/>} />
+        <Route path='/festividades' element ={<Festividades/>} />
+        <Route path='/vestimenta' element ={<Vestimenta/>} />
 
       <Route path='/contribuciones' element ={<Contribuciones/>} />
         <Route path='/ver-contribuciones' element ={<Detalle/>} />
         
 
       <Route path='/minijuegos' element ={<Minijuegos/>} />
-      <Route path='/dinastias' element ={<Dinastias/>} />
-      <Route path='/arquitectura' element ={<Arquitectura/>} />
+
     </Routes>
 
   </BrowserRouter>

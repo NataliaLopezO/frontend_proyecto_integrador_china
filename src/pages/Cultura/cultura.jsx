@@ -155,7 +155,7 @@ export function Cultura() {
             nombre="Tradiciones"
             imagen="/images/tradicion-icono.png"
             identificador={123}
-            href="/dinastias"
+            href="/tradiciones"
           />
 
           {/*           <h2
