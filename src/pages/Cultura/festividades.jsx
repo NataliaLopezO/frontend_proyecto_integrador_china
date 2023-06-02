@@ -5,7 +5,7 @@ import { Boton_back } from "../../components/boton-back";
 import { Boton_next } from "../../components/boton-next";
 
 
-export function Vestimenta() {
+export function Festividades() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   /**
@@ -41,7 +41,7 @@ export function Vestimenta() {
         className={`contenedor-historia ${isSidebarOpen ? "open" : ""}`}
       >
         <div className="historia-titulo">
-          <h1>Vestimenta</h1>
+          <h1>Festividades</h1>
         </div>
 
         <div
@@ -49,17 +49,17 @@ export function Vestimenta() {
           style={{ display: "flex", justifyContent: "space-between" }}
         >
           <Boton_back
-            nombre="Festividades"
-            imagen="/images/festividades-icono.png"
+            nombre="Artesanias"
+            imagen="/images/artesanias-icono.png"
             identificador={123}
-            href="/festividades"
+            href="/artesanias"
           />
 
           <Boton_next
-            nombre="Cultura"
-            imagen="/images/cultura-icon.png"
+            nombre="Vestimenta"
+            imagen="/images/vestimenta-icono.png"
             identificador={123}
-            href="/cultura"
+            href="/vestimenta"
           />
         </div>
       </main>
