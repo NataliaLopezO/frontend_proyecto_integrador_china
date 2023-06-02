@@ -13,6 +13,8 @@ import {Historia} from './pages/Historia/historia'
 import {Cultura} from './pages/Cultura/cultura'
 import {Contribuciones} from './pages/Contribuciones/contribuciones'
 import {Minijuegos} from './pages/minijuegos'
+import {Dinastias} from './pages/Historia/dinastias'
+import {Arquitectura} from './pages/Historia/arquitectura'
 
 
 
@@ -36,6 +38,8 @@ function App() {
       <Route path='/cultura' element ={<Cultura/>} />
       <Route path='/contribuciones' element ={<Contribuciones/>} />
       <Route path='/minijuegos' element ={<Minijuegos/>} />
+      <Route path='/dinastias' element ={<Dinastias/>} />
+      <Route path='/arquitectura' element ={<Arquitectura/>} />
     </Routes>
 
   </BrowserRouter>

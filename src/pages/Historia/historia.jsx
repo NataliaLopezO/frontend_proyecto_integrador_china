@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
 import "../../scss/historia_style.css";
 import "../../scss/boton_toggler_style.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandPointRight } from "@fortawesome/free-solid-svg-icons";
+import { Boton_next } from "../../components/boton-next";
+
 
 export function Historia() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -100,26 +100,13 @@ export function Historia() {
             </p>
           </div>
 
-          <div className="siguiente">
-            <div className="siguiente-hijo">
-              <h5 className="next">Siguiente</h5>
+            <Boton_next
+              nombre="Dinastias"
+              imagen="/images/dinastia-icono.png"
+              identificador={123}
+              href="/dinastias"
+            />
 
-              <button className="boton-siguiente">
-                <span className="button-content">
-                  <img
-                    src="/images/dinastia-icono.png"
-                    alt="Imagen"
-                    className="button-icon"
-                  />
-                </span>
-                Dinastias
-                <FontAwesomeIcon
-                  icon={faHandPointRight}
-                  style={{ color: "#000000" , marginLeft:"10px"}}
-                />
-              </button>
-            </div>
-          </div>
           {/*           <h2
             className="titulo-hist"
             style={{ marginTop: "1rem", marginBottom: "1rem" }}
