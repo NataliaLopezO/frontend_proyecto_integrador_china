@@ -23,7 +23,7 @@ export function Festividades() {
     <>
       <button
         className={`boton-toggler ${isSidebarOpen ? "open" : ""}`}
-        style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
+        style={{ marginLeft: isSidebarOpen ? "310px" : "5px" }}
         onClick={toggleSidebar}
       >
         <span></span>
@@ -42,6 +42,10 @@ export function Festividades() {
       >
         <div className="historia-titulo">
           <h1>Festividades</h1>
+        </div>
+
+        <div className="formulario-settings">
+          <img src="/images/mock-festividades.png" alt="Foto" />
         </div>
 
         <div
