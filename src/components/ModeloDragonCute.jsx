@@ -1,10 +1,27 @@
 import React, { useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
+/**
+ *
+ * Componente que muestra un modelo 3D de un dragón.
+ * Utiliza la biblioteca React Three Fiber y el formato glTF.
+ *
+ * @component
+ * @param {Object} props - Propiedades del componente.
+ * @returns {JSX.Element} Modelo 3D del dragón.
+ *
+ */
+
 export function Modelo(props) {
+  // Crea una referencia al grupo de objetos del modelo 3D
   const group = useRef();
+
+  // Carga el archivo glTF del dragón y obtiene los nodos, materiales y animaciones del modelo
   const { nodes, materials, animations } = useGLTF("static/cute_dragon.glb");
+
+  // Controla las animaciones del modelo
   const { actions } = useAnimations(animations, group);
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
@@ -64,4 +81,5 @@ export function Modelo(props) {
   );
 }
 
+// Precarga el modelo para mejorar el rendimiento
 useGLTF.preload("static/cute_dragon.glb");

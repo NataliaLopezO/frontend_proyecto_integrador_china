@@ -5,6 +5,13 @@ import "../../scss/boton_toggler_style.css";
 import { Boton_back } from "../../components/boton-back";
 import { Boton_next } from "../../components/boton-next";
 
+/**
+* 
+*Componente de detalle de contribuciones.
+*Este componente muestra la interfaz donde se van a presentrar las contribuciones u aportes
+*
+**/
+
 export function Detalle() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 

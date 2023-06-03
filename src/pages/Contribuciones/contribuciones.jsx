@@ -5,7 +5,6 @@ import "../../scss/boton_toggler_style.css";
 import "../../scss/contribuciones_style.css";
 import { Boton_back } from "../../components/boton-back";
 import { Boton_next } from "../../components/boton-next";
-import { ModelGato } from "../../components/Model-contribuciones";
 import { Modelo } from "../../components/ModeloDragonCute";
 import { Canvas } from "react-three-fiber";
 import { Float, Text, OrbitControls } from "@react-three/drei";
@@ -13,7 +12,7 @@ import { Float, Text, OrbitControls } from "@react-three/drei";
 /**
  * Componente de contribuciones.
  *
- * Este componente muestra la interfaz de contribuciones
+ * Este componente muestra la interfaz de contribuciones introductoria
  */
 
 export function Contribuciones() {
@@ -63,32 +62,39 @@ export function Contribuciones() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            marginTop: "100px",
           }}
         >
           <div className="contenido-historia">
             <h2 className="titulo-hist">
               Conoce los importantes aportes a la humanidad...
             </h2>
-            <p>
-              ¡Bienvenido a conocer sobre los inventos y contribuciones de la
-              civilización china antigua!. Los cuatro grandes inventos de la
-              Antigua China, la brújula, la pólvora, el papel y la imprenta,
-              además de otras contribuciones como la tinta, la producción de
-              porcelana y la acupuntura, se encuentran entre los avances
-              tecnológicos más importantes. En particular, la época de la
-              Dinastía Tang (618-906) fue de gran innovación. En este módulo
-              introductorio, nuestro objetivo es sumergirnos en el rico legado
-              de la antigua civilización china, proporcionando información clara
-              y accesible sobre estos temas fascinantes. Acompáñanos en este
-              viaje a través del tiempo y el espacio, mientras exploramos los
-              aportes tecnológicos y lingüísticos de la antigua China y su
-              influencia en la historia y la cultura de la humanidad. ¡Empecemos
-              este emocionante viaje de descubrimiento juntos!
-            </p>
+            <div className="parrafo-contribuciones" style={{marginLeft:"15rem", marginRight:"15rem", textAlign:"justify", marginTop:"10px"}}>
+              <p>
+                ¡Bienvenido a conocer sobre los inventos y contribuciones de la
+                civilización china antigua!. Los cuatro grandes inventos de la
+                Antigua China, la brújula, la pólvora, el papel y la imprenta,
+                además de otras contribuciones como la tinta, la producción de
+                porcelana y la acupuntura, se encuentran entre los avances
+                tecnológicos más importantes. En particular, la época de la
+                Dinastía Tang (618-906) fue de gran innovación. En este módulo
+                introductorio, nuestro objetivo es sumergirnos en el rico legado
+                de la antigua civilización china, proporcionando información
+                clara y accesible sobre estos temas fascinantes. Acompáñanos en
+                este viaje a través del tiempo y el espacio, mientras exploramos
+                los aportes tecnológicos y lingüísticos de la antigua China y su
+                influencia en la historia y la cultura de la humanidad.
+                ¡Empecemos este emocionante viaje de descubrimiento juntos!
+              </p>
+            </div>
 
             <div className="contenido-aportes">
-              <div style={{ width: "400px", height: "800px", marginLeft: isSidebarOpen ? "310px" : "0" }}>
+              <div
+                style={{
+                  width: "400px",
+                  height: "800px",
+                  marginLeft: isSidebarOpen ? "310px" : "0",
+                }}
+              >
                 <Canvas
                   camera={{
                     fov: 45,
