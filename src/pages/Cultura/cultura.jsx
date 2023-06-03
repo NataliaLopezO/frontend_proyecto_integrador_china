@@ -46,7 +46,7 @@ export function Cultura() {
     <>
       <button
         className={`boton-toggler ${isSidebarOpen ? "open" : ""}`}
-        style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
+        style={{ marginLeft: isSidebarOpen ? "310px" : "5px" }}
         onClick={toggleSidebar}
       >
         <span></span>
@@ -69,15 +69,24 @@ export function Cultura() {
 
         <div className="contenido-historia">
           <h2 className="titulo-hist">¡Bienvenido al módulo de cultura!</h2>
-          <p>
-            ¡Bienvenido a conocer sobre las costumbres en la civilización china
-            antigua! En este módulo introductorio, exploraremos las fascinantes
-            tradiciones y prácticas de la antigua civilización china. Con una
-            historia milenaria y una cultura rica y diversa, China ha dejado un
-            legado importante en el mundo. Acompáñanos en este viaje para
-            descubrir algunas de las costumbres más destacadas que influyeron en
-            la vida cotidiana de los antiguos chinos.
-          </p>
+          <div
+            style={{
+              marginLeft: "18rem",
+              marginRight: "18rem",
+              textAlign: "justify",
+              fontSize:"1.2rem"
+            }}
+          >
+            <p>
+              ¡Bienvenido a conocer sobre las costumbres en la civilización
+              china antigua! En este módulo introductorio, exploraremos las
+              fascinantes tradiciones y prácticas de la antigua civilización
+              china. Con una historia milenaria y una cultura rica y diversa,
+              China ha dejado un legado importante en el mundo. Acompáñanos en
+              este viaje para descubrir algunas de las costumbres más destacadas
+              que influyeron en la vida cotidiana de los antiguos chinos.
+            </p>
+          </div>
           <div className="contenedor-hijo-Hist-izq">
             <img src="/images/saludochina.png" alt="" />
             <p>
@@ -157,65 +166,6 @@ export function Cultura() {
             identificador={123}
             href="/tradiciones"
           />
-
-          {/*           <h2
-              className="titulo-hist"
-              style={{ marginTop: "1rem", marginBottom: "1rem" }}
-            >
-              Mas información sobre las dinastias
-            </h2> */}
-          {/*           <div className="botones-dinasty">
-              <button className="dinasty">
-                <span className="button-content">
-                  <img
-                    src="/images/dinastia-icono.png"
-                    alt="Imagen"
-                    className="button-icon"
-                  />
-                  XIA
-                </span>
-              </button>
-              <button className="dinasty">
-                <span className="button-content">
-                  <img
-                    src="/images/dinastia-icono.png"
-                    alt="Imagen"
-                    className="button-icon"
-                  />
-                  SHANG
-                </span>
-              </button>
-              <button className="dinasty">
-                <span className="button-content">
-                  <img
-                    src="/images/dinastia-icono.png"
-                    alt="Imagen"
-                    className="button-icon"
-                  />
-                  ZHOU
-                </span>
-              </button>
-              <button className="dinasty">
-                <span className="button-content">
-                  <img
-                    src="/images/dinastia-icono.png"
-                    alt="Imagen"
-                    className="button-icon"
-                  />
-                  QIN
-                </span>
-              </button>
-              <button className="dinasty">
-                <span className="button-content">
-                  <img
-                    src="/images/dinastia-icono.png"
-                    alt="Imagen"
-                    className="button-icon"
-                  />
-                  HAN
-                </span>
-              </button>
-            </div> */}
         </div>
       </main>
     </>

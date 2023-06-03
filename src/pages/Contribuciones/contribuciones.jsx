@@ -34,7 +34,7 @@ export function Contribuciones() {
     <>
       <button
         className={`boton-toggler ${isSidebarOpen ? "open" : ""}`}
-        style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
+        style={{ marginLeft: isSidebarOpen ? "310px" : "5px" }}
         onClick={toggleSidebar}
       >
         <span></span>

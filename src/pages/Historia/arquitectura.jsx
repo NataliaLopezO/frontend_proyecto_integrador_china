@@ -3,7 +3,7 @@ import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
 import "../../scss/historia_style.css";
 import "../../scss/boton_toggler_style.css";
 import { Boton_back } from "../../components/boton-back";
-
+import { Boton_next } from "../../components/boton-next";
 
 export function Arquitectura() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -44,6 +44,18 @@ export function Arquitectura() {
           <h1>Arquitectura</h1>
         </div>
 
+        <div className="contenido-tradiciones">
+          <div className="cultura-parrafo">
+            <p>
+             AQUI HABRÁ INFORMACION SOBRE LA ARQUITECTURA USADA POR LA CULTURA ANTIGUA CHINA
+            </p>
+          </div>
+        </div>
+
+        <div
+          className="next-back"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
           <Boton_back
             nombre="Dinastias"
             imagen="/images/dinastia-icono.png"
@@ -51,6 +63,13 @@ export function Arquitectura() {
             href="/dinastias"
           />
 
+          <Boton_next
+            nombre="Historia"
+            imagen="/images/historia-icono.png"
+            identificador={123}
+            href="/historia"
+          />
+        </div>
       </main>
     </>
   );

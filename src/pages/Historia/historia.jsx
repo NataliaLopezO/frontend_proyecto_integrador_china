@@ -23,7 +23,7 @@ export function Historia() {
     <>
       <button
         className={`boton-toggler ${isSidebarOpen ? "open" : ""}`}
-        style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
+        style={{ marginLeft: isSidebarOpen ? "310px" : "5px" }}
         onClick={toggleSidebar}
       >
         <span></span>
@@ -49,7 +49,7 @@ export function Historia() {
           <div className="contenedor-hijo-Hist-izq">
             <img src="/images/Xia-dinasty.png" alt="" />
             <p>
-              1. Dinastía Xia: La dinastía Xia, que se cree que gobernó desde el
+              <b>1. Dinastía Xia:</b> La dinastía Xia, que se cree que gobernó desde el
               siglo XXI a.C. hasta el siglo XVI a.C., es la primera dinastía
               registrada en la historia china. Sin embargo, durante mucho tiempo
               se consideró una leyenda hasta que se descubrieron ruinas y
@@ -60,7 +60,7 @@ export function Historia() {
           <div className="contenedor-hijo-Hist-der">
             <img src="/images/Chinashang.jpg" alt="" />
             <p>
-              2. Dinastía Shang: La dinastía Shang, que gobernó desde el siglo
+              <b>2. Dinastía Shang:</b> La dinastía Shang, que gobernó desde el siglo
               XVI a.C. hasta el siglo XI a.C., fue conocida por su uso de los
               caracteres de escritura más antiguos encontrados en China. Estos
               caracteres se inscribían en huesos de animales y caparazones de
@@ -74,7 +74,7 @@ export function Historia() {
           <div className="contenedor-hijo-Hist-izq">
             <img src="/images/zhou-dinasty.png" alt="" />
             <p>
-              3. Dinastía Zhou: La dinastía Zhou, que gobernó desde el siglo XI
+              <b>3. Dinastía Zhou:</b> La dinastía Zhou, que gobernó desde el siglo XI
               a.C. hasta el 256 a.C., fue un período importante para el
               desarrollo de la filosofía china. Durante esta época surgieron
               grandes pensadores como Confucio y Laozi, cuyas enseñanzas han
@@ -86,7 +86,7 @@ export function Historia() {
           <div className="contenedor-hijo-Hist-der">
             <img src="/images/qin-dinasty.png" alt="" />
             <p>
-              4. Dinastía Qin y Han: Estas dos dinastías están estrechamente
+              <b>4. Dinastía Qin y Han:</b> Estas dos dinastías están estrechamente
               relacionadas y se consideran un período de transición en la
               historia china. La dinastía Qin, que gobernó desde el 221 a.C.
               hasta el 206 a.C., es conocida por unificar China bajo un solo
