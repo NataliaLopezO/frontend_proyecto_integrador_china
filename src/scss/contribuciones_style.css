@@ -103,3 +103,10 @@
   font-family: "Noto Serif", serif;
 
 }
+
+.contenido-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -26,6 +26,12 @@ export function Dinastias() {
 
   const [showModal, setShowModal] = useState(false);
 
+
+  /**
+   * Abre el modal.
+   * Actualiza el estado 'showModal' a true para mostrar el modal.
+   */
+
   const handleModalOpen = () => {
     setShowModal(true);
   };

@@ -7,6 +7,10 @@ import "../../scss/tradiciones_style.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Carousel, Button } from "react-bootstrap";
 
+/**
+ * Componente de formulario de registro.
+ */
+
 export function Tradiciones() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -21,7 +25,17 @@ export function Tradiciones() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+
+
   const [index, setIndex] = useState(0);
+
+  /**
+  *
+  *Cambia el índice del carrusel al seleccionar una diapositiva.
+  *@param {number} selectedIndex - El índice de la diapositiva seleccionada.
+  *@param {Object} e - El evento de selección.
+  *
+  **/
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
@@ -293,7 +307,6 @@ export function Tradiciones() {
                       </div>
                     </div>
                   </Carousel.Item>
-                
                 </Carousel>
               </div>
             </div>
