@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
-import "../../scss/historia_style.css";
+import "../../scss/cultura_estilo.css";
 import "../../scss/boton_toggler_style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandPointRight } from "@fortawesome/free-solid-svg-icons";
@@ -61,20 +61,20 @@ export function Cultura() {
       )}
       <main
         style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
-        className={`contenedor-historia ${isSidebarOpen ? "open" : ""}`}
+        className={`contenedor-cultura ${isSidebarOpen ? "open" : ""}`}
       >
-        <div className="historia-titulo">
+        <div className="cultura-titulo">
           <h1>Cultura</h1>
         </div>
 
-        <div className="contenido-historia">
+        <div className="contenido-cultura">
           <h2 className="titulo-hist">¡Bienvenido al módulo de cultura!</h2>
           <div
             style={{
-              marginLeft: "18rem",
-              marginRight: "18rem",
+              marginLeft: "15rem",
+              marginRight: "15rem",
               textAlign: "justify",
-              fontSize:"1.2rem"
+              fontSize: "1.2rem",
             }}
           >
             <p>
@@ -87,29 +87,77 @@ export function Cultura() {
               que influyeron en la vida cotidiana de los antiguos chinos.
             </p>
           </div>
-          <div className="contenedor-hijo-Hist-izq">
-            <img src="/images/saludochina.png" alt="" />
-            <p>
-              1. Los chinos antiguos daban gran importancia a la etiqueta y el
-              respeto hacia los demás. El saludo más común era el saludo de
-              cortesía, que se realizaba inclinando ligeramente la cabeza.
-              También se valoraba mucho el respeto a los ancianos y a los
-              líderes comunitarios.
-            </p>
-          </div>
 
-          <div className="contenedor-hijo-Hist-der">
-            <img src="/images/festividad.jpg" alt="" />
-            <p>
-              2. China es famosa por sus coloridas festividades. Entre las más
-              importantes se encuentra el Año Nuevo Chino, una celebración que
-              marca el inicio del nuevo año lunar. Durante esta festividad, las
-              familias se reúnen para disfrutar de banquetes, danzas del león y
-              del dragón, y fuegos artificiales.
-            </p>
-          </div>
+          <div className="container">
+            <div className="row">
+              <div className="col-sm" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+                <div className="sketchfab-embed-wrapper">
+                  {" "}
+                  <iframe
+                    style={{width:'400px', height:'480px', marginLeft:'8rem'}}
+                    title="Chinese wooden figure."
+                    frameBorder="0"
+                    allowFullScreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    xr-spatial-tracking
+                    execution-while-out-of-viewport
+                    execution-while-not-rendered
+                    web-share
+                    src="https://sketchfab.com/models/5cc058c064f14cb18e3cb2ab484127f3/embed"
+                  >
+                    {" "}
+                  </iframe>{" "}
+                  <p
+                    style={{
+                      fontSize: "13px",
+                      fontWeight: "normal",
+                      margin: "5px",
+                      color: "#4A4A4A",
+                      textAlign: "center",
+                    }}
+                  >
+                    {" "}
+                    <a
+                      target="_blank"
+                      rel="nofollow"
+                      style={{ fontWeight: "bold", color: "black" , marginLeft:'10rem'}}
+                    >
+                      {" "}
+                     Budismo como religión en la antigüa china
+                    </a>{" "}
+                  </p>
+                </div>
+              </div>
 
-          <div className="contenedor-hijo-Hist-izq">
+              <div className="col-lg">
+                <div className="contenedor-hijo-Cult-izq">
+                  <img src="/images/saludochina.png" alt="" />
+                  <p>
+                    1. Los chinos antiguos daban gran importancia a la etiqueta
+                    y el respeto hacia los demás. El saludo más común era el
+                    saludo de cortesía, que se realizaba inclinando ligeramente
+                    la cabeza. También se valoraba mucho el respeto a los
+                    ancianos y a los líderes comunitarios.
+                  </p>
+                </div>
+
+                <div className="contenedor-hijo-Cult-der">
+                  <img src="/images/festividad.jpg" alt="" />
+                  <p>
+                    2. China es famosa por sus coloridas festividades. Entre las
+                    más importantes se encuentra el Año Nuevo Chino, una
+                    celebración que marca el inicio del nuevo año lunar. Durante
+                    esta festividad, las familias se reúnen para disfrutar de
+                    banquetes, danzas del león y del dragón, y fuegos
+                    artificiales.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="contenedor-hijo-Cult-izq">
             <img src="/images/taoismo.png" alt="" />
             <p>
               3. China es el hogar de varias escuelas de pensamiento filosófico,
@@ -121,7 +169,7 @@ export function Cultura() {
             </p>
           </div>
 
-          <div className="contenedor-hijo-Hist-der">
+          <div className="contenedor-hijo-Cult-der">
             <img src="/images/familia.png" alt="" />
             <p>
               4. La familia era el núcleo de la sociedad china antigua. Se
@@ -131,35 +179,6 @@ export function Cultura() {
               su vejez.
             </p>
           </div>
-
-          <div style={{ width: "400px", height: "800px" }}>
-            <Canvas
-              camera={{
-                fov: 45,
-                near: 0.03,
-                far: 800,
-                position: [-1, 7, 10],
-              }}
-            >
-              {/*Controles*/}
-              <OrbitControls makeDefault />
-
-              {/*Luces*/}
-              <directionalLight position={[1, 2, 3]} intensity={1.5} />
-              <ambientLight intensity={0.5} />
-
-              {/*Templo Griego*/}
-              <Modelo scale={20}></Modelo>
-
-              {/* {/*Piso
-              <mesh  position-y={-0.3} rotation-x={- Math.PI*0.5} scale={10}>
-              <planeGeometry />
-              <meshStandardMaterial/>
-              </mesh>
-              */}
-            </Canvas>
-          </div>
-
           <Boton_next
             nombre="Tradiciones"
             imagen="/images/tradicion-icono.png"
