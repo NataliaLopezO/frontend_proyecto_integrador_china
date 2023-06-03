@@ -68,7 +68,7 @@ export function Tradiciones() {
           <div className="container">
             <div className="row">
               <div className="col-6">
-                <h3 className="mb-3">Tradiciones </h3>
+                <h3 className="mb-3"> </h3>
               </div>
 
               <div className="col-12">
@@ -93,14 +93,23 @@ export function Tradiciones() {
                               className="img-fluid"
                               style={{ borderTopLeftRadius: "25px" }}
                               alt="100%x280"
-                              src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d"
+                              src="/images/antepasados.jpg"
                             />
                           </div>
                           <div className="card-body">
-                            <h4 className="card-title">1</h4>
+                            <h4 className="card-title text-center">
+                              Culto a los antepasados
+                            </h4>
                             <p className="card-text">
-                              With supporting text below as a natural lead-in to
-                              additional content.
+                              Los antiguos chinos creían firmemente en la
+                              veneración de sus antepasados. Se dedicaban
+                              altares especiales en los hogares donde se les
+                              ofrecían alimentos, incienso y rituales para
+                              honrar a los ancestros fallecidos. Este culto a
+                              los antepasados tenía como objetivo mantener la
+                              conexión entre las generaciones pasadas, presentes
+                              y futuras, y se consideraba una responsabilidad
+                              filial importante.
                             </p>
                           </div>
                         </div>
@@ -117,14 +126,21 @@ export function Tradiciones() {
                             <img
                               className="img-fluid"
                               alt="100%x280"
-                              src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698"
+                              src="/images/ceremoniaTe.jpg"
                             />
                           </div>
                           <div className="card-body">
-                            <h4 className="card-title">2</h4>
+                            <h4 className="card-title text-center">
+                              Ceremonia del té
+                            </h4>
                             <p className="card-text">
-                              With supporting text below as a natural lead-in to
-                              additional content.
+                              El té tenía un lugar destacado en la cultura
+                              china, y la ceremonia del té era una tradición
+                              común. Se realizaba con elegancia y precisión,
+                              siguiendo pasos específicos para preparar y servir
+                              el té. Esta ceremonia no solo era una forma de
+                              disfrutar de la bebida, sino también un acto de
+                              cortesía y hospitalidad hacia los invitados.
                             </p>
                           </div>
                         </div>
@@ -143,14 +159,21 @@ export function Tradiciones() {
                               className="img-fluid"
                               style={{ borderTopRightRadius: "25px" }}
                               alt="100%x280"
-                              src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a"
+                              src="/images/caligrafia.jpeg"
                             />
                           </div>
                           <div className="card-body">
-                            <h4 className="card-title">3</h4>
+                            <h4 className="card-title text-center">
+                              Arte de la caligrafía
+                            </h4>
                             <p className="card-text">
-                              With supporting text below as a natural lead-in to
-                              additional content.
+                              La caligrafía era considerada un arte refinado y
+                              un medio para expresar la belleza y la elegancia
+                              del lenguaje escrito. Los antiguos chinos
+                              practicaban la caligrafía como una forma de
+                              automejora y autorreflexión. Era enseñada desde
+                              temprana edad y se valoraba tanto por su estética
+                              como por su contenido.
                             </p>
                           </div>
                         </div>
@@ -158,7 +181,7 @@ export function Tradiciones() {
                     </div>
                   </Carousel.Item>
                   <Carousel.Item>
-                                        <div className="row">
+                    <div className="row">
                       <div className="col-md-4 mb-3">
                         <div className="card">
                           <div
@@ -173,14 +196,21 @@ export function Tradiciones() {
                               className="img-fluid"
                               style={{ borderTopLeftRadius: "25px" }}
                               alt="100%x280"
-                              src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d"
+                              src="/images/boda.jpg"
                             />
                           </div>
                           <div className="card-body">
-                            <h4 className="card-title">4</h4>
+                            <h4 className="card-title text-center">
+                              Ceremonia de boda
+                            </h4>
                             <p className="card-text">
-                              With supporting text below as a natural lead-in to
-                              additional content.
+                              Las bodas en la antigua China eran eventos
+                              significativos y altamente ritualizados. Se
+                              llevaban a cabo rituales simbólicos que
+                              representaban la unión de las familias y la
+                              bendición de los antepasados. El respeto hacia los
+                              padres y la obediencia filial eran aspectos
+                              fundamentales en estas ceremonias.
                             </p>
                           </div>
                         </div>
@@ -197,14 +227,24 @@ export function Tradiciones() {
                             <img
                               className="img-fluid"
                               alt="100%x280"
-                              src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698"
+                              src="/images/rituales.jpg"
                             />
                           </div>
                           <div className="card-body">
-                            <h4 className="card-title">5</h4>
+                            <h4 className="card-title text-center">
+                              Ceremonias y rituales
+                            </h4>
                             <p className="card-text">
-                              With supporting text below as a natural lead-in to
-                              additional content.
+                              Las ceremonias y rituales desempeñaban un papel
+                              fundamental en la vida de los antiguos chinos.
+                              Estos actos solemnes y cuidadosamente orquestados
+                              se llevaban a cabo para celebrar ocasiones
+                              especiales, honrar a los antepasados, adorar a los
+                              dioses y buscar la protección y la buena fortuna.
+                              La etiqueta y el protocolo eran esenciales en
+                              estas ceremonias, que involucraban prácticas como
+                              el intercambio de ofrendas, la quema de incienso,
+                              las danzas rituales y los cantos sagrados.
                             </p>
                           </div>
                         </div>
@@ -223,100 +263,37 @@ export function Tradiciones() {
                               className="img-fluid"
                               style={{ borderTopRightRadius: "25px" }}
                               alt="100%x280"
-                              src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a"
+                              src="/images/funeral.jpg"
                             />
                           </div>
                           <div className="card-body">
-                            <h4 className="card-title">6</h4>
+                            <h4 className="card-title text-center">
+                              Ceremonias de entierro
+                            </h4>
                             <p className="card-text">
-                              With supporting text below as a natural lead-in to
-                              additional content.
+                              En la antigua China, se creía firmemente en la
+                              vida después de la muerte y en la necesidad de
+                              proporcionar un adecuado descanso y cuidado a los
+                              seres queridos fallecidos. Las ceremonias de
+                              entierro se consideraban una forma de respeto y
+                              amor filial hacia los antepasados y se llevaban a
+                              cabo con gran solemnidad y atención a los
+                              detalles. Antes del entierro propiamente dicho, se
+                              realizaban diversos rituales preparatorios. Estos
+                              incluían lavar y vestir el cuerpo del difunto con
+                              ropas ceremoniales, así como colocar objetos
+                              personales y artículos simbólicos en el ataúd.
+                              Estos objetos podían incluir joyas, monedas,
+                              alimentos y utensilios, todo lo cual se creía que
+                              sería útil y necesario en la vida después de la
+                              muerte.
                             </p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </Carousel.Item>
-                  <Carousel.Item>
-                  <div className="row">
-                      <div className="col-md-4 mb-3">
-                        <div className="card">
-                          <div
-                            className="fondo"
-                            style={{
-                              backgroundColor: "black",
-                              borderTopLeftRadius: "40px",
-                              padding: "1rem",
-                            }}
-                          >
-                            <img
-                              className="img-fluid"
-                              style={{ borderTopLeftRadius: "25px" }}
-                              alt="100%x280"
-                              src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d"
-                            />
-                          </div>
-                          <div className="card-body">
-                            <h4 className="card-title">7</h4>
-                            <p className="card-text">
-                              With supporting text below as a natural lead-in to
-                              additional content.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4 mb-3">
-                        <div className="card">
-                          <div
-                            className="fondo"
-                            style={{
-                              backgroundColor: "red",
-                              padding: "1rem",
-                            }}
-                          >
-                            <img
-                              className="img-fluid"
-                              alt="100%x280"
-                              src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698"
-                            />
-                          </div>
-                          <div className="card-body">
-                            <h4 className="card-title">8</h4>
-                            <p className="card-text">
-                              With supporting text below as a natural lead-in to
-                              additional content.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-4 mb-3">
-                        <div className="card">
-                          <div
-                            className="fondo"
-                            style={{
-                              backgroundColor: "black",
-                              borderTopRightRadius: "40px",
-                              padding: "1rem",
-                            }}
-                          >
-                            <img
-                              className="img-fluid"
-                              style={{ borderTopRightRadius: "25px" }}
-                              alt="100%x280"
-                              src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a"
-                            />
-                          </div>
-                          <div className="card-body">
-                            <h4 className="card-title">9</h4>
-                            <p className="card-text">
-                              With supporting text below as a natural lead-in to
-                              additional content.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Carousel.Item>
+                
                 </Carousel>
               </div>
             </div>
