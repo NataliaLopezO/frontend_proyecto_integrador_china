@@ -8,6 +8,8 @@ import { Boton_back } from "../../components/boton-back";
 import { Boton_next } from "../../components/boton-next";
 import { Canvas } from "react-three-fiber";
 import { Modelo_dinastia } from "../../components/Modelo_dinastia";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Float, Text, OrbitControls } from "@react-three/drei";
 
 export function Dinastias() {
@@ -25,7 +27,6 @@ export function Dinastias() {
   };
 
   const [showModal, setShowModal] = useState(false);
-
 
   /**
    * Abre el modal.
@@ -82,11 +83,50 @@ export function Dinastias() {
         </div>
 
         <div className="botones-dinastias">
-          <button>XIA</button>
-          <button>SHANG</button>
-          <button>ZHOU</button>
-          <button>QIN</button>
-          <button>HAN</button>
+          <NavLink
+            exact="true"
+            to="/xia"
+            className="nav-link"
+            activeclassname="active"
+          >
+            <button>XIA</button>
+          </NavLink>
+
+          <NavLink
+            exact="true"
+            to="/shang"
+            className="nav-link"
+            activeclassname="active"
+          >
+            <button>SHANG</button>
+          </NavLink>
+
+          <NavLink
+            exact="true"
+            to="/zhou"
+            className="nav-link"
+            activeclassname="active"
+          >
+            <button>ZHOU</button>
+          </NavLink>
+          
+          <NavLink
+            exact="true"
+            to="/qin"
+            className="nav-link"
+            activeclassname="active"
+          >
+            <button>QIN</button>
+          </NavLink>
+          
+          <NavLink
+            exact="true"
+            to="/han"
+            className="nav-link"
+            activeclassname="active"
+          >
+            <button>HAN</button>
+          </NavLink>
         </div>
 
         <div className="boton-modelo">

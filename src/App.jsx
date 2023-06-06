@@ -11,14 +11,19 @@ import {Contacto} from './pages/contacto'
 import {Ajustes} from './pages/ajustes'
 
 import {Historia} from './pages/Historia/historia'
-import {Dinastias} from './pages/Historia/dinastias'
-import {Arquitectura} from './pages/Historia/arquitectura'
+  import {Dinastias} from './pages/Historia/dinastias'
+    import { Din_Xia } from './pages/Historia/xia'
+    import { Din_Shang } from './pages/Historia/shang'
+    import { Din_Zhou } from './pages/Historia/zhou'
+    import { Din_Qin } from './pages/Historia/qin'
+    import { Din_Han } from './pages/Historia/han'
+  import {Arquitectura} from './pages/Historia/arquitectura'
 
 import {Cultura} from './pages/Cultura/cultura'
-import {Tradiciones} from './pages/Cultura/tradiciones'
-import {Artesanias} from './pages/Cultura/artesanias'
-import {Festividades} from './pages/Cultura/festividades'
-import {Vestimenta} from './pages/Cultura/vestimenta'
+  import {Tradiciones} from './pages/Cultura/tradiciones'
+  import {Artesanias} from './pages/Cultura/artesanias'
+  import {Festividades} from './pages/Cultura/festividades'
+  import {Vestimenta} from './pages/Cultura/vestimenta'
 
 import {Contribuciones} from './pages/Contribuciones/contribuciones'
 
@@ -48,6 +53,12 @@ function App() {
 
       <Route path='/historia' element ={<Historia/>} />
         <Route path='/dinastias' element ={<Dinastias/>} />
+          <Route path='/xia' element ={<Din_Xia/>} />
+          <Route path='/shang' element ={<Din_Shang/>} />
+          <Route path='/zhou' element ={<Din_Zhou/>} />
+          <Route path='/qin' element ={<Din_Qin/>} />
+          <Route path='/han' element ={<Din_Han/>} />
+
         <Route path='/arquitectura' element ={<Arquitectura/>} />
 
       <Route path='/cultura' element ={<Cultura/>} />
