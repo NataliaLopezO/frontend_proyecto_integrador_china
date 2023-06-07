@@ -12,10 +12,10 @@
   margin-bottom: 1rem;
   cursor: context-menu;
   color: black; /* Color original */
-  animation: cambio-color 3s infinite alternate; /* Aplicar animación */
+  animation: cambio-color-shang 3s infinite alternate; /* Aplicar animación */
 }
 
-@keyframes cambio-color {
+@keyframes cambio-color-shang {
   0% {
     color: black; /* Color original */
   }
