@@ -6,6 +6,14 @@ import "../../scss/xia_style.css";
 export function Din_Xia() {
   const [index, setIndex] = useState(0);
 
+  /**
+   *
+   *Cambia el índice del carrusel al seleccionar una diapositiva.
+   *@param {number} selectedIndex - El índice de la diapositiva seleccionada.
+   *@param {Object} e - El evento de selección.
+   *
+   **/
+
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
