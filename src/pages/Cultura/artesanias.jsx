@@ -152,7 +152,8 @@ export function Artesanias() {
                   src="/images/ceramica-china2.jpg"
                   alt=""
                 />
-                Vasijas, Neolítico medio y tardío (5000-2050 a.C.)
+                Vasijas, Neolítico medio y tardío (5000-2050 a.C.) Culturas
+                Yangshao y Majiayao
               </a>
             </div>
             <div className="col">
