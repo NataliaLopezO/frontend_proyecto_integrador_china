@@ -39,7 +39,6 @@ export function Din_Han() {
                   borderRadius: "10px",
                   boxShadow: "0px 0px 7px rgba(0, 0, 0, 0.8)",
                 }}
-                title="Guerreiro de Xi´an"
                 frameBorder="0"
                 allowFullScreen={true}
                 mozallowfullscreen="true"
