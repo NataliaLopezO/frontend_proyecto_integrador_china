@@ -17,11 +17,3 @@
 }
 
 
-
-.card {
-    transition: 1.5s transform;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}

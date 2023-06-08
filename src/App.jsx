@@ -24,6 +24,7 @@ import {Cultura} from './pages/Cultura/cultura'
   import {Artesanias} from './pages/Cultura/artesanias'
   import {Festividades} from './pages/Cultura/festividades'
   import {Vestimenta} from './pages/Cultura/vestimenta'
+  import {Creencias} from './pages/Cultura/creencias'
 
 import {Contribuciones} from './pages/Contribuciones/contribuciones'
 
@@ -66,6 +67,7 @@ function App() {
         <Route path='/artesanias' element ={<Artesanias/>} />
         <Route path='/festividades' element ={<Festividades/>} />
         <Route path='/vestimenta' element ={<Vestimenta/>} />
+        <Route path='/creencias' element ={<Creencias/>} />
 
       <Route path='/contribuciones' element ={<Contribuciones/>} />
         <Route path='/ver-contribuciones' element ={<Detalle/>} />
