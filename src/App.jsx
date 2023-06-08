@@ -27,10 +27,16 @@ import {Cultura} from './pages/Cultura/cultura'
   import {Creencias} from './pages/Cultura/creencias'
 
 import {Contribuciones} from './pages/Contribuciones/contribuciones'
+  import {Detalle} from './pages/Contribuciones/detalle-contribuciones'
+  import {Brujula} from './pages/Contribuciones/brujula'
+  import {Polvora} from './pages/Contribuciones/polvora'
+  import {Papel} from './pages/Contribuciones/papel'
+  import {Imprenta} from './pages/Contribuciones/imprenta'
+  import {Acupuntura} from './pages/Contribuciones/acupuntura'
 
 import {Minijuegos} from './pages/minijuegos'
 
-import {Detalle} from './pages/Contribuciones/detalle-contribuciones'
+
 
 
 
@@ -71,6 +77,11 @@ function App() {
 
       <Route path='/contribuciones' element ={<Contribuciones/>} />
         <Route path='/ver-contribuciones' element ={<Detalle/>} />
+        <Route path='/brujula' element ={<Brujula/>} />
+        <Route path='/polvora' element ={<Polvora/>} />
+        <Route path='/papel' element ={<Papel/>} />
+        <Route path='/imprenta' element ={<Imprenta/>} />
+        <Route path='/acupuntura' element ={<Acupuntura/>} />
         
 
       <Route path='/minijuegos' element ={<Minijuegos/>} />
