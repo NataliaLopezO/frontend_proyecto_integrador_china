@@ -279,9 +279,7 @@ export function Vestimenta() {
                             />
                           </div>
                           <div className="card-body">
-                            <h4 className="card-title text-center">
-                              
-                            </h4>
+                            <h4 className="card-title text-center"></h4>
                             <p className="card-text">
                               La vestimenta en la civilización china era más que
                               simples prendas de ropa; representaba la identidad
@@ -311,8 +309,6 @@ export function Vestimenta() {
           className="next-back"
           style={{ display: "flex", justifyContent: "space-between" }}
         >
-
-
           <Boton_back
             nombre="Festividades"
             imagen="/images/festividades-icono.png"
@@ -320,12 +316,11 @@ export function Vestimenta() {
             href="/festividades"
           />
 
-
-<Boton_next
-            nombre="Cultura"
-            imagen="/images/cultura-icon.png"
+          <Boton_next
+            nombre="Creencias"
+            imagen="/images/creencias-icono.png"
             identificador={123}
-            href="/cultura"
+            href="/creencias"
           />
         </div>
       </main>
