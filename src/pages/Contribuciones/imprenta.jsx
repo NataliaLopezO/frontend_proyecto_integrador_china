@@ -4,6 +4,13 @@ import { Carousel } from "react-bootstrap";
 import "../../scss/imprenta_style.css";
 import "bootstrap/dist/css/bootstrap.css";
 
+/**
+ * Componente de Imprenta.
+ *
+ * Este componente muestra la interfaz de la información relacionada con la invención de la imprenta en el modulo de contribuciones
+ * con sus respectivos modelos. 
+ */
+
 export function Imprenta() {
   const [index, setIndex] = useState(0);
 
@@ -23,7 +30,7 @@ export function Imprenta() {
     <>
       <h1 className="titulo-imprenta text-center">Imprenta</h1>
       <div className="container page-imprenta text-center">
-      
+
         <br></br>
         <br></br>
         <div className="row">
@@ -57,7 +64,7 @@ export function Imprenta() {
               ></iframe>
             </div>
           </div>
-          
+
           <div
             className="col-sm"
             style={{
@@ -66,20 +73,15 @@ export function Imprenta() {
             }}
           >
             <div className="info-imprenta">
-              
 
-              
+
+
               <p>
                 <strong>Origen y desarrollo:</strong>
 
                 <br></br>
-
-                
                 La imprenta de tipos móviles fue inventada en China durante la dinastía Tang, en el siglo VIII d.C.
                 Fue desarrollada por el artesano chino Bi Sheng, quien diseñó un sistema de tipos móviles hechos de arcilla.
-
-
-
 
               </p>
               <p>
@@ -98,176 +100,77 @@ export function Imprenta() {
                 <strong>Impacto y legado:</strong>
                 <br></br>
 
-                
                 La invención de la imprenta de tipos móviles en China tuvo un impacto significativo en la difusión de la información y la preservación del conocimiento.
                 Facilitó la producción en masa de libros y documentos, lo que contribuyó a la expansión de la educación y el acceso a la información.
                 La imprenta de tipos móviles sentó las bases para el desarrollo posterior de la imprenta en otros países, como Corea y Europa, donde se perfeccionaron y adaptaron diferentes técnicas de impresión.
-
-
-
-
 
               </p>
             </div>
           </div>
           <div className="row" style={{ marginTop: "2rem" }}>
             <Carousel activeIndex={index} onSelect={handleSelect}>
-
-              
-            <Carousel.Item>
-            <iframe
-                style={{
-                  width: "1000px",
-                  height: "500px",
-                  borderRadius: "10px",
-                  boxShadow: "0px 0px 7px rgba(0, 0, 0, 0.8)",
-                }}
-                frameBorder="0"
-                allowFullScreen={true}
-                mozallowfullscreen="true"
-                webkitallowfullscreen="true"
-                allow="autoplay; fullscreen; xr-spatial-tracking"
-                xr-spatial-tracking="true"
-                execution-while-out-of-viewport="true"
-                execution-while-not-rendered="true"
-                web-share="true"
-                src="https://www.youtube.com/embed/vVlDfy4o0R8"
-                
-               
-                
-              ></iframe>
-
-                
-              </Carousel.Item>
-
-
               <Carousel.Item>
-              <iframe
-                style={{
-                  width: "1000px",
-                  height: "500px",
-                  borderRadius: "10px",
-                  boxShadow: "0px 0px 7px rgba(0, 0, 0, 0.8)",
-                }}
-                frameBorder="0"
-                allowFullScreen={true}
-                mozallowfullscreen="true"
-                webkitallowfullscreen="true"
-                allow="autoplay; fullscreen; xr-spatial-tracking"
-                xr-spatial-tracking="true"
-                execution-while-out-of-viewport="true"
-                execution-while-not-rendered="true"
-                web-share="true"
-                src="https://sketchfab.com/3d-models/imprenta-6d52e83a2f2341f3b234651be1b96668/embed"
-              ></iframe>
+                <iframe
+                  style={{
+                    width: "1000px",
+                    height: "500px",
+                    borderRadius: "10px",
+                    boxShadow: "0px 0px 7px rgba(0, 0, 0, 0.8)",
+                  }}
+                  frameBorder="0"
+                  allowFullScreen={true}
+                  mozallowfullscreen="true"
+                  webkitallowfullscreen="true"
+                  allow="autoplay; fullscreen; xr-spatial-tracking"
+                  xr-spatial-tracking="true"
+                  execution-while-out-of-viewport="true"
+                  execution-while-not-rendered="true"
+                  web-share="true"
+                  src="https://www.youtube.com/embed/vVlDfy4o0R8"
+                ></iframe>
+              </Carousel.Item>
+              <Carousel.Item>
+                <iframe
+                  style={{
+                    width: "1000px",
+                    height: "500px",
+                    borderRadius: "10px",
+                    boxShadow: "0px 0px 7px rgba(0, 0, 0, 0.8)",
+                  }}
+                  frameBorder="0"
+                  allowFullScreen={true}
+                  mozallowfullscreen="true"
+                  webkitallowfullscreen="true"
+                  allow="autoplay; fullscreen; xr-spatial-tracking"
+                  xr-spatial-tracking="true"
+                  execution-while-out-of-viewport="true"
+                  execution-while-not-rendered="true"
+                  web-share="true"
+                  src="https://sketchfab.com/3d-models/imprenta-6d52e83a2f2341f3b234651be1b96668/embed"
+                ></iframe>
                 <Carousel.Caption>
                   <h3 >
-                  Avances y mejoras:
+                    Avances y mejoras:
                   </h3>
                   <p >
-                  
                     Durante la dinastía Song (siglos X-XIII), se perfeccionaron las técnicas de fabricación de tipos móviles, utilizando metal en lugar de arcilla o madera.
                     La utilización de tipos metálicos permitió una mayor durabilidad y precisión en la impresión, acelerando el proceso de producción de libros y documentos.
-
-
                   </p>
                 </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
-              <img
+                <img
                   className="d-block w-100"
                   src="/images/imprenta-antigua.png"
                   alt="Third slide"
                 />
-                
-              </Carousel.Item>  
-            </Carousel>
-            </div>
-           
 
-            {/*
-          
-          <div className="row" style={{ marginTop: "2rem" }}>
-            <div className="col">
-              <div className="sketchfab-embed-wrapper">
-                <iframe
-                  style={{
-                    width: "380px",
-                    height: "580px",
-                    borderRadius: "10px",
-                    boxShadow: "0px 0px 7px rgba(0, 0, 0, 0.8)",
-                  }}
-                  frameBorder="0"
-                  allowFullScreen={true}
-                  mozallowfullscreen="true"
-                  webkitallowfullscreen="true"
-                  allow="autoplay; fullscreen; xr-spatial-tracking"
-                  xr-spatial-tracking="true"
-                  execution-while-out-of-viewport="true"
-                  execution-while-not-rendered="true"
-                  web-share="true"
-                  src="https://sketchfab.com/models/04afa6c71d7244c58d7bb9fa8a939f27/embed"
-                ></iframe>
-              </div>
-            </div>
-            <div className="col">
-              <div className="sketchfab-embed-wrapper">
-                <iframe
-                  style={{
-                    width: "380px",
-                    height: "580px",
-                    borderRadius: "10px",
-                    boxShadow: "0px 0px 7px rgba(0, 0, 0, 0.8)",
-                  }}
-                  frameBorder="0"
-                  allowFullScreen={true}
-                  mozallowfullscreen="true"
-                  webkitallowfullscreen="true"
-                  allow="autoplay; fullscreen; xr-spatial-tracking"
-                  xr-spatial-tracking="true"
-                  execution-while-out-of-viewport="true"
-                  execution-while-not-rendered="true"
-                  web-share="true"
-                  src="https://sketchfab.com/models/ded2697cd0a2413a95fa5a9b478bc99c/embed"
-                ></iframe>
-                <p
-                  style={{
-                    fontSize: "50px",
-                    fontWeight: "normal",
-                    fontFamily: "Noto Serif",
-                    margin: "5px",
-                    color: "black",
-                  }}
-                >
-                  Soldados de Terracota
-                </p>
-              </div>
-            </div>
-            <div className="col">
-              <div className="sketchfab-embed-wrapper">
-                <iframe
-                  style={{
-                    width: "380px",
-                    height: "580px",
-                    borderRadius: "10px",
-                    boxShadow: "0px 0px 7px rgba(0, 0, 0, 0.8)",
-                  }}
-                  frameBorder="0"
-                  allowFullScreen={true}
-                  mozallowfullscreen="true"
-                  webkitallowfullscreen="true"
-                  allow="autoplay; fullscreen; xr-spatial-tracking"
-                  xr-spatial-tracking="true"
-                  execution-while-out-of-viewport="true"
-                  execution-while-not-rendered="true"
-                  web-share="true"
-                  src="https://sketchfab.com/models/9746027fbe934fab9576930a037257c3/embed"
-                ></iframe>
-              </div>
-            </div>*/}
-          
+              </Carousel.Item>
+            </Carousel>
+          </div>
+
         </div>
-       
+
         <div
           className="next-back"
           style={{ display: "flex", justifyContent: "space-between" }}

@@ -12,7 +12,7 @@ import { Float, Text, OrbitControls } from "@react-three/drei";
 /**
  * Componente de contribuciones.
  *
- * Este componente muestra la interfaz de contribuciones introductoria
+ * Este componente muestra la interfaz de contribuciones introductoria en el modulo de contribuciones.
  */
 
 export function Contribuciones() {
@@ -68,14 +68,6 @@ export function Contribuciones() {
             <h2 className="titulo-hist">
               Conoce los importantes aportes de la civilización antigua China a la humanidad...
             </h2>
-
-            {/*<div className="parrafo-contribuciones" style={{ marginLeft: "15rem", marginRight: "15rem", textAlign: "justify", marginTop: "10px" }}>
-              <p>
-              Esta civilización dejó múltiples legados, aportes tecnológicos y medicinales, algunos incluso se siguen 
-              utilizando en la actualidad, acompáñame a ver este video para conocerlos.
-              </p>
-        </div>*/}
-
 
             <div className="contenedor-hijo-Hist-der">
               <img src="/images/brujula.jpg" alt="" />
@@ -175,7 +167,6 @@ export function Contribuciones() {
           identificador={123}
           href="/ver-contribuciones"
         />
-
 
       </main>
     </>
