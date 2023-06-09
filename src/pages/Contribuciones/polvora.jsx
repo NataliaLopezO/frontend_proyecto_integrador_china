@@ -48,7 +48,7 @@ export function Polvora() {
                 execution-while-out-of-viewport="true"
                 execution-while-not-rendered="true"
                 web-share="true"
-                src="https://sketchfab.com/3d-models/brujula-de-jack-sparrow-55dfcde675a447e8a602f7c9f5bf1d11/embed"
+                src="https://sketchfab.com/3d-models/pandaren-fireworks-cart-2db44face8834abc94de8883001fb5ad/embed"
               ></iframe>
             </div>
           </div>
@@ -147,13 +147,13 @@ export function Polvora() {
               ></iframe>
                 <Carousel.Caption>
                   <h3>
-                  Principio de funcionamiento de la brujula:
+                  Cañones de polvora:
                   </h3>
                   <p>
-                  El principio de funcionamiento de la brújula china se basaba en las propiedades magnéticas de la 
-                  aguja. La aguja magnetizada tendía a alinearse con el campo magnético terrestre, apuntando hacia 
-                  el polo norte magnético. Esto permitía a los navegantes chinos determinar la dirección y orientarse 
-                  durante sus viajes.
+                  En la antigua China, los cañones eran conocidos como "huochong" o "huopao", que se traduce como "tubo de fuego".
+                  Eran cilindros de metal, generalmente hechos de bronce, y tenían una estructura similar a la de los cañones de cañón 
+                  posteriores. Estos cañones primitivos eran rudimentarios en comparación con las armas de fuego modernas, pero aún así
+                  demostraron ser formidables en el campo de batalla.
                   </p>
                 </Carousel.Caption>
               </Carousel.Item>
