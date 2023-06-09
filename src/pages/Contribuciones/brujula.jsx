@@ -20,8 +20,8 @@ export function Brujula() {
 
   return (
     <>
-      <h1 className="titulo-qin text-center">Invención de la brújula</h1>
-      <div className="container page-qin text-center">
+      <h1 className="titulo-brujula text-center">Invención de la brújula</h1>
+      <div className="container page-brujula text-center">
         <div className="row">
           <div
             className="col-sm"
@@ -59,7 +59,7 @@ export function Brujula() {
               justifyContent: "center",
             }}
           >
-            <div className="info-qin">
+            <div className="info-brujula">
               <p>
                 La invención de la brújula es uno de los logros más importantes de la antigua China. 
                 Aquí tienes información detallada sobre su desarrollo y su impacto:
