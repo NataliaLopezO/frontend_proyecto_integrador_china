@@ -50,7 +50,7 @@ export function Contribuciones() {
         style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
         className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
       >
-        <div className="historia-titulo">
+        <div className="aportes-titulo">
           <h1>Inventos y Contribuciones</h1>
         </div>
 
@@ -64,7 +64,7 @@ export function Contribuciones() {
             justifyContent: "center",
           }}
         >
-          <div className="contenido-historia">
+          <div className="contenido-aportes">
             <h2 className="titulo-hist">
               Conoce los importantes aportes de la civilización antigua China a la humanidad...
             </h2>

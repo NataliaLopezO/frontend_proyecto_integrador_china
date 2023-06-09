@@ -146,10 +146,16 @@ export function Polvora() {
                 src="https://sketchfab.com/3d-models/rosita-wicke-castillo-de-la-mota-san-sebastian-15b200af9edd472490f10cf1188a2962/embed"
               ></iframe>
                 <Carousel.Caption>
-                  <h3>
+                  <h3 style={{
+                      color: "black",
+                      backgroundColor: "rgba(240, 240, 240, 0.7)",
+                    }}>
                   Cañones de polvora:
                   </h3>
-                  <p>
+                  <p style={{
+                      color: "black",
+                      backgroundColor: "rgba(240, 240, 240, 0.7)",
+                    }}>
                   En la antigua China, los cañones eran conocidos como "huochong" o "huopao", que se traduce como "tubo de fuego".
                   Eran cilindros de metal, generalmente hechos de bronce, y tenían una estructura similar a la de los cañones de cañón 
                   posteriores. Estos cañones primitivos eran rudimentarios en comparación con las armas de fuego modernas, pero aún así
@@ -158,6 +164,42 @@ export function Polvora() {
                 </Carousel.Caption>
               </Carousel.Item>
               
+              <Carousel.Item>
+              <iframe
+                style={{
+                  width: "1000px",
+                  height: "500px",
+                  borderRadius: "10px",
+                  boxShadow: "0px 0px 7px rgba(0, 0, 0, 0.8)",
+                }}
+                frameBorder="0"
+                allowFullScreen={true}
+                mozallowfullscreen="true"
+                webkitallowfullscreen="true"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                xr-spatial-tracking="true"
+                execution-while-out-of-viewport="true"
+                execution-while-not-rendered="true"
+                web-share="true"
+                src="https://sketchfab.com/3d-models/chinese-fireworks-shop-8acedb4adb1841979de9031e369c9072/embed"
+              ></iframe>
+                <Carousel.Caption>
+                  <h3 style={{
+                      color: "black",
+                      backgroundColor: "rgba(240, 240, 240, 0.7)",
+                    }}>
+                  Venta de polvora:
+                  </h3>
+                  <p style={{
+                      color: "black",
+                      backgroundColor: "rgba(240, 240, 240, 0.7)",
+                    }}>
+                  En la antigua China, la venta de fuegos artificiales se llevaba a cabo en lugares específicos, 
+                  principalmente en mercados y ferias locales. Estos lugares eran puntos de encuentro donde los 
+                  artesanos y comerciantes exhibían y vendían sus productos, incluyendo los fuegos artificiales.
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
 
 
               
