@@ -180,10 +180,7 @@ export function Imprenta() {
                   alt="Third slide"
                 />
                 
-              </Carousel.Item>
-
-
-              
+              </Carousel.Item>  
             </Carousel>
             </div>
            
