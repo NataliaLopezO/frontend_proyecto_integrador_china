@@ -71,14 +71,14 @@ export function Detalle() {
       )}
       <main
         style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
-        className={`contenedor-historia ${isSidebarOpen ? "open" : ""}`}
+        className={`contenedor-aportes ${isSidebarOpen ? "open" : ""}`}
       >
-        <div className="historia-titulo">
+        <div className="aportes-titulo">
           <h1>Inventos y Contribuciones</h1>
         </div>
 
-        <div className="contenido-dinastias">
-          <div className="dinastias-parrafo">
+        <div className="contenido-aportes">
+          <div className="aportes-parrafo">
             <p>
                 ¡Bienvenido a conocer sobre los inventos y contribuciones de la
                 civilización china antigua!. Los cuatro grandes inventos de la
@@ -97,7 +97,7 @@ export function Detalle() {
           </div>
         </div>
 
-        <div className="botones-dinastias">
+        <div className="botones-aportes">
           <NavLink
             exact="true"
             to="/brujula"
