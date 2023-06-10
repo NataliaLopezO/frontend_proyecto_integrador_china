@@ -1,7 +1,11 @@
+import React from 'react';
 import { Boton_back } from "../../components/boton-back";
 import { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "../../scss/qin_style.css";
+/**
+ * Componente principal para mostrar la información de la Dinastía Qin.
+ */
 
 export function Din_Qin() {
   const [index, setIndex] = useState(0);

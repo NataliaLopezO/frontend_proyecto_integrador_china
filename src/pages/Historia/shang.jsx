@@ -1,7 +1,12 @@
+import React from 'react';
 import { Boton_back } from "../../components/boton-back";
 import { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "../../scss/shang_style.css";
+
+/**
+ * Componente principal para mostrar la información de la Dinastía Shang.
+ */
 
 export function Din_Shang() {
   const [index, setIndex] = useState(0);

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Boton_back } from "../../components/boton-back";
 import { useState } from "react";
 import { Carousel } from "react-bootstrap";

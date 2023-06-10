@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
 import { Button, Modal } from "react-bootstrap";
@@ -11,6 +12,11 @@ import { Modelo_dinastia } from "../../components/Modelo_dinastia";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Float, Text, OrbitControls } from "@react-three/drei";
+
+/**
+ * El componente `Dinastias` representa una página que muestra información sobre
+ * las dinastías antiguas de China y permite al usuario interactuar con ella.
+ */
 
 export function Dinastias() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

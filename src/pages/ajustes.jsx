@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import { Update_china } from "../components/update_china";
 import { Nav_bar_perfil } from "../components/nav-bar-perfil";

@@ -5,6 +5,11 @@ import { Boton_back } from "../../components/boton-back";
 import { Boton_next } from "../../components/boton-next";
 import "../../scss/festividades_style.css";
 
+/**
+ * Componente que muestra una página de festividades en la aplicación.
+ * Proporciona información sobre las festividades de la antigua civilización china.
+ */
+
 export function Festividades() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 

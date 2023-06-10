@@ -8,7 +8,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Carousel, Button } from "react-bootstrap";
 
 /**
- * Componente de formulario de registro.
+ * Componente que muestra una página de tradiciones en la aplicación.
+ * Proporciona información sobre las tradiciones de la antigua civilización china.
  */
 
 export function Tradiciones() {

@@ -1,7 +1,12 @@
+import React from "react";
 import { Boton_back } from "../../components/boton-back";
 import { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "../../scss/han_style.css";
+
+/**
+ * Componente principal para mostrar la información de la Dinastía Han.
+ */
 
 export function Din_Han() {
   const [index, setIndex] = useState(0);
