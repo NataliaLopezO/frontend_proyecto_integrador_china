@@ -7,6 +7,11 @@ import "../../scss/tradiciones_style.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Carousel, Button } from "react-bootstrap";
 
+/**
+ * Componente que muestra una página de vestimenta en la aplicación.
+ * Proporciona información sobre las vestimenta de la antigua civilización china.
+ */
+
 export function Vestimenta() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 

@@ -7,6 +7,11 @@ import "../../scss/creencias_style.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Carousel, Button } from "react-bootstrap";
 
+/**
+ * Componente de la página de Creencias.
+ * Muestra información sobre diferentes creencias de la antigua China.
+ */
+
 export function Creencias() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 

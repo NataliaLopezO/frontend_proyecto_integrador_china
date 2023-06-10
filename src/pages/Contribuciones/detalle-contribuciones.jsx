@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
 import "../../scss/contribuciones_style.css";

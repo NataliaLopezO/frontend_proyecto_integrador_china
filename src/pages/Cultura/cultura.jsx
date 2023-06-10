@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
 import "../../scss/cultura_estilo.css";
@@ -7,8 +8,12 @@ import { faHandPointRight } from "@fortawesome/free-solid-svg-icons";
 import { Float, Text, OrbitControls } from "@react-three/drei";
 import { Canvas } from "react-three-fiber";
 import { Boton_next } from "../../components/boton-next";
-
 import { Modelo } from "../../components/ModeloDragonCute";
+
+/**
+ * Componente que muestra una página de cultura en la aplicación.
+ * Proporciona información sobre las costumbres y tradiciones de la antigua civilización china.
+ */
 
 export function Cultura() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

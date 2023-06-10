@@ -1,7 +1,12 @@
+import React from 'react';
 import { Boton_back } from "../../components/boton-back";
 import { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "../../scss/zhou_style.css";
+
+/**
+ * Componente principal para mostrar la información de la Dinastía Zhou.
+ */
 
 export function Din_Zhou() {
   const [index, setIndex] = useState(0);

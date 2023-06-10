@@ -1,9 +1,16 @@
+import React from 'react';
 import { useState } from "react";
 import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
 import "../../scss/historia_style.css";
 import "../../scss/boton_toggler_style.css";
 import { Boton_next } from "../../components/boton-next";
 
+/**
+ * Componente Historia.
+ *
+ * Este componente muestra información sobre la historia china, incluyendo las dinastías
+ * Xia, Shang, Zhou, Qin y Han.
+ */
 
 export function Historia() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -15,6 +22,7 @@ export function Historia() {
    * si la barra lateral está abierta o cerrada. Si la barra lateral está abierta,
    * la función la cerrará y viceversa.
    */
+  
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };

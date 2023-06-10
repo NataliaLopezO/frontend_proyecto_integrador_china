@@ -5,6 +5,13 @@ import { Boton_back } from "../../components/boton-back";
 import { Boton_next } from "../../components/boton-next";
 import "../../scss/artesanias_style.css";
 
+/**
+ * Página principal de la sección de artesanías.
+ *
+ * Muestra información sobre diferentes formas de artesanía en la antigua China,
+ * como la pintura china, la cerámica y la porcelana.
+ */
+
 export function Artesanias() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
