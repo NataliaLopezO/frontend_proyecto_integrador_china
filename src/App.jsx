@@ -35,6 +35,7 @@ import {Contribuciones} from './pages/Contribuciones/contribuciones'
   import {Acupuntura} from './pages/Contribuciones/acupuntura'
 
 import {Minijuegos} from './pages/minijuegos'
+  import {Memo_card} from './pages/memoCard'
 
 
 
@@ -85,6 +86,8 @@ function App() {
         
 
       <Route path='/minijuegos' element ={<Minijuegos/>} />
+        <Route path='/memoCard' element ={<Memo_card/>} />
+
 
     </Routes>
 

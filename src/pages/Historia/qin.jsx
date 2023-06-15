@@ -229,6 +229,7 @@ export function Din_Qin() {
                     fontFamily: "Noto Serif",
                     margin: "5px",
                     color: "black",
+                    textShadow: "2px 2px 4px rgba(255, 255, 255, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)"
                   }}
                 >
                   Soldados de Terracota

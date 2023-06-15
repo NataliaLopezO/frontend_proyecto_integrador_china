@@ -138,29 +138,20 @@
 }
 
 .botones-aportes button {
-    background-color: brown;
-    border: 0;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.7);
-    border-radius: 30px;
-    font-size: 1.5rem;
-    margin: 2rem;
-    padding: 2rem;
-    transition: 0.5s transform, 0.5s background-color, 0.5s color;
-    width: auto;
-    display: inline-block; /* Permite que el botón se ajuste al contenido */
-    white-space: nowrap;
-    
+  background-color: brown;
+  border: 0;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.7);
+  border-radius: 30px;
+  color: rgb(255, 231, 231);
+  font-size: 1.5rem;
+  margin: 2rem;
+  padding: 2rem;
+  transition: 0.5s transform, 0.5s background-color, 0.5s color;
+  width: 16rem;
 }
 
 .botones-aportes button:hover {
-    background-color: rgb(161, 65, 65);
+    background-color: rgb(249, 201, 201);
     transform: scale(1.10);
-    color:aliceblue;
-}
-
-.boton-modelo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-family: "Noto Serif", serif;
+    color:brown;
 }

@@ -4,7 +4,7 @@ import { Register_form } from "../components/register_form";
 import { BrowserRouter as Router } from "react-router-dom";
 
 describe("Register_form", () => {
-  test("renders form inputs", () => {
+  test("Verificar que se rendericen los campos de entrada", () => {
     render(
       <Router>
         <Register_form />
@@ -14,12 +14,10 @@ describe("Register_form", () => {
     // Verificar que se rendericen los campos de entrada
     expect(screen.getByPlaceholderText("Ingresa username")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("Ingresa Email")).toBeInTheDocument();
-    expect(
-      screen.getByPlaceholderText("Ingresa contraseña")
-    ).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Ingresa contraseña")).toBeInTheDocument();
   });
 
-  test("updates state on input change", () => {
+  test("Actualiza el estado con campos de entrada", () => {
     render(
       <Router>
         <Register_form />
