@@ -182,6 +182,7 @@ export function Din_Zhou() {
                   fontFamily: "Noto Serif",
                   margin: "5px",
                   color: "black",
+                  textShadow: "2px 2px 4px rgba(255, 255, 255, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)"
                 }}
               >
                 El filósofo chino Confucio (551 a.C. a 479 a.C.)
