@@ -3,6 +3,7 @@
 .contenedor-perfil {
   display: flex;
   flex-direction: column;
+  font-family: "Noto Serif", serif;
   transition: margin-left 0.1s ease;
 }
 
@@ -31,4 +32,34 @@
   justify-content: center;
   margin-top: 10px;
   width: 100%;
+}
+
+.nombre-user {
+  animation: tamano-user 05s infinite alternate;
+  font-size: 1.3rem;
+}
+
+.foto-user {
+  border: 1px solid;
+  border-radius: 50%;
+  height: 280px;
+  padding: 5px;
+  width: auto;
+}
+
+.info-profile {
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+@keyframes tamano-user {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100%{
+    scale: 1;
+  }
 }
