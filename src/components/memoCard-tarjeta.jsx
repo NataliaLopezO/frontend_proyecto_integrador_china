@@ -28,8 +28,8 @@ const Memo_card_tarjeta = ({ name, number, frontFace, flipCard, unflippedCards, 
   return (
     <div className='tarjeta' >
       <ReactCardFlip isFlipped={isFlipped} >
-        <img className='tarjeta-image' src={backFace} alt='back-face' onClick={hasEvent ? handleClick : null} />
-        <img className='tarjeta-image' src={frontFace} alt='front-face' onClick={hasEvent ? handleClick : null} />
+        <img className='card-image' src={backFace} alt='back-face' onClick={hasEvent ? handleClick : null} />
+        <img className='card-image' src={frontFace} alt='front-face' onClick={hasEvent ? handleClick : null} />
       </ReactCardFlip>
     </div>
   )
