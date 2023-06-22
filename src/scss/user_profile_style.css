@@ -35,7 +35,6 @@
 }
 
 .nombre-user {
-  animation: tamano-user 05s infinite alternate;
   font-size: 1.3rem;
 }
 
@@ -52,17 +51,6 @@
   text-align: justify;
 }
 
-@keyframes tamano-user {
-  0% {
-    scale: 1;
-  }
-  50% {
-    scale: 1.1;
-  }
-  100%{
-    scale: 1;
-  }
-}
 
 .perfil-column {
   align-items: center;

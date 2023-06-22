@@ -36,33 +36,25 @@ export function User_profile() {
   };
 
   useEffect(() => {
-
-    console.log(username)
-    // Realiza una solicitud POST al servidor para el inicio de sesión
+    // Realiza una solicitud POST al servidor para obtener el progreso del usuario
     axios;
     api
-      .post("/china/get_progreso/",  {username})
+      .post("/china/get_progreso/", { username })
       .then((response) => {
-        const cantidadTotalHistoria = Object.keys(response.data.historia).length;
-        const historia= sumarValoresDiccionario(response.data.historia)
-        
-        const cultura= sumarValoresDiccionario(response.data.cultura)
+        const cantidadTotalHistoria = Object.keys(
+          response.data.historia
+        ).length;
+        const historia = sumarValoresDiccionario(response.data.historia);
+
+        const cultura = sumarValoresDiccionario(response.data.cultura);
         const cantidadTotalCultura = Object.keys(response.data.cultura).length;
 
-        const cantidadTotalContribuciones = Object.keys(response.data.contribuciones).length;
-        const contribuciones= sumarValoresDiccionario(response.data.contribuciones)
-
-        console.log(response.data.historia)
-        console.log(historia)
-        console.log(cantidadTotalHistoria)
-
-        console.log(response.data.cultura)
-        console.log(cultura)
-        console.log(cantidadTotalCultura)
-
-        console.log(response.data.contribuciones)
-        console.log(contribuciones)
-        console.log(cantidadTotalContribuciones)
+        const cantidadTotalContribuciones = Object.keys(
+          response.data.contribuciones
+        ).length;
+        const contribuciones = sumarValoresDiccionario(
+          response.data.contribuciones
+        );
 
         const nuevoPorcHistoria = (historia / cantidadTotalHistoria) * 100;
         setPorcHistoria(nuevoPorcHistoria); // Actualizar el estado 'now' con el nuevo valor
@@ -70,30 +62,36 @@ export function User_profile() {
         const nuevoPorcCultura = (cultura / cantidadTotalCultura) * 100;
         setPorcCultura(nuevoPorcCultura); // Actualizar el estado 'now' con el nuevo valor
 
-        const nuevoPorcContribuciones = (contribuciones / cantidadTotalContribuciones) * 100;
+        const nuevoPorcContribuciones =
+          (contribuciones / cantidadTotalContribuciones) * 100;
         setPorcContribuciones(nuevoPorcContribuciones); // Actualizar el estado 'now' con el nuevo valor
-
       })
       .catch((error) => {
         console.error(error);
       });
-  
-});
+  });
 
-function sumarValoresDiccionario(diccionario) {
-  let sumaTotal = 0;
+  /**
+   * Suma los valores de un diccionario.
+   *
+   * @param {object} diccionario - El diccionario cuyos valores se sumarán.
+   * @returns {number} - La suma total de los valores del diccionario.
+   */
 
-  // Recorrer cada clave del diccionario
-  for (let clave in diccionario) {
-    // Verificar si la clave pertenece al diccionario y no a su prototipo
-    if (diccionario.hasOwnProperty(clave)) {
-      // Sumar el valor de la clave a la suma total
-      sumaTotal += diccionario[clave];
+  function sumarValoresDiccionario(diccionario) {
+    let sumaTotal = 0;
+
+    // Recorrer cada clave del diccionario
+    for (let clave in diccionario) {
+      // Verificar si la clave pertenece al diccionario y no a su prototipo
+      if (diccionario.hasOwnProperty(clave)) {
+        // Sumar el valor de la clave a la suma total
+        sumaTotal += diccionario[clave];
+      }
     }
-  }
 
-  return sumaTotal;
-}
+    return sumaTotal;
+  }
 
   return (
     <>
@@ -120,7 +118,7 @@ function sumarValoresDiccionario(diccionario) {
           <h1 className="titulo-settings">Perfil</h1>
         </div>
 
-        <div className="container my-5">
+        <div className="container my-2">
           <div className="row" style={{ borderBottom: "5px solid" }}>
             <div className="col text-center">
               <p className="nombre-user">
@@ -159,15 +157,26 @@ function sumarValoresDiccionario(diccionario) {
             }}
           >
             <div className="col perfil-column">
-              <button className="bton-quiz">Quiz Historia</button>
-              <p className="acierto">
-                <img src="/images/comprobado.png" alt="" />
-                Aciertos:
-              </p>
-              <p className="fallos">
-                <img src="/images/cancelar.png" alt="" />
-                Fallos:
-              </p>
+              <button
+                className="bton-quiz historia"
+                disabled={porcHistoria < 100}
+              >
+                Quiz Historia
+              </button>
+              {porcHistoria >= 100 ? (
+                <>
+                  <p className="acierto">
+                    <img src="/images/comprobado.png" alt="" />
+                    Aciertos:
+                  </p>
+                  <p className="fallos">
+                    <img src="/images/cancelar.png" alt="" />
+                    Fallos:
+                  </p>
+                </>
+              ) : (
+                <h2 className="no-disponible">No disponible</h2>
+              )}
               <h2 className="titulo-profile">Progreso</h2>
               <ProgressBar
                 animated
@@ -181,18 +190,29 @@ function sumarValoresDiccionario(diccionario) {
                   marginTop: "50px",
                 }}
               />
-              ;
             </div>
+
             <div className="col perfil-column">
-              <button className="bton-quiz">Quiz Cultura</button>
-              <p className="acierto">
-                <img src="/images/comprobado.png" alt="" />
-                Aciertos:
-              </p>
-              <p className="fallos">
-                <img src="/images/cancelar.png" alt="" />
-                Fallos:
-              </p>
+              <button
+                className="bton-quiz cultura"
+                disabled={porcCultura < 100}
+              >
+                Quiz Cultura
+              </button>
+              {porcCultura >= 100 ? (
+                <>
+                  <p className="acierto">
+                    <img src="/images/comprobado.png" alt="" />
+                    Aciertos:
+                  </p>
+                  <p className="fallos">
+                    <img src="/images/cancelar.png" alt="" />
+                    Fallos:
+                  </p>
+                </>
+              ) : (
+                <h2 className="no-disponible">No disponible</h2>
+              )}
               <h2 className="titulo-profile">Progreso</h2>
               <ProgressBar
                 animated
@@ -206,24 +226,35 @@ function sumarValoresDiccionario(diccionario) {
                   marginTop: "50px",
                 }}
               />
-              ;
             </div>
+
             <div className="col perfil-column">
-              <button className="bton-quiz">Quiz Contribuciones</button>
-              <p className="acierto">
-                <img src="/images/comprobado.png" alt="" />
-                Aciertos:
-              </p>
-              <p className="fallos">
-                <img src="/images/cancelar.png" alt="" />
-                Fallos:
-              </p>
+              <button
+                className="bton-quiz contribuciones"
+                disabled={porcContribuciones < 100}
+              >
+                Quiz Contribuciones
+              </button>
+              {porcContribuciones >= 100 ? (
+                <>
+                  <p className="acierto">
+                    <img src="/images/comprobado.png" alt="" />
+                    Aciertos:
+                  </p>
+                  <p className="fallos">
+                    <img src="/images/cancelar.png" alt="" />
+                    Fallos:
+                  </p>
+                </>
+              ) : (
+                <h2 className="no-disponible">No disponible</h2>
+              )}
               <h2 className="titulo-profile">Progreso</h2>
               <ProgressBar
                 animated
                 variant="success"
                 now={porcContribuciones}
-                label={`${porcContribuciones.toFixed(2)}%`} // Redondear 'now' a 2 decimales
+                label={`${porcContribuciones.toFixed(2)}%`}
                 style={{
                   width: "300px",
                   height: "35px",
@@ -231,7 +262,6 @@ function sumarValoresDiccionario(diccionario) {
                   marginTop: "50px",
                 }}
               />
-              ;
             </div>
           </div>
         </div>
