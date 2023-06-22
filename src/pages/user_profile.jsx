@@ -1,9 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Nav_bar_perfil } from "../components/nav-bar-perfil";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "../scss/user_profile_style.css";
 import "../scss/boton_toggler_style.css";
+import axios from "axios";
+import { api } from "../api/register_api";
 
 /**
  * Componente User_profile.
@@ -16,7 +18,10 @@ import "../scss/boton_toggler_style.css";
 export function User_profile() {
   const username = sessionStorage.getItem("username");
   const profilePic = sessionStorage.getItem("foto");
-  const now = 50;
+
+  const [porcHistoria, setPorcHistoria] = useState(0); // Ahora 'now' es un estado
+  const [porcCultura, setPorcCultura] = useState(0);
+  const [porcContribuciones, setPorcContribuciones] = useState(0);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   /**
@@ -29,6 +34,66 @@ export function User_profile() {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  useEffect(() => {
+
+    console.log(username)
+    // Realiza una solicitud POST al servidor para el inicio de sesión
+    axios;
+    api
+      .post("/china/get_progreso/",  {username})
+      .then((response) => {
+        const cantidadTotalHistoria = Object.keys(response.data.historia).length;
+        const historia= sumarValoresDiccionario(response.data.historia)
+        
+        const cultura= sumarValoresDiccionario(response.data.cultura)
+        const cantidadTotalCultura = Object.keys(response.data.cultura).length;
+
+        const cantidadTotalContribuciones = Object.keys(response.data.contribuciones).length;
+        const contribuciones= sumarValoresDiccionario(response.data.contribuciones)
+
+        console.log(response.data.historia)
+        console.log(historia)
+        console.log(cantidadTotalHistoria)
+
+        console.log(response.data.cultura)
+        console.log(cultura)
+        console.log(cantidadTotalCultura)
+
+        console.log(response.data.contribuciones)
+        console.log(contribuciones)
+        console.log(cantidadTotalContribuciones)
+
+        const nuevoPorcHistoria = (historia / cantidadTotalHistoria) * 100;
+        setPorcHistoria(nuevoPorcHistoria); // Actualizar el estado 'now' con el nuevo valor
+
+        const nuevoPorcCultura = (cultura / cantidadTotalCultura) * 100;
+        setPorcCultura(nuevoPorcCultura); // Actualizar el estado 'now' con el nuevo valor
+
+        const nuevoPorcContribuciones = (contribuciones / cantidadTotalContribuciones) * 100;
+        setPorcContribuciones(nuevoPorcContribuciones); // Actualizar el estado 'now' con el nuevo valor
+
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  
+});
+
+function sumarValoresDiccionario(diccionario) {
+  let sumaTotal = 0;
+
+  // Recorrer cada clave del diccionario
+  for (let clave in diccionario) {
+    // Verificar si la clave pertenece al diccionario y no a su prototipo
+    if (diccionario.hasOwnProperty(clave)) {
+      // Sumar el valor de la clave a la suma total
+      sumaTotal += diccionario[clave];
+    }
+  }
+
+  return sumaTotal;
+}
 
   return (
     <>
@@ -107,9 +172,14 @@ export function User_profile() {
               <ProgressBar
                 animated
                 variant="success"
-                now={now}
-                label={`${now}%`}
-                style={{ width: "300px",  height:"35px", fontSize:"1.4rem", marginTop:"50px"}}
+                now={porcHistoria}
+                label={`${porcHistoria.toFixed(2)}%`}
+                style={{
+                  width: "300px",
+                  height: "35px",
+                  fontSize: "1.4rem",
+                  marginTop: "50px",
+                }}
               />
               ;
             </div>
@@ -127,9 +197,14 @@ export function User_profile() {
               <ProgressBar
                 animated
                 variant="success"
-                now={now}
-                label={`${now}%`}
-                style={{ width: "300px",  height:"35px", fontSize:"1.4rem", marginTop:"50px"}}
+                now={porcCultura}
+                label={`${porcCultura.toFixed(2)}%`}
+                style={{
+                  width: "300px",
+                  height: "35px",
+                  fontSize: "1.4rem",
+                  marginTop: "50px",
+                }}
               />
               ;
             </div>
@@ -147,9 +222,14 @@ export function User_profile() {
               <ProgressBar
                 animated
                 variant="success"
-                now={now}
-                label={`${now}%`}
-                style={{ width: "300px",  height:"35px", fontSize:"1.4rem", marginTop:"50px"}}
+                now={porcContribuciones}
+                label={`${porcContribuciones.toFixed(2)}%`} // Redondear 'now' a 2 decimales
+                style={{
+                  width: "300px",
+                  height: "35px",
+                  fontSize: "1.4rem",
+                  marginTop: "50px",
+                }}
               />
               ;
             </div>
