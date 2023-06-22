@@ -161,7 +161,7 @@ export function Memo_card_tablero() {
           {!gameComplete && (
             <div>
               <div className="score-time">
-                <div className="score">Puntos: {score}</div>
+                <div className="score" data-testid="score">Puntos: {score}</div>
                 <div className="timer">
                   Tiempo restante: {formatTime(timeLeft)}
                 </div>
@@ -178,6 +178,7 @@ export function Memo_card_tablero() {
                     disabledCards={disabledCards}
                     score={score}
                     setScore={setScore}
+                    data-testid={`memo-card-${index}`}
                   />
                 ))}
               </div>

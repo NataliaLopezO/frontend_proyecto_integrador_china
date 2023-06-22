@@ -73,7 +73,7 @@ const Memo_card_tarjeta = ({
   };
 
   return (
-    <div className="tarjeta">
+    <div className="tarjeta" data-testid="memo-card">
       <ReactCardFlip isFlipped={isFlipped}>
         <img
           className="tarjeta-image"
