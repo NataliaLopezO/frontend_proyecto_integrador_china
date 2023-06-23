@@ -6,6 +6,7 @@ import "../scss/user_profile_style.css";
 import "../scss/boton_toggler_style.css";
 import axios from "axios";
 import { api } from "../api/register_api";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Componente User_profile.
@@ -16,6 +17,7 @@ import { api } from "../api/register_api";
  */
 
 export function User_profile() {
+  const navigate = useNavigate();
   const username = sessionStorage.getItem("username");
   const profilePic = sessionStorage.getItem("foto");
 
@@ -24,6 +26,17 @@ export function User_profile() {
   const [porcContribuciones, setPorcContribuciones] = useState(0);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  /**
+   * Manejador de clic del botón del quiz de contribuciones.
+   *
+   * Esta función se ejecuta cuando se hace clic en el botón de quiz de contribuciones. Redirecciona al usuario
+   * a la página especificada utilizando la función 'navigate' proporcionada por React Router.
+   */
+
+  const handleClick = () => {
+    navigate("/quiz-contribuciones"); // Redirecciona a la página especificada en href
+  };
   /**
    * Alternar la apertura y cierre de la barra lateral.
    *
@@ -232,6 +245,7 @@ export function User_profile() {
               <button
                 className="bton-quiz contribuciones"
                 disabled={porcContribuciones < 100}
+                onClick={() => {handleClick(); }}
               >
                 Quiz Contribuciones
               </button>
