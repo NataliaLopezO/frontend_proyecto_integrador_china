@@ -4,6 +4,7 @@ import { Nav_bar_perfil } from "../components/nav-bar-perfil";
 import { NavLink } from "react-router-dom";
 import "../scss/user_profile_style.css";
 import "../scss/boton_toggler_style.css";
+import "../scss/minijuegos_style.css";
 
 export function Minijuegos() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -44,16 +45,45 @@ export function Minijuegos() {
           <h1 className="titulo-settings">Minijuegos</h1>
         </div>
 
-        
-          <NavLink
-            exact="true"
-            to="/memoCard"
-            className="nav-link"
-            activeclassname="active"
-          >
-            <button className="text-center">Memo</button>
-          </NavLink>
-          
+        <div className="ola">
+          <div className="contenedor-botones-juegos my-5">
+            <NavLink
+              exact="true"
+              to="/memoCard"
+              className="nav-link"
+              activeclassname="active"
+            >
+              <button className="memoGame text-center">
+                <img src="/images/memoIcon.png" alt="" />
+                MemoCard
+              </button>
+            </NavLink>
+
+            <NavLink
+              exact="true"
+              to="/hangman"
+              className="nav-link"
+              activeclassname="active"
+            >
+              <button className="memoGame text-center">
+                <img src="/images/horcaIcon.png" alt="" />
+                Ahorcado
+              </button>
+            </NavLink>
+
+            <NavLink
+              exact="true"
+              to="/crucigrama"
+              className="nav-link"
+              activeclassname="active"
+            >
+              <button className="memoGame text-center">
+                <img src="/images/crucigramaIcon.png" alt="" />
+                Crucigrama
+              </button>
+            </NavLink>
+          </div>
+        </div>
       </main>
     </>
   );
