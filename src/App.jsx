@@ -37,6 +37,7 @@ import {Contribuciones} from './pages/Contribuciones/contribuciones'
 import {Minijuegos} from './pages/minijuegos'
   import {Memo_card} from './pages/memoCard'
   import {Hang_man} from './pages/hangMan'
+  import {Scrabble} from './pages/scrabble'
 
 
 
@@ -89,6 +90,7 @@ function App() {
       <Route path='/minijuegos' element ={<Minijuegos/>} />
         <Route path='/memoCard' element ={<Memo_card/>} />
         <Route path='/hangman' element ={<Hang_man/>} />
+        <Route path='/scrabble' element ={<Scrabble/>} />
 
 
     </Routes>
