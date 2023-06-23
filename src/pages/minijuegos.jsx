@@ -6,6 +6,11 @@ import "../scss/user_profile_style.css";
 import "../scss/boton_toggler_style.css";
 import "../scss/minijuegos_style.css";
 
+/**
+ * Componente que muestra la página de Minijuegos.
+ * Permite al usuario acceder a diferentes juegos como MemoCard, Ahorcado y Scrabble.
+ */
+
 export function Minijuegos() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -73,13 +78,13 @@ export function Minijuegos() {
 
             <NavLink
               exact="true"
-              to="/crucigrama"
+              to="/scrabble"
               className="nav-link"
               activeclassname="active"
             >
               <button className="memoGame text-center">
-                <img src="/images/crucigramaIcon.png" alt="" />
-                Crucigrama
+                <img src="/images/scrabbleIcon.png" alt="" />
+                Scrabble
               </button>
             </NavLink>
           </div>

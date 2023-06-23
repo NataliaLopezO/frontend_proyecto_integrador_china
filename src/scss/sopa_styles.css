@@ -1,0 +1,51 @@
+.cuadricula-sopa {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.word-list {
+  text-align: left;
+  column-count: 2;
+  column-gap: 100px;
+  color: red;
+}
+
+.word-list li.found {
+  color: #01af24;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    1,
+    1fr
+  ); /* Ajusta el número de columnas según tus necesidades */
+  gap: 5px; /* Espacio entre las celdas de la cuadrícula */
+  width: 70%; /* Ajusta el tamaño del contenedor según tus necesidades */
+  position: relative;
+}
+
+.row {
+  display: flex;
+}
+
+.letter {
+  width: 50px; /* Ancho de cada celda */
+  height: 50px; /* Alto de cada celda */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black; /* Borde de cada celda */
+  cursor: pointer;
+}
+
+.selected {
+  background-color: yellow; /* Color de fondo para las celdas seleccionadas */
+}
+
+.letter.found {
+  background-color: rgb(43, 255, 0); /* Cambia el color a tu preferencia */
+}

@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../scss/hangMan_style.css";
 
+/**
+ * Componente que representa el juego del Ahorcado basado en la civilización antigua de China.
+ * El objetivo del juego es adivinar una palabra oculta antes de quedarse sin intentos.
+ */
+
 export const Ahorcado = () => {
   const [palabra, setPalabra] = useState("");
   const [palabraOculta, setPalabraOculta] = useState("");
@@ -20,10 +25,20 @@ export const Ahorcado = () => {
     "dragón",
   ];
 
+  /**
+   * Selecciona una palabra aleatoria del arreglo de palabras disponibles.
+   * @returns {string} Palabra aleatoria seleccionada.
+   */
+
   const seleccionarPalabraAleatoria = () => {
     const indice = Math.floor(Math.random() * palabras.length);
     return palabras[indice];
   };
+
+  /**
+   * Inicializa el juego estableciendo una nueva palabra oculta, letras adivinadas,
+   * intentos restantes y estado del juego.
+   */
 
   const inicializarJuego = () => {
     const palabraAleatoria = seleccionarPalabraAleatoria();
@@ -33,6 +48,12 @@ export const Ahorcado = () => {
     setIntentosRestantes(4);
     setEstadoJuego("");
   };
+
+  /**
+   * Maneja el evento de selección de una letra.
+   * Actualiza la palabra oculta, las letras adivinadas, los intentos restantes y el estado del juego.
+   * @param {string} letra - Letra seleccionada.
+   */
 
   const manejarLetra = (letra) => {
     if (estadoJuego === "ganado" || estadoJuego === "perdido") {
@@ -66,6 +87,10 @@ export const Ahorcado = () => {
     }
   };
 
+  /**
+   * Reinicia el juego llamando a la función de inicialización del juego.
+   */
+
   const reiniciarJuego = () => {
     inicializarJuego();
   };
@@ -73,6 +98,11 @@ export const Ahorcado = () => {
   useEffect(() => {
     inicializarJuego();
   }, []);
+
+  /**
+   * Componente que muestra las opciones de letras para seleccionar.
+   * @returns {JSX.Element} Componente de teclado.
+   */
 
   const Teclado = () => {
     const letras = "abcdefghijklmnopqrstuvwxyz";
@@ -96,6 +126,11 @@ export const Ahorcado = () => {
     );
   };
 
+  /**
+   * Componente que muestra la imagen del Ahorcado según los intentos restantes.
+   * @returns {JSX.Element} Componente de la imagen del Ahorcado.
+   */
+
   const AhorcadoImagen = () => {
     const imagenes = [
       "/images/hangMan-img/ahorcado0.png",
@@ -110,14 +145,24 @@ export const Ahorcado = () => {
     return <img style={{height:"300px", width:"300px"}} src={imagenAhorcado} alt="Ahorcado" />;
   };
 
+  /**
+   * Componente que muestra el historial de letras adivinadas.
+   * @returns {JSX.Element} Componente de historial de letras.
+   */
+
   const HistorialLetras = () => {
     return (
-      <div>
+      <div className="text-center">
         <p>Letras adivinadas:</p>
         <div>{letrasAdivinadas.join(", ")}</div>
       </div>
     );
   };
+
+  /**
+   * Componente que muestra el puntaje actual del jugador.
+   * @returns {JSX.Element} Componente de puntaje.
+   */
 
   const Puntaje = () => {
     const puntaje = palabraOculta
