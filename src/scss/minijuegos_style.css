@@ -1,0 +1,61 @@
+
+.contenedor-botones-juegos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.ola {
+    height: 100vh;
+}
+.ola:before {
+    content: "";
+    position: fixed;
+    width: 300%;
+    height: 100%;
+    top: 45%;
+    left: 50%;
+    background-color: #696969;
+    background-color: #696969;
+    border-radius: 50%;
+    transform: translateX(-50%) skew(0, -10deg);
+    animation: wave 7s ease-in-out infinite alternate;
+    -webkit-animation: wave 7s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+.memoGame {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    width: 12rem;
+    transition: 0.5s ease background-color, 0.5s color, 0.5s transform;
+}
+
+.memoGame img {
+    height: 50px;
+    margin-right: 10px;
+    width: auto;
+}
+
+.memoGame:hover {
+    background-color: rgb(166, 166, 166);
+    color: white;
+    transform: scale(1.2);
+}
+
+@keyframes wave {
+    from {
+      transform: translateX(-50%) skew(0, -10deg);
+    }
+    to {
+      transform: translateX(-30%) skew(10deg, 0);
+      -webkit-transform: translateX(-30%) skew(10deg, 0);
+      -moz-transform: translateX(-30%) skew(10deg, 0);
+      -ms-transform: translateX(-30%) skew(10deg, 0);
+      -o-transform: translateX(-30%) skew(10deg, 0);
+    }
+  }
+  
