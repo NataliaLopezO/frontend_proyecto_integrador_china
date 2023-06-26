@@ -8,7 +8,10 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faUserGear } from "@fortawesome/free-solid-svg-icons";
 import { faPeopleRoof } from "@fortawesome/free-solid-svg-icons";
 import { faHandHoldingHand } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGamepad } from "@fortawesome/free-solid-svg-icons";
+import { Button, Modal } from "react-bootstrap";
+import {useState } from "react";
 
 
 /**
@@ -21,6 +24,17 @@ export function Nav_bar_perfil() {
   // Obtener el nombre de usuario y la imagen de perfil almacenados en el almacenamiento de sesión
   const username = sessionStorage.getItem("username");
   const profilePic = sessionStorage.getItem("foto");
+
+
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModalOpen = () => {
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
 
   return (
     <nav className="navbar navbar-light bg-light custom-sidebar">
@@ -134,7 +148,42 @@ export function Nav_bar_perfil() {
           </ul>
         </div>
         <div className="div-logout custom-div-logout">
-          <Logout_china />
+
+
+<button onClick={handleModalOpen} className="dashboard-nav-item">
+          <FontAwesomeIcon
+            icon={faSignOutAlt}
+            style={{ color: "#ffffff", marginRight: "16px" }}
+          />{" "}
+          Salir
+        </button>
+          
+
+
+
+
+        
+      {/* Modal de cierre de sesión */}
+      <Modal
+        show={showModal}
+        onHide={handleModalClose}
+        centered
+        backdrop="static"
+      >
+        <Modal.Header>
+          <Modal.Title>Salir de la sesión</Modal.Title>
+          <Button variant="danger" onClick={handleModalClose}>
+            <span aria-hidden="true">&times;</span>
+          </Button>
+        </Modal.Header>
+        <Modal.Body>¿Deseas finalizar la sesión?</Modal.Body>
+        <Modal.Footer>      
+            <Logout_china onClick={() => {
+              handleModalClose();
+            }} />
+        </Modal.Footer>
+      </Modal>  
+
         </div>
       </div>
     </nav>
