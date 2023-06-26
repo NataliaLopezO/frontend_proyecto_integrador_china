@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
 import "../scss/login_china_style.css";
 import { api } from "../api/register_api";
+import Swal from "sweetalert2";
 
 
 /**
@@ -63,13 +64,48 @@ export const Formulario = () => {
           localStorage.setItem("authToken", response.data.token);
           console.log(sessionStorage.getItem("foto"))
           navigate("/next");
+
+          Swal.fire({
+            icon: "success",
+            title: "Operación exitosa",
+            text: "Se ha iniciado sesión correctamente",
+            confirmButtonText: "Continuar",
+            allowOutsideClick: false,
+            showCancelButton: false,
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Redirigir a la página actual
+              window.location.reload();
+            }
+          });
+
         } else {
             setLoginError("Usuario o contraseña incorrectos");
             console.log("No pudo validar el inicio de sesión");
+
+            Swal.fire({
+              icon: "error",
+              title: "Opps algo salió mal",
+              text: "Verifica tus credenciales",
+              confirmButtonText: "Continuar",
+              allowOutsideClick: false,
+              showCancelButton: false,
+            });
+
           }
       })
       .catch((error) => {
         console.error(error);
+
+        Swal.fire({
+          icon: "error",
+          title: "Opps algo salió mal",
+          text: "Verifica tus credenciales",
+          confirmButtonText: "Continuar",
+          allowOutsideClick: false,
+          showCancelButton: false,
+        });
+        
       });
   };
 
