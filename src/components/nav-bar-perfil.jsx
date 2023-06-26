@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "../scss/nav_bar_perfil_style.css";
 import { Logout_china } from "../components/logout_china";
 import { NavLink } from "react-router-dom";
@@ -11,8 +11,7 @@ import { faHandHoldingHand } from "@fortawesome/free-solid-svg-icons";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { Button, Modal } from "react-bootstrap";
-import {useState } from "react";
-
+import { useState } from "react";
 
 /**
  * Componente de barra de navegación del perfil.
@@ -20,11 +19,9 @@ import {useState } from "react";
  * Contiene enlaces a diferentes secciones del perfil.
  */
 export function Nav_bar_perfil() {
-  
   // Obtener el nombre de usuario y la imagen de perfil almacenados en el almacenamiento de sesión
   const username = sessionStorage.getItem("username");
   const profilePic = sessionStorage.getItem("foto");
-
 
   const [showModal, setShowModal] = useState(false);
 
@@ -37,13 +34,13 @@ export function Nav_bar_perfil() {
   };
 
   return (
-    <nav className="navbar navbar-light bg-light custom-sidebar">
+    <nav className="navbar bg-light custom-sidebar">
       <div className="d-flex flex-column">
-        <div className="navbar-brand align-top">
+        <div className="navbar-brand">
           <span className="navbar-text custom-navbar-brand">
             <img
               src={profilePic}
-              className="img-fluid profile-image-pic img-thumbnail my-3"
+              className="img-fluid profile-image-pic img-thumbnail"
               width="100px"
               alt="profile"
             />
@@ -64,7 +61,7 @@ export function Nav_bar_perfil() {
                   icon={faUser}
                   size="sm"
                   className="icon-custom"
-                  style={{marginRight: "15px" }}
+                  style={{ marginRight: "15px" }}
                 />
                 Perfil
               </NavLink>
@@ -80,7 +77,7 @@ export function Nav_bar_perfil() {
                   icon={faUserGear}
                   size="sm"
                   className="icon-custom"
-                  style={{marginRight: "15px" }}
+                  style={{ marginRight: "15px" }}
                 />
                 Ajustes
               </NavLink>
@@ -95,7 +92,7 @@ export function Nav_bar_perfil() {
                   icon={faLandmark}
                   size="sm"
                   className="icon-custom"
-                  style={{marginRight: "15px" }}
+                  style={{ marginRight: "15px" }}
                 />
                 Historia
               </NavLink>
@@ -110,7 +107,7 @@ export function Nav_bar_perfil() {
                   icon={faPeopleRoof}
                   size="sm"
                   className="icon-custom"
-                  style={{marginRight: "15px" }}
+                  style={{ marginRight: "15px" }}
                 />
                 Cultura
               </NavLink>
@@ -125,7 +122,7 @@ export function Nav_bar_perfil() {
                   icon={faHandHoldingHand}
                   size="sm"
                   className="icon-custom"
-                  style={{marginRight: "15px" }}
+                  style={{ marginRight: "15px" }}
                 />
                 Contribuciones
               </NavLink>
@@ -140,51 +137,49 @@ export function Nav_bar_perfil() {
                   icon={faGamepad}
                   size="sm"
                   className="icon-custom"
-                  style={{marginRight: "15px" }}
+                  style={{ marginRight: "15px" }}
                 />
                 Minijuegos
               </NavLink>
             </li>
+            <li className="nav-item custom-nav-item">
+              <NavLink
+                onClick={handleModalOpen}
+                className="nav-link custom-nav-link"
+              >
+                <FontAwesomeIcon
+                  icon={faSignOutAlt}
+                  size="sm"
+                  className="icon-custom"
+                  style={{ marginRight: "15px" }}
+                />
+                Cerrar sesión
+              </NavLink>
+            </li>
           </ul>
         </div>
-        <div className="div-logout custom-div-logout">
-
-
-<button onClick={handleModalOpen} className="dashboard-nav-item">
-          <FontAwesomeIcon
-            icon={faSignOutAlt}
-            style={{ color: "#ffffff", marginRight: "16px" }}
-          />{" "}
-          Salir
-        </button>
-          
-
-
-
-
-        
-      {/* Modal de cierre de sesión */}
-      <Modal
-        show={showModal}
-        onHide={handleModalClose}
-        centered
-        backdrop="static"
-      >
-        <Modal.Header>
-          <Modal.Title>Salir de la sesión</Modal.Title>
-          <Button variant="danger" onClick={handleModalClose}>
-            <span aria-hidden="true">&times;</span>
-          </Button>
-        </Modal.Header>
-        <Modal.Body>¿Deseas finalizar la sesión?</Modal.Body>
-        <Modal.Footer>      
-            <Logout_china onClick={() => {
-              handleModalClose();
-            }} />
-        </Modal.Footer>
-      </Modal>  
-
-        </div>
+        {/* Modal de cierre de sesión */}
+        <Modal
+          show={showModal}
+          onHide={handleModalClose}
+          centered
+          backdrop="static"
+        >
+          <Modal.Header>
+            <Modal.Title>Salir de la sesión</Modal.Title>
+            <Button variant="danger" onClick={handleModalClose}>
+              <span aria-hidden="true">&times;</span>
+            </Button>
+          </Modal.Header>
+          <Modal.Body>¿Deseas finalizar la sesión?</Modal.Body>
+          <Modal.Footer>
+            <Logout_china
+              onClick={() => {
+                handleModalClose();
+              }}
+            />
+          </Modal.Footer>
+        </Modal>
       </div>
     </nav>
   );

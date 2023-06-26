@@ -106,8 +106,7 @@ export function Tradiciones() {
                           >
                             <img
                               className="img-fluid"
-                              style={{ borderTopLeftRadius: "25px" }}
-                              alt="100%x280"
+                              style={{ borderTopLeftRadius: "25px", height:"270px", width:"auto" }}
                               src="/images/antepasados.jpg"
                             />
                           </div>
@@ -115,7 +114,7 @@ export function Tradiciones() {
                             <h4 className="card-title text-center">
                               Culto a los antepasados
                             </h4>
-                            <p className="card-text">
+                            <p className="card-text" style={{height:"13.5rem", textAlign:"justify", fontSize:"1rem", display:"flex", alignItems:"center"}}>
                               Los antiguos chinos creían firmemente en la
                               veneración de sus antepasados. Se dedicaban
                               altares especiales en los hogares donde se les
@@ -140,7 +139,7 @@ export function Tradiciones() {
                           >
                             <img
                               className="img-fluid"
-                              alt="100%x280"
+                              style={{ height:"270px", width:"auto" }}
                               src="/images/ceremoniaTe.jpg"
                             />
                           </div>
@@ -148,7 +147,7 @@ export function Tradiciones() {
                             <h4 className="card-title text-center">
                               Ceremonia del té
                             </h4>
-                            <p className="card-text">
+                            <p className="card-text" style={{height:"13.5rem", textAlign:"justify", fontSize:"1rem", display:"flex", alignItems:"center"}}>
                               El té tenía un lugar destacado en la cultura
                               china, y la ceremonia del té era una tradición
                               común. Se realizaba con elegancia y precisión,
@@ -172,7 +171,7 @@ export function Tradiciones() {
                           >
                             <img
                               className="img-fluid"
-                              style={{ borderTopRightRadius: "25px" }}
+                              style={{ borderTopRightRadius: "25px", height:"270px", width:"380px"}}
                               alt="100%x280"
                               src="/images/caligrafia.jpeg"
                             />
@@ -181,7 +180,7 @@ export function Tradiciones() {
                             <h4 className="card-title text-center">
                               Arte de la caligrafía
                             </h4>
-                            <p className="card-text">
+                            <p className="card-text" style={{height:"13.5rem", textAlign:"justify", fontSize:"1rem", display:"flex", alignItems:"center"}}>
                               La caligrafía era considerada un arte refinado y
                               un medio para expresar la belleza y la elegancia
                               del lenguaje escrito. Los antiguos chinos
@@ -209,8 +208,7 @@ export function Tradiciones() {
                           >
                             <img
                               className="img-fluid"
-                              style={{ borderTopLeftRadius: "25px" }}
-                              alt="100%x280"
+                              style={{ borderTopLeftRadius: "25px" , height:"270px", width:"400px" }}
                               src="/images/boda.jpg"
                             />
                           </div>
@@ -218,7 +216,7 @@ export function Tradiciones() {
                             <h4 className="card-title text-center">
                               Ceremonia de boda
                             </h4>
-                            <p className="card-text">
+                            <p className="card-text" style={{height:"25rem", textAlign:"justify", fontSize:"1rem", display:"flex", alignItems:"center"}}>
                               Las bodas en la antigua China eran eventos
                               significativos y altamente ritualizados. Se
                               llevaban a cabo rituales simbólicos que
@@ -241,7 +239,7 @@ export function Tradiciones() {
                           >
                             <img
                               className="img-fluid"
-                              alt="100%x280"
+                              style={{height:"270px", width:"auto"}}
                               src="/images/rituales.jpg"
                             />
                           </div>
@@ -249,7 +247,7 @@ export function Tradiciones() {
                             <h4 className="card-title text-center">
                               Ceremonias y rituales
                             </h4>
-                            <p className="card-text">
+                            <p className="card-text" style={{height:"25rem", textAlign:"justify", fontSize:"1rem", display:"flex", alignItems:"center"}}>
                               Las ceremonias y rituales desempeñaban un papel
                               fundamental en la vida de los antiguos chinos.
                               Estos actos solemnes y cuidadosamente orquestados
@@ -276,8 +274,7 @@ export function Tradiciones() {
                           >
                             <img
                               className="img-fluid"
-                              style={{ borderTopRightRadius: "25px" }}
-                              alt="100%x280"
+                              style={{ borderTopRightRadius: "25px", height:"270px", width:"auto" }}
                               src="/images/funeral.jpg"
                             />
                           </div>
@@ -285,7 +282,7 @@ export function Tradiciones() {
                             <h4 className="card-title text-center">
                               Ceremonias de entierro
                             </h4>
-                            <p className="card-text">
+                            <p className="card-text" style={{height:"25rem", textAlign:"justify", fontSize:"1rem", display:"flex", alignItems:"center"}}>
                               En la antigua China, se creía firmemente en la
                               vida después de la muerte y en la necesidad de
                               proporcionar un adecuado descanso y cuidado a los

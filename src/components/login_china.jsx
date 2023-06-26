@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
@@ -6,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import "../scss/login_china_style.css";
 import { api } from "../api/register_api";
 import Swal from "sweetalert2";
-
 
 /**
  * Obtiene el nombre de usuario almacenado en sessionStorage.
@@ -27,100 +25,103 @@ export const Formulario = () => {
   const navigate = useNavigate();
 
   /**
-  * Maneja el cambio en el campo de nombre de usuario.
-  * @param {Object} event - El evento de cambio del campo de nombre de usuario.
-  */
+   * Maneja el cambio en el campo de nombre de usuario.
+   * @param {Object} event - El evento de cambio del campo de nombre de usuario.
+   */
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
 
   /**
-  * Maneja el cambio en el campo de contraseña.
-  * @param {Object} event - El evento de cambio del campo de contraseña.
-  */
+   * Maneja el cambio en el campo de contraseña.
+   * @param {Object} event - El evento de cambio del campo de contraseña.
+   */
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
   /**
-  * Maneja el envío del formulario de inicio de sesión.
-  * Realiza una solicitud de inicio de sesión al servidor y almacena los datos de usuario y token de 
-  * autenticación.
-  * Navega a la página "/next" en caso de éxito.
-  * @param {Object} event - El evento de envío del formulario.
-  */
+   * Maneja el envío del formulario de inicio de sesión.
+   * Realiza una solicitud de inicio de sesión al servidor y almacena los datos de usuario y token de
+   * autenticación.
+   * Navega a la página "/next" en caso de éxito.
+   * @param {Object} event - El evento de envío del formulario.
+   */
   const handleSubmit = (event) => {
     event.preventDefault();
     // Realiza una solicitud POST al servidor para el inicio de sesión
-    axios
-    api.post("/china/login_view/", { username, password })
+    axios;
+    api
+      .post("/china/login_view/", { username, password })
       .then((response) => {
         // Cuando la solicitud es exitosa
         if (response.data.valid) {
           sessionStorage.setItem("username", username);
-          sessionStorage.setItem("email",response.data.user.email)
-          const fotoBack= decodeURIComponent(response.data.user.profile_picture)
+          sessionStorage.setItem("email", response.data.user.email);
+          const fotoBack = decodeURIComponent(
+            response.data.user.profile_picture
+          );
           sessionStorage.setItem("foto", fotoBack.substring(1));
           localStorage.setItem("authToken", response.data.token);
-          console.log(sessionStorage.getItem("foto"))
+          console.log(sessionStorage.getItem("foto"));
           navigate("/next");
 
           Swal.fire({
             icon: "success",
             title: "Operación exitosa",
             text: "Se ha iniciado sesión correctamente",
-            confirmButtonText: "Continuar",
+            showConfirmButton: false,
             allowOutsideClick: false,
             showCancelButton: false,
+            timer: 1800,
           }).then((result) => {
             if (result.isConfirmed) {
               // Redirigir a la página actual
               window.location.reload();
             }
           });
-
         } else {
-            setLoginError("Usuario o contraseña incorrectos");
-            console.log("No pudo validar el inicio de sesión");
+          setLoginError("Usuario o contraseña incorrectos");
+          console.log("No pudo validar el inicio de sesión");
 
-            Swal.fire({
-              icon: "error",
-              title: "Opps algo salió mal",
-              text: "Verifica tus credenciales",
-              confirmButtonText: "Continuar",
-              allowOutsideClick: false,
-              showCancelButton: false,
-            });
-
-          }
+          Swal.fire({
+            icon: "warning",
+            title: "Datos incorrectos",
+            text: "Verifica tus credenciales",
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            showCancelButton: false,
+            timer: 1800,
+          });
+        }
       })
       .catch((error) => {
         console.error(error);
 
         Swal.fire({
           icon: "error",
-          title: "Opps algo salió mal",
-          text: "Verifica tus credenciales",
-          confirmButtonText: "Continuar",
+          title: "Opps, parece que no existes",
+          text: "¡Unete!",
+          showConfirmButton: false,
           allowOutsideClick: false,
           showCancelButton: false,
+          timer: 1800,
         });
-        
       });
   };
 
   /**
-  * Redirecciona al usuario a la página de registro.
-  */
-  const redireccionarRegistro= () => {
-    navigate('/register'); 
+   * Redirecciona al usuario a la página de registro.
+   */
+  const redireccionarRegistro = () => {
+    navigate("/register");
   };
 
   /**
-  * Redireccionar a la página de registro
-  */
-  const redireccionarInicio= () => {
-    navigate('/'); 
+   * Redireccionar a la página de registro
+   */
+  const redireccionarInicio = () => {
+    navigate("/");
   };
 
   return (
@@ -165,9 +166,7 @@ export const Formulario = () => {
                   />
                 </div>
                 {loginError && (
-                  <div className="error-login text-danger">
-                    {loginError}
-                  </div>
+                  <div className="error-login text-danger">{loginError}</div>
                 )}
                 <div className="mb-3">
                   <button className="btn form-control" type="submit">
@@ -176,20 +175,13 @@ export const Formulario = () => {
                 </div>
                 <div className="form-text text-dark">
                   No estas registrado?
-                  <a
-                    className="registrarse"
-
-                    onClick={redireccionarRegistro}
-                  >
+                  <a className="registrarse" onClick={redireccionarRegistro}>
                     Crea una cuenta
                   </a>
                 </div>
                 <div className="form-text text-dark">
                   Vuelta al menú?
-                  <a
-                    className="registrarse"
-                    onClick={redireccionarInicio} 
-                  >
+                  <a className="registrarse" onClick={redireccionarInicio}>
                     Click aquí
                   </a>
                 </div>
