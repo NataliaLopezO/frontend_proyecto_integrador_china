@@ -104,8 +104,11 @@ export function Vestimenta() {
                           >
                             <img
                               className="img-fluid"
-                              style={{ borderTopLeftRadius: "25px" }}
-                              alt="100%x280"
+                              style={{
+                                borderTopLeftRadius: "25px",
+                                height: "270px",
+                                width: "auto",
+                              }}
                               src="/images/vestimenta_han.jpg"
                             />
                           </div>
@@ -113,7 +116,16 @@ export function Vestimenta() {
                             <h4 className="card-title text-center">
                               Dinastía Han (206 a.C. - 220 d.C.):
                             </h4>
-                            <p className="card-text">
+                            <p
+                              className="card-text"
+                              style={{
+                                height: "13.5rem",
+                                textAlign: "justify",
+                                fontSize: "1rem",
+                                display: "flex",
+                                alignItems: "center",
+                              }}
+                            >
                               Durante la dinastía Han, la vestimenta china se
                               caracterizaba por su elegancia y sofisticación.
                               Tanto hombres como mujeres llevaban túnicas largas
@@ -138,7 +150,7 @@ export function Vestimenta() {
                           >
                             <img
                               className="img-fluid"
-                              alt="100%x280"
+                              style={{ height: "270px", width: "auto" }}
                               src="/images/dinastia_tang_moda.jpg"
                             />
                           </div>
@@ -146,7 +158,16 @@ export function Vestimenta() {
                             <h4 className="card-title text-center">
                               Dinastía Tang (618 - 907):
                             </h4>
-                            <p className="card-text">
+                            <p
+                              className="card-text"
+                              style={{
+                                height: "13.5rem",
+                                textAlign: "justify",
+                                fontSize: "1rem",
+                                display: "flex",
+                                alignItems: "center",
+                              }}
+                            >
                               La dinastía Tang se considera una época dorada
                               para la moda china. La vestimenta era lujosa y
                               extravagante, con telas suaves y colores
@@ -172,8 +193,11 @@ export function Vestimenta() {
                           >
                             <img
                               className="img-fluid"
-                              style={{ borderTopRightRadius: "25px" }}
-                              alt="100%x280"
+                              style={{
+                                borderTopRightRadius: "25px",
+                                height: "270px",
+                                width: "400px",
+                              }}
                               src="/images/song_vestimenta.jpg"
                             />
                           </div>
@@ -181,7 +205,16 @@ export function Vestimenta() {
                             <h4 className="card-title text-center">
                               Dinastía Song (960 - 1279):
                             </h4>
-                            <p className="card-text">
+                            <p
+                              className="card-text"
+                              style={{
+                                height: "13.5rem",
+                                textAlign: "justify",
+                                fontSize: "1rem",
+                                display: "flex",
+                                alignItems: "center",
+                              }}
+                            >
                               Durante la dinastía Song, la vestimenta china se
                               volvió más refinada y sutil. Las túnicas se
                               volvieron más ceñidas al cuerpo y se utilizaban
@@ -211,8 +244,11 @@ export function Vestimenta() {
                           >
                             <img
                               className="img-fluid"
-                              style={{ borderTopLeftRadius: "25px" }}
-                              alt="100%x280"
+                              style={{
+                                borderTopLeftRadius: "25px",
+                                height: "270px",
+                                width: "auto",
+                              }}
                               src="/images/ming_vestimenta.jpg"
                             />
                           </div>
@@ -220,7 +256,16 @@ export function Vestimenta() {
                             <h4 className="card-title text-center">
                               Dinastía Ming (1368 - 1644):
                             </h4>
-                            <p className="card-text">
+                            <p
+                              className="card-text"
+                              style={{
+                                height: "20rem",
+                                textAlign: "justify",
+                                fontSize: "1rem",
+                                display: "flex",
+                                alignItems: "center",
+                              }}
+                            >
                               Durante la dinastía Ming, la vestimenta china se
                               caracterizaba por su elegancia y formalidad. Las
                               túnicas largas y amplias eran populares tanto para
@@ -244,7 +289,7 @@ export function Vestimenta() {
                           >
                             <img
                               className="img-fluid"
-                              alt="100%x280"
+                              style={{ height: "270px", width: "auto" }}
                               src="/images/qing_vestimenta.jpg"
                             />
                           </div>
@@ -252,7 +297,16 @@ export function Vestimenta() {
                             <h4 className="card-title text-center">
                               Dinastía Qing (1644 - 1912):
                             </h4>
-                            <p className="card-text">
+                            <p
+                              className="card-text"
+                              style={{
+                                height: "20rem",
+                                textAlign: "justify",
+                                fontSize: "1rem",
+                                display: "flex",
+                                alignItems: "center",
+                              }}
+                            >
                               Durante la dinastía Qing, la vestimenta china
                               experimentó influencias de las minorías étnicas y
                               culturas extranjeras. Los trajes de "qipao" se
@@ -278,14 +332,29 @@ export function Vestimenta() {
                           >
                             <img
                               className="img-fluid"
-                              style={{ borderTopRightRadius: "25px" }}
+                              style={{
+                                borderTopRightRadius: "25px",
+                                height: "270px",
+                                width: "auto",
+                              }}
                               alt="100%x280"
                               src="/images/era_vestimenta.jpg"
                             />
                           </div>
                           <div className="card-body">
-                            <h4 className="card-title text-center"></h4>
-                            <p className="card-text">
+                            <h4 className="card-title text-center">
+                              Mas información:
+                            </h4>
+                            <p
+                              className="card-text"
+                              style={{
+                                height: "20rem",
+                                textAlign: "justify",
+                                fontSize: "1rem",
+                                display: "flex",
+                                alignItems: "center",
+                              }}
+                            >
                               La vestimenta en la civilización china era más que
                               simples prendas de ropa; representaba la identidad
                               cultural, el estatus social y los valores
@@ -324,9 +393,9 @@ export function Vestimenta() {
           <Boton_next
             nombre="Creencias"
             imagen="/images/creencias-icono.png"
-            identificador='cultura'
+            identificador="cultura"
             href="/creencias"
-            categoria= "vestimenta"
+            categoria="vestimenta"
           />
         </div>
       </main>

@@ -92,3 +92,7 @@
   transform: scale(1.05);
 }
 
+.next-back {
+  bottom: 0;
+  position: sticky;
+}

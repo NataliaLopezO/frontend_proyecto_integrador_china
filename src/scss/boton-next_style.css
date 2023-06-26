@@ -29,6 +29,8 @@
     flex-direction: column;
     align-items: end;
     width: 100%;
+    bottom: 0;
+    position: sticky;
   }
   
   .siguiente-hijo {

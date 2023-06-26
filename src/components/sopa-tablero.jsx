@@ -206,10 +206,11 @@ export const SoupGame = () => {
   return (
     <div className="cuadricula-sopa">
       <h1>Encuentra las palabras - Civilización Antigua China</h1>
-      <p>
+      <p style={{fontSize:"1.19rem"}}>
         Encuentra las palabras escondidas. <br />
         Haz clic en las letras para formar una palabra. <br />
-        Las palabras pueden estar en cualquier lugar.
+        Las letras no necesariamente estarán seguidas. <br />
+        Las letras pueden estar en cualquier lugar, ¡busca bien!.
       </p>
       <div>
         <h2>Palabras encontradas:</h2>

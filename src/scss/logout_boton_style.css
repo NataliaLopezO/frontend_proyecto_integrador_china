@@ -1,5 +1,4 @@
 .boton-logout {
-    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,19 +10,13 @@
     border: none;
     box-shadow: rgb(0, 0, 0) 0px 0px 20px -6px;
     border-radius: 6px;
-    transition: 1000ms;
-    transform: translateY(0);
     align-items: center;
-    cursor: context-menu;
+    cursor: pointer;
     text-transform: uppercase;
+    transition: 0.5s background-color;
   }
   
   .boton-logout:hover{
-      transition: 1000ms;
-      padding: 5px 30px;
-      transform: translateY(-9px);
-      background-color: #b0b0b0;
+      background-color: #972b2b;
       color: #ffffff;
-      border: solid 2px #b0b0b0;
-      cursor: pointer;
   }
