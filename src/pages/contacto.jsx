@@ -27,7 +27,6 @@ export function Contacto() {
           <div className="formulario-contacto p-3 ">
             <form>
               <div className="form-group col-md-12 px-2 py-2 ">
-                <label htmlFor="name">Nombre</label>
                 <input
                   type="email"
                   className="form-control"
@@ -36,7 +35,6 @@ export function Contacto() {
                 />
               </div>
               <div className="form-group col-md-12 px-2 py-2">
-                <label htmlFor="email">Correo electrónico</label>
                 <input
                   type="email"
                   className="form-control"
@@ -45,7 +43,6 @@ export function Contacto() {
                 />
               </div>
               <div className="form-group col-md-12 px-2 py-2">
-                <label htmlFor="textArea">Mensaje</label>
                 <textarea
                   className="form-control"
                   id="textArea"
