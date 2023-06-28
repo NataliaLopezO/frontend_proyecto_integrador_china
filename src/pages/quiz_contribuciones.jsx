@@ -179,7 +179,7 @@ export function Quiz_contribuciones() {
                 />
                 <label className="radio-label" for="one-b">
                   <span className="alphabet">B</span>{" "}
-                  {item.opcion2.texto_opcion}  
+                  {item.opcion2.texto_opcion}
                 </label>
 
                 {/* Opcion 3 */}
@@ -222,7 +222,6 @@ export function Quiz_contribuciones() {
             </Modal.Footer>
           </Modal>
         </div>
-
       </main>
     </>
   );
