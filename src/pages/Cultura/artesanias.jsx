@@ -5,6 +5,10 @@ import { Nav_bar_perfil } from "../../components/nav-bar-perfil";
 import { Boton_back } from "../../components/boton-back";
 import { Boton_next } from "../../components/boton-next";
 import { Modelo_dinastia } from "../../components/Modelo_dinastia";
+import { Modelo_pintura } from "../../components/Modelo_pintura";
+import { Modelo_pintura2 } from "../../components/Modelo_pintura2";
+import { Ceramica_model1 } from "../../components/Ceramica_model1";
+import { Ceramica_model2 } from "../../components/Ceramica_model2";
 import { Canvas } from "react-three-fiber";
 import { Float, Text, OrbitControls } from "@react-three/drei";
 import "../../scss/artesanias_style.css";
@@ -18,6 +22,7 @@ import "../../scss/artesanias_style.css";
 
 export function Artesanias() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   /**
    * Alternar la apertura y cierre de la barra lateral.
@@ -242,58 +247,65 @@ export function Artesanias() {
           </div>
         </div>
 
-        <Modal
-          show={showModal}
-          onHide={handleModalClose}
-          centered
-          backdrop="static"
-        >
-          <Modal.Header>
-            <Modal.Title>Guerrero Chino</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div
-              className="modelo-dinastia"
-              style={{
-                width: "100%",
-                height: "500px",
-                marginBottom: "0",
-              }}
-            >
-              <Canvas
-                camera={{
-                  fov: 45,
-                  near: 0.005,
-                  far: 800,
-                  position: [300, 5, -150],
-                }}
-              >
-                {/* Controles */}
-                <OrbitControls makeDefault />
+        <Modal show={showModal} onHide={handleModalClose} centered backdrop="static">
+  <Modal.Header>
+    <Modal.Title>Pintura china</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+    <div
+      className="modelo-dinastia"
+      style={{
+        width: "100%",
+        height: "500px",
+        marginBottom: "0",
+        backgroundColor: "black",
+      }}
+    >
+      <Canvas
+        camera={{
+          fov: 45,
+          near: 0.005,
+          far: 800,
+          position: [295.5, 50, 200],
+        }}
+      >
+        {/* Controles */}
+        <OrbitControls makeDefault />
 
-                {/* Luces */}
-                <directionalLight position={[5, 1, 6]} intensity={0.7} />
-                <ambientLight intensity={0.5} />
+        {/* Luces */}
+        <directionalLight position={[5, 1, 6]} intensity={0.7} />
+        <ambientLight intensity={0.5} />
 
-                <Modelo_dinastia
-                  position={[-10, -50, 10]}
-                  scale={20}
-                ></Modelo_dinastia>
-              </Canvas>
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button
-              type="submit"
-              variant="secondary"
-              onClick={() => {
-                handleModalClose();
-              }}
-            >
-              Cerrar
-            </Button>
-          </Modal.Footer>
-        </Modal>
+        <Modelo_pintura
+          position={[-100, -50, 10]}
+          scale={3.5}
+          onMouseEnter={() => setShowInfo(true)}
+          onMouseLeave={() => setShowInfo(false)}
+        ></Modelo_pintura>
+
+        <Modelo_pintura2
+          position={[70, -75, 10]}
+          scale={200.5}
+        ></Modelo_pintura2>
+      </Canvas>
+    </div>
+  </Modal.Body>
+  <Modal.Footer>
+    <Button
+      type="submit"
+      variant="secondary"
+      onClick={handleModalClose}
+    >
+      Cerrar
+    </Button>
+  </Modal.Footer>
+</Modal>
+
+{showInfo && (
+  <div className="info-text">
+    Texto informativo sobre la pintura china
+  </div>
+)}
 
         <Modal
           show={showModal2}
@@ -302,7 +314,7 @@ export function Artesanias() {
           backdrop="static"
         >
           <Modal.Header>
-            <Modal.Title>Guerrero Chino</Modal.Title>
+            <Modal.Title>Céramicas chinas</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div
@@ -311,6 +323,7 @@ export function Artesanias() {
                 width: "100%",
                 height: "500px",
                 marginBottom: "0",
+                backgroundColor: "#BFBCBC",
               }}
             >
               <Canvas
@@ -318,7 +331,7 @@ export function Artesanias() {
                   fov: 45,
                   near: 0.005,
                   far: 800,
-                  position: [300, 5, -150],
+                  position: [100, 60, 300],
                 }}
               >
                 {/* Controles */}
@@ -328,10 +341,17 @@ export function Artesanias() {
                 <directionalLight position={[5, 1, 6]} intensity={0.7} />
                 <ambientLight intensity={0.5} />
 
-                <Modelo_dinastia
+                <Ceramica_model1
                   position={[-10, -50, 10]}
-                  scale={20}
-                ></Modelo_dinastia>
+                  scale={30}
+                ></Ceramica_model1>
+
+
+                <Ceramica_model2
+                  position={[-60, -50, 10]}
+                  scale={300}
+                
+                ></Ceramica_model2>
               </Canvas>
             </div>
           </Modal.Body>
@@ -347,6 +367,7 @@ export function Artesanias() {
             </Button>
           </Modal.Footer>
         </Modal>
+
 
         <div
           className="next-back"
