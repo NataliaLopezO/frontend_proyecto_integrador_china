@@ -7,6 +7,7 @@ import "../scss/boton_toggler_style.css";
 import axios from "axios";
 import { api } from "../api/register_api";
 import { useNavigate } from "react-router-dom";
+import { Button, Modal } from "react-bootstrap";
 
 /**
  * Componente User_profile.
@@ -123,6 +124,29 @@ export function User_profile() {
     return sumaTotal;
   }
 
+    /**
+  * Maneja el envío del formulario y actualiza la contraseña.
+  */
+    const handleSubmit3 = () => {
+        axios;
+        api
+          .post('/china/update_valores_historia/', {
+            username: sessionStorage.getItem("username"),
+            aciertos_historia: 0,
+            fallos_historia: 0,
+          })
+          .then((response) => {
+            console.log("Se ha actualizado los fallos y aciertos");
+            window.location.reload();
+            //sessionStorage.removeItem("username");
+            //navigate("/inicio");
+          })
+          .catch((error) => {
+            console.error("Error al realizar el update", error);
+          });
+      };
+  
+
   return (
     <>
       <button
@@ -209,6 +233,15 @@ export function User_profile() {
                   <p className="fallos">
                     {fallosHistoria}
                   </p>
+                  <Button
+                  type="submit"
+                  variant="secondary"
+                  onClick={() => {
+                    handleSubmit3();
+                  }}
+                >
+                  Enviar
+                </Button>
                 </>
               ) : (
                 <h2 className="no-disponible">No disponible</h2>
