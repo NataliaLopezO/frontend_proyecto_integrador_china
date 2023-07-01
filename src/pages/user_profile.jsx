@@ -29,6 +29,12 @@ export function User_profile() {
   const [aciertosHistoria, setaciertosHistoria] = useState(2);
   const [fallosHistoria, setfallosHistoria] = useState(2);
 
+  const [aciertosCultura, setaciertosCultura] = useState(2);
+  const [fallosCultura, setfallosCultura] = useState(2);
+
+  const [aciertosContribuciones, setaciertosContribuciones] = useState(2);
+  const [fallosContribuciones, setfallosContribuciones] = useState(2);
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   /**
@@ -89,13 +95,41 @@ export function User_profile() {
   });
 
   useEffect(() => {
-    // Realiza una solicitud POST al servidor para obtener el progreso del usuario
+    // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de historia
     axios;
     api
       .post("/china/get_valores_historia/", { username })
       .then((response) => {
         setaciertosHistoria(response.data.aciertos_historia);
         setfallosHistoria(response.data.fallos_historia);
+        })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
+
+  useEffect(() => {
+    // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de cultura
+    axios;
+    api
+      .post("/china/get_valores_cultura/", { username })
+      .then((response) => {
+        setaciertosCultura(response.data.aciertos_cultura);
+        setfallosCultura(response.data.fallos_cultura);
+        })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
+
+  useEffect(() => {
+    // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de contribuciones
+    axios;
+    api
+      .post("/china/get_valores_contribuciones/", { username })
+      .then((response) => {
+        setaciertosContribuciones(response.data.aciertos_contribuciones);
+        setfallosContribuciones(response.data.fallos_contribuciones);
         })
       .catch((error) => {
         console.error(error);
@@ -233,15 +267,7 @@ export function User_profile() {
                   <p className="fallos">
                     {fallosHistoria}
                   </p>
-                  <Button
-                  type="submit"
-                  variant="secondary"
-                  onClick={() => {
-                    handleSubmit3();
-                  }}
-                >
-                  Enviar
-                </Button>
+                  
                 </>
               ) : (
                 <h2 className="no-disponible">No disponible</h2>
@@ -274,9 +300,15 @@ export function User_profile() {
                     <img src="/images/comprobado.png" alt="" />
                     Aciertos:
                   </p>
+                  <p className="acierto">
+                    {aciertosCultura}
+                  </p>
                   <p className="fallos">
                     <img src="/images/cancelar.png" alt="" />
                     Fallos:
+                  </p>
+                  <p className="fallos">
+                    {fallosCultura}
                   </p>
                 </>
               ) : (
@@ -311,9 +343,15 @@ export function User_profile() {
                     <img src="/images/comprobado.png" alt="" />
                     Aciertos:
                   </p>
+                  <p className="acierto">
+                    {aciertosContribuciones}
+                  </p>
                   <p className="fallos">
                     <img src="/images/cancelar.png" alt="" />
                     Fallos:
+                  </p>
+                  <p className="fallos">
+                    {fallosContribuciones}
                   </p>
                 </>
               ) : (
