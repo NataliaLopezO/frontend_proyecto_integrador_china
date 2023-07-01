@@ -137,7 +137,7 @@ export function User_profile() {
           })
           .then((response) => {
             console.log("Se ha actualizado los fallos y aciertos");
-            window.location.reload();
+            
             //sessionStorage.removeItem("username");
             //navigate("/inicio");
           })
