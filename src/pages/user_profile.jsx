@@ -25,6 +25,9 @@ export function User_profile() {
   const [porcCultura, setPorcCultura] = useState(0);
   const [porcContribuciones, setPorcContribuciones] = useState(0);
 
+  const [aciertosHistoria, setaciertosHistoria] = useState(2);
+  const [fallosHistoria, setfallosHistoria] = useState(2);
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   /**
@@ -79,6 +82,20 @@ export function User_profile() {
           (contribuciones / cantidadTotalContribuciones) * 100;
         setPorcContribuciones(nuevoPorcContribuciones); // Actualizar el estado 'now' con el nuevo valor
       })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
+
+  useEffect(() => {
+    // Realiza una solicitud POST al servidor para obtener el progreso del usuario
+    axios;
+    api
+      .post("/china/get_valores_historia/", { username })
+      .then((response) => {
+        setaciertosHistoria(response.data.aciertos_historia);
+        setfallosHistoria(response.data.fallos_historia);
+        })
       .catch((error) => {
         console.error(error);
       });
@@ -182,9 +199,15 @@ export function User_profile() {
                     <img src="/images/comprobado.png" alt="" />
                     Aciertos:
                   </p>
+                  <p className="acierto">
+                    {aciertosHistoria}
+                  </p>
                   <p className="fallos">
                     <img src="/images/cancelar.png" alt="" />
                     Fallos:
+                  </p>
+                  <p className="fallos">
+                    {fallosHistoria}
                   </p>
                 </>
               ) : (
