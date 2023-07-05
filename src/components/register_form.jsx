@@ -81,7 +81,7 @@ export function Register_form() {
         });
 
         setTimeout(() => {
-          window.location.href = "/login";
+          navigate("/login");
           sessionStorage.removeItem("foto");
         }, 3000);
       } else {
