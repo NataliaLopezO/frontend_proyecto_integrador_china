@@ -1,4 +1,3 @@
-
 import { useForm } from "react-hook-form";
 import { createuser } from "../api/register_api";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import "../scss/registro_style.css";
+import Swal from "sweetalert2";
 
 /**
  * Componente de formulario de registro.
@@ -58,11 +58,49 @@ export function Register_form() {
    * Navega a la página de inicio de sesión ("/login") después de enviar el formulario.
    * Elimina el valor de 'foto' del almacenamiento de sesión.
    */
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const foto = sessionStorage.getItem("foto");
-    createuser(foto, email1, nombre, contraseña);
-    navigate("/login");
-    sessionStorage.removeItem("foto");
+
+    try {
+      // Realiza la llamada al backend
+      const response = await createuser(foto, email1, nombre, contraseña);
+      console.log(response);
+      // Verifica la respuesta del backend
+      if (response.status === 200) {
+        console.log(response.data);
+        console.log("entro aqui exito");
+        // Si la respuesta indica éxito, muestra una notificación de éxito
+        Swal.fire({
+          icon: "success",
+          title: "Operación exitosa",
+          text: "Se ha registrado correctamente",
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          showCancelButton: false,
+          timer: 3000,
+        });
+
+        setTimeout(() => {
+          window.location.href = "/login";
+          sessionStorage.removeItem("foto");
+        }, 3000);
+      } else {
+        // Si la respuesta indica un error, muestra una notificación de error
+        Swal.fire("Error", "Hubo un problema al guardar los datos", "error");
+        console.log("entro aqui");
+      }
+    } catch (error) {
+      // Si ocurre un error en la llamada al backend, muestra una notificación de error
+      Swal.fire({
+        icon: "error",
+        title: "Hubo un error al registrarse",
+        text: "Verifica que la contraseña sea mayor a tres carácteres",
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        showCancelButton: false,
+        timer: 3000,
+      });
+    }
   };
 
   /**
@@ -175,12 +213,19 @@ export function Register_form() {
                 onSubmit={handleSubmit}
               >
                 <div>
-                  <img
-                    src="/images/login_logo.jpg"
-                    className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                    width="200px"
-                    alt="profile"
-                  />
+                  {selectedImage ? (
+                    <img
+                      src={selectedImage}
+                      className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                      width="200px"
+                    />
+                  ) : (
+                    <img
+                      src="/images/login_logo.jpg"
+                      className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                      width="200px"
+                    />
+                  )}
                 </div>
 
                 <div>
@@ -193,8 +238,7 @@ export function Register_form() {
                   </button>
                 </div>
 
-                <div className="mb-3">
-                  <label htmlFor="username"></label>
+                <div className="mb-3 my-3">
                   <input
                     type="text"
                     className="form-control"
@@ -206,7 +250,6 @@ export function Register_form() {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="email"></label>
                   <input
                     type="email"
                     className="form-control"
@@ -218,7 +261,6 @@ export function Register_form() {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="password"></label>
                   <input
                     type="password"
                     className="form-control"
@@ -246,10 +288,10 @@ export function Register_form() {
                     backdrop="static"
                   >
                     <Modal.Header>
-                      <Modal.Title>Registro existoso</Modal.Title>
+                      <Modal.Title>Confirmación de registro</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      ¡Bienvenid@! Te has registrado con exito
+                      ¿Estos son los datos que deseas usar?
                     </Modal.Body>
                     <Modal.Footer>
                       <Button
@@ -260,7 +302,10 @@ export function Register_form() {
                           handleSubmit();
                         }}
                       >
-                        Guardar
+                        Confirmar
+                      </Button>
+                      <Button variant="secondary" onClick={handleModalClose}>
+                        Cancelar
                       </Button>
                     </Modal.Footer>
                   </Modal>
@@ -298,6 +343,20 @@ export function Register_form() {
                             </div>
                           </div>
                         )}
+                        <img
+                          src={imagen}
+                          alt="Imagen"
+                          className={`square-image ${
+                            selectedImage === imagen ? "selected" : ""
+                          }`}
+                          style={{
+                            width: "100px",
+                            height: "100px",
+                            marginRight: "20px",
+                            marginBottom: "20px",
+                          }}
+                          onClick={() => handleImage(imagen)}
+                        />
                         <img
                           src={imagen2}
                           alt="Imagen"
