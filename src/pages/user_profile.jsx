@@ -22,7 +22,7 @@ export function User_profile() {
   const username = sessionStorage.getItem("username");
   const profilePic = sessionStorage.getItem("foto");
 
-// Definición de estados utilizando el hook useState
+  // Definición de estados utilizando el hook useState
 
   const [porcHistoria, setPorcHistoria] = useState(0); // Ahora 'now' es un estado
   const [porcCultura, setPorcCultura] = useState(0);
@@ -38,6 +38,52 @@ export function User_profile() {
   const [fallosContribuciones, setfallosContribuciones] = useState(2);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const [modalHistoria, setModalHistoria] = useState(false);
+  const [modalCultura, setModalCultura] = useState(false);
+  const [modalContribuciones, setModalContribuciones] = useState(false);
+
+  /**
+   * Manejador de clic del modal del botón del quiz de historia.
+   *
+   * Esta función se ejecuta cuando se hace clic en el botón de quiz de historia.
+   */
+
+  const clickModalHistiora = () => {
+    setModalHistoria(true);
+  };
+
+  /**
+   * Manejador de clic del modal del botón del quiz de cultura.
+   *
+   * Esta función se ejecuta cuando se hace clic en el botón de quiz de cultura.
+   */
+
+  const clickModalCultura = () => {
+    setModalCultura(true);
+  };
+
+  /**
+   * Manejador de clic del modal del botón del quiz de contribuciones.
+   *
+   * Esta función se ejecuta cuando se hace clic en el botón de quiz de contribuciones.
+   */
+
+  const clickModalContribuciones = () => {
+    setModalContribuciones(true);
+  };
+
+  const clickModalHistioraClose = () => {
+    setModalHistoria(false);
+  };
+
+  const clickModalCulturaClose = () => {
+    setModalCultura(false);
+  };
+
+  const clickModalContribucionesClose = () => {
+    setModalContribuciones(false);
+  };
 
   /**
    * Manejador de clic del botón del quiz de historia.
@@ -116,7 +162,7 @@ export function User_profile() {
       .catch((error) => {
         console.error(error);
       });
-  });
+  }, []);
 
   useEffect(() => {
     // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de historia
@@ -130,7 +176,7 @@ export function User_profile() {
       .catch((error) => {
         console.error(error);
       });
-  });
+  }, []);
 
   useEffect(() => {
     // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de cultura
@@ -144,7 +190,7 @@ export function User_profile() {
       .catch((error) => {
         console.error(error);
       });
-  });
+  }, []);
 
   useEffect(() => {
     // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de contribuciones
@@ -158,7 +204,7 @@ export function User_profile() {
       .catch((error) => {
         console.error(error);
       });
-  });
+  }, []);
 
   /**
    * Suma los valores de un diccionario.
@@ -250,7 +296,7 @@ export function User_profile() {
                 className="bton-quiz historia"
                 disabled={porcHistoria < 100}
                 onClick={() => {
-                  handleClickHistoria();
+                  clickModalHistiora();
                 }}
               >
                 Quiz Historia
@@ -289,7 +335,7 @@ export function User_profile() {
                 className="bton-quiz cultura"
                 disabled={porcCultura < 100}
                 onClick={() => {
-                  handleClickCultura();
+                  clickModalCultura();
                 }}
               >
                 Quiz Cultura
@@ -329,7 +375,7 @@ export function User_profile() {
                 className="bton-quiz contribuciones"
                 disabled={porcContribuciones < 100}
                 onClick={() => {
-                  handleClickContribuciones();
+                  clickModalContribuciones();
                 }}
               >
                 Quiz Contribuciones
@@ -363,6 +409,93 @@ export function User_profile() {
               />
             </div>
           </div>
+
+          <Modal show={modalHistoria} onHide={() => setModalHistoria(false)}>
+            <Modal.Header closeButton>
+              <Modal.Title>Quiz de Historia</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              Estas a punto de iniciar el quiz, no hay limite de tiempo, son 5
+              preguntas. Si respondes las 5 preguntas correctamente, se contará
+              como acierto, en caso contrario, será un fallo. Puedes repetir el
+              quiz cuantas veces quieras.{" "}
+            </Modal.Body>
+            <Modal.Footer>
+              <Button
+                type="submit"
+                variant="secondary"
+                onClick={() => {
+                  clickModalHistioraClose();
+                  handleClickHistoria();
+                }}
+              >
+                Confirmar
+              </Button>
+              <Button variant="secondary" onClick={clickModalHistioraClose}>
+                Cancelar
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+          <Modal show={modalCultura} onHide={() => setModalCultura(false)}>
+            <Modal.Header closeButton>
+              <Modal.Title>Quiz de Cultura</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              Estas a punto de iniciar el quiz, no hay limite de tiempo, son 5
+              preguntas. Si respondes las 5 preguntas correctamente, se contará
+              como acierto, en caso contrario, será un fallo. Puedes repetir el
+              quiz cuantas veces quieras.{" "}
+            </Modal.Body>
+            <Modal.Footer>
+              <Button
+                type="submit"
+                variant="secondary"
+                onClick={() => {
+                  clickModalCulturaClose();
+                  handleClickCultura();
+                }}
+              >
+                Confirmar
+              </Button>
+              <Button variant="secondary" onClick={clickModalCulturaClose}>
+                Cancelar
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+          <Modal
+            show={modalContribuciones}
+            onHide={() => setModalContribuciones(false)}
+          >
+            <Modal.Header closeButton>
+              <Modal.Title>Quiz de Contribuciones</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              Estas a punto de iniciar el quiz, no hay limite de tiempo, son 5
+              preguntas. Si respondes las 5 preguntas correctamente, se contará
+              como acierto, en caso contrario, será un fallo. Puedes repetir el
+              quiz cuantas veces quieras.{" "}
+            </Modal.Body>
+            <Modal.Footer>
+              <Button
+                type="submit"
+                variant="secondary"
+                onClick={() => {
+                  clickModalContribucionesClose();
+                  handleClickContribuciones();
+                }}
+              >
+                Confirmar
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={clickModalContribucionesClose}
+              >
+                Cancelar
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </main>
     </>

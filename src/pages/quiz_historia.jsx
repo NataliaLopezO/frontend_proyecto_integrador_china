@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Nav_bar_perfil } from "../components/nav-bar-perfil";
 import { api } from "../api/register_api";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../scss/quices_style.css";
@@ -22,7 +21,6 @@ export function Quiz_historia() {
   const [opcionSeleccionada, setOpcionSeleccionada] = useState("");
   const [mensajeVisible, setMensajeVisible] = useState(false);
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const navigate = useNavigate();
 
@@ -80,17 +78,6 @@ export function Quiz_historia() {
       .catch((error) => {
         console.error("Error al realizar el update", error);
       });
-  };
-
-  /**
-   * Alternar la apertura y cierre de la barra lateral.
-   *
-   * Esta función cambia el estado de la variable 'isSidebarOpen' para controlar
-   * si la barra lateral está abierta o cerrada. Si la barra lateral está abierta,
-   * la función la cerrará y viceversa.
-   */
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
   };
 
   /**
@@ -213,37 +200,39 @@ export function Quiz_historia() {
 
   return (
     <>
-      <button
-        className={`boton-toggler ${isSidebarOpen ? "open" : ""}`}
-        style={{ marginLeft: isSidebarOpen ? "310px" : "5px" }}
-        onClick={toggleSidebar}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      {isSidebarOpen && (
-        <div>
-          <Nav_bar_perfil />
-          <div className="sidebar-overlay" onClick={toggleSidebar}></div>
-        </div>
-      )}
-      <main
-        style={{ marginLeft: isSidebarOpen ? "310px" : "0" }}
-        className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
-      >
+      <main className="contenedor-perfil page-quiz">
         <div className="settings">
           <h1 className="titulo-settings">Quiz Historia</h1>
         </div>
 
         {quizCompleted ? (
-          <div className="text-center">
-            <p>
-              Quiz completado. Has respondido correctamente{" "}
-              {correctAnswersCount} preguntas.
-            </p>
-            <button onClick={restartQuiz}>Volver al perfil</button>
+          <>
+          <div className="parent-mostrar-resultados">
+            <div className="mostrar-resultados ">
+              <p>
+                Quiz completado. Has respondido correctamente{" "}
+                <span
+                    style={{
+                      color:
+                      correctAnswersCount === 5
+                          ? "green"
+                          : "red",
+                    }}
+                  >
+                    {correctAnswersCount}{" "}
+                  </span> preguntas.
+              </p>
+            </div>
+            <button
+              className="volver-Perfil"
+              onClick={() => {
+                restartQuiz();
+              }}
+            >
+              Volver al perfil
+            </button>
           </div>
+        </>
         ) : (
           <div className="tarjeta-preguntas mt-5">
             <h2>Pregunta {currentQuestionIndex + 1}/5</h2>
@@ -350,9 +339,29 @@ export function Quiz_historia() {
         )}
         <Modal show={mensajeVisible} onHide={() => setMensajeVisible(false)}>
           <Modal.Header>
-            <Modal.Title>Tu respuesta</Modal.Title>
+            <Modal.Title>
+              Tu respuesta es{" "}
+              <span style={{ textTransform: "uppercase" }}>
+                {opcionSeleccionada}
+              </span>
+            </Modal.Title>
           </Modal.Header>
-          <Modal.Body>Tu respuesta es {opcion} </Modal.Body>
+          <Modal.Body>
+            Tu respuesta es{" "}
+            <span
+              style={{
+                textTransform: "uppercase",
+                color:
+                  opcion === "correcta"
+                    ? "green"
+                    : opcion === "incorrecta"
+                    ? "red"
+                    : "inherit",
+              }}
+            >
+              {opcion}
+            </span>
+          </Modal.Body>
         </Modal>
       </main>
     </>
