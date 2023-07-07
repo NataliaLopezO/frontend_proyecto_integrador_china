@@ -7,6 +7,10 @@
 
 .tarjeta-header {
   background-color: rgb(233, 199, 11);
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-left: 1px solid;
+  border-top: 1px solid;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 0.3rem;
@@ -24,6 +28,7 @@
 }
 
 .tarjeta-body {
+  background-color: rgba(184, 181, 181, 0.7);
   border-left: 1px solid;
   border-right: 1px solid;
   border-bottom: 1px solid;
@@ -43,41 +48,91 @@
 }
 
 .radio.selected {
-  background-color: #97eea4;
+  background-color: rgb(250, 232, 128);
   border: none;
   border-radius: 10px;
   padding: 0.25rem;
 }
 
 .radio {
-  transition: 0.5s ease-in-out background-color, 0.5s ease-in-out transform;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out background-color, 0.5s ease-in-out color,
+    0.5s ease-in-out transform;
+  padding: 0.25rem;
 }
 
 .radio:hover {
-  background-color: #bbbbbb;
+  background-color: #706f6f;
   border: none;
   border-radius: 10px;
+  color: #fff;
   padding: 0.25rem;
 }
 
 .radio.selected:hover {
-  background-color: #97eea4;
+  background-color: rgb(233, 199, 11);
   border: none;
   border-radius: 10px;
   padding: 0.25rem;
 }
 
 .btn-verificar {
-    background-color: rgb(134, 134, 134);
-    border-radius: 20px;
-    color: #ffffff;
-    font-size: 1.4rem;
-    padding: 0.5rem;
-    transition: 0.5s ease-in-out background-color, 0.5s ease-in-out color, 0.5s ease-in-out transform;
+  background-color: rgb(134, 134, 134);
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  transition: 0.5s ease-in-out background-color, 0.5s ease-in-out color,
+    0.5s ease-in-out transform;
 }
 
 .btn-verificar:hover {
-    background-color: goldenrod;
-    color: #000;
-    transform: scale(1.05);
+  background-color: goldenrod;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.parent-mostrar-resultados {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mostrar-resultados {
+  font-size: 2rem;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  width: 50vw;
+  animation: tamano-result 7s ease-in-out infinite alternate;
+}
+
+
+@keyframes tamano-result {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.5;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.volver-Perfil {
+  background-color: #ffa8a8;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  padding: 15px;
+  transition: 0.5s ease-in-out color, 0.5s ease-in-out background-color,
+    0.5s ease-in-out transform;
+  width: 12rem;
+}
+
+.volver-Perfil:hover {
+  background-color: #762626;
+  color: #ffa8a8;
+  transform: scale(1.05);
 }
