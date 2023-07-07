@@ -9,6 +9,9 @@ import {Sobre_nosotros} from './pages/sobre_nosotros'
 import {FYI} from './pages/fyi'
 import {Contacto} from './pages/contacto'
 import {Ajustes} from './pages/ajustes'
+
+import { Quiz_historia } from './pages/quiz_historia'
+import { Quiz_cultura } from './pages/quiz_cultura'
 import { Quiz_contribuciones } from './pages/quiz_contribuciones'
 
 import {Historia} from './pages/Historia/historia'
@@ -61,6 +64,9 @@ function App() {
       <Route path='/fyi' element ={<FYI/>} />
       <Route path='/contacto' element ={<Contacto/>} />
       <Route path='/ajustes' element ={<Ajustes/>} />
+
+      <Route path='/quiz-historia' element ={<Quiz_historia/>} />
+      <Route path='/quiz-cultura' element ={<Quiz_cultura/>} />
       <Route path='/quiz-contribuciones' element ={<Quiz_contribuciones/>} />
 
       <Route path='/historia' element ={<Historia/>} />

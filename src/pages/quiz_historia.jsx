@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../scss/quices_style.css";
 
-export function Quiz_contribuciones() {
+export function Quiz_historia() {
   const username = sessionStorage.getItem("username");
   const [data, setData] = useState([]);
   const [preguntas, setPreguntas] = useState([]);
@@ -19,17 +19,17 @@ export function Quiz_contribuciones() {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const navigate = useNavigate();
 
-  const [aciertosContribuciones, setaciertosContribuciones] = useState(2);
-  const [fallosContribuciones, setfallosContribuciones] = useState(2);
+  const [aciertosHistoria, setaciertosHistoria] = useState(2);
+  const [fallosHistoria, setfallosHistoria] = useState(2);
 
   useEffect(() => {
     // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de contribuciones
     axios;
     api
-      .post("/china/get_valores_contribuciones/", { username })
+      .post("/china/get_valores_historia/", { username })
       .then((response) => {
-        setaciertosContribuciones(response.data.aciertos_contribuciones);
-        setfallosContribuciones(response.data.fallos_contribuciones);
+        setaciertosHistoria(response.data.aciertos_historia);
+        setfallosHistoria(response.data.fallos_historia);
       })
       .catch((error) => {
         console.error(error);
@@ -37,8 +37,9 @@ export function Quiz_contribuciones() {
   });
 
   const envioAciertoFallos = () => {
-    let aciertos = aciertosContribuciones;
-    let fallos = fallosContribuciones;
+
+    let aciertos = aciertosHistoria;
+    let fallos = fallosHistoria;
 
     if (correctAnswersCount === 4) {
       aciertos += 1;
@@ -48,10 +49,10 @@ export function Quiz_contribuciones() {
 
     axios;
     api
-      .post("/china/update_valores_contribuciones/", {
+      .post("/china/update_valores_historia/", {
         username: username,
-        aciertos_contribuciones: aciertos,
-        fallos_contribuciones: fallos,
+        aciertos_historia: aciertos,
+        fallos_historia: fallos,
       })
       .then((response) => {
         console.log("Se ha actualizado los fallos y aciertos");
@@ -89,7 +90,7 @@ export function Quiz_contribuciones() {
 
   const fetchData = () => {
     api
-      .get("/china/preguntas_aportes/")
+      .get("/china/preguntas_historia/")
       .then((response) => {
         setData(response.data);
         const shuffledPreguntas = shuffle(response.data);
@@ -119,7 +120,7 @@ export function Quiz_contribuciones() {
 
     if (opcion === "correcta") {
       setCorrectAnswersCount((prevCount) => prevCount + 1);
-      console.log(correctAnswersCount);
+      console.log(correctAnswersCount)
     }
 
     if (currentQuestionIndex === preguntas.length - 1) {
@@ -143,7 +144,7 @@ export function Quiz_contribuciones() {
     setPreguntas([]);
     setCurrentQuestionIndex(0);
     setCorrectAnswersCount(0);
-    navigate("/profile");
+    navigate('/profile');
   };
 
   const showResults = () => {
@@ -172,7 +173,7 @@ export function Quiz_contribuciones() {
         className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
       >
         <div className="settings">
-          <h1 className="titulo-settings">Quiz Contribuciones</h1>
+          <h1 className="titulo-settings">Quiz Historia</h1>
         </div>
 
         {quizCompleted ? (
@@ -181,13 +182,7 @@ export function Quiz_contribuciones() {
               Quiz completado. Has respondido correctamente{" "}
               {correctAnswersCount} preguntas.
             </p>
-            <button
-              onClick={() => {
-                restartQuiz();
-              }}
-            >
-              Volver al perfil
-            </button>
+            <button onClick={restartQuiz}>Volver al perfil</button>
           </div>
         ) : (
           <div className="tarjeta-preguntas mt-5">

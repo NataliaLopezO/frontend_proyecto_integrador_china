@@ -38,15 +38,38 @@ export function User_profile() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   /**
+   * Manejador de clic del botón del quiz de historia.
+   *
+   * Esta función se ejecuta cuando se hace clic en el botón de quiz de historia. Redirecciona al usuario
+   * a la página especificada utilizando la función 'navigate' proporcionada por React Router.
+   */
+
+  const handleClickHistoria = () => {
+    navigate("/quiz-historia"); // Redirecciona a la página especificada en href
+  };
+
+  /**
+   * Manejador de clic del botón del quiz de cultura.
+   *
+   * Esta función se ejecuta cuando se hace clic en el botón de quiz de cultura. Redirecciona al usuario
+   * a la página especificada utilizando la función 'navigate' proporcionada por React Router.
+   */
+
+  const handleClickCultura = () => {
+    navigate("/quiz-cultura"); // Redirecciona a la página especificada en href
+  };
+
+  /**
    * Manejador de clic del botón del quiz de contribuciones.
    *
    * Esta función se ejecuta cuando se hace clic en el botón de quiz de contribuciones. Redirecciona al usuario
    * a la página especificada utilizando la función 'navigate' proporcionada por React Router.
    */
 
-  const handleClick = () => {
+  const handleClickContribuciones = () => {
     navigate("/quiz-contribuciones"); // Redirecciona a la página especificada en href
   };
+
   /**
    * Alternar la apertura y cierre de la barra lateral.
    *
@@ -101,7 +124,7 @@ export function User_profile() {
       .then((response) => {
         setaciertosHistoria(response.data.aciertos_historia);
         setfallosHistoria(response.data.fallos_historia);
-        })
+      })
       .catch((error) => {
         console.error(error);
       });
@@ -115,7 +138,7 @@ export function User_profile() {
       .then((response) => {
         setaciertosCultura(response.data.aciertos_cultura);
         setfallosCultura(response.data.fallos_cultura);
-        })
+      })
       .catch((error) => {
         console.error(error);
       });
@@ -129,7 +152,7 @@ export function User_profile() {
       .then((response) => {
         setaciertosContribuciones(response.data.aciertos_contribuciones);
         setfallosContribuciones(response.data.fallos_contribuciones);
-        })
+      })
       .catch((error) => {
         console.error(error);
       });
@@ -157,28 +180,9 @@ export function User_profile() {
     return sumaTotal;
   }
 
-    /**
-  * Maneja el envío del formulario y actualiza la contraseña.
-  */
-    const handleSubmit3 = () => {
-        axios;
-        api
-          .post('/china/update_valores_historia/', {
-            username: sessionStorage.getItem("username"),
-            aciertos_historia: 0,
-            fallos_historia: 0,
-          })
-          .then((response) => {
-            console.log("Se ha actualizado los fallos y aciertos");
-            
-            //sessionStorage.removeItem("username");
-            //navigate("/inicio");
-          })
-          .catch((error) => {
-            console.error("Error al realizar el update", error);
-          });
-      };
-  
+  /**
+   * Maneja el envío del formulario y actualiza la contraseña.
+   */
 
   return (
     <>
@@ -247,6 +251,9 @@ export function User_profile() {
               <button
                 className="bton-quiz historia"
                 disabled={porcHistoria < 100}
+                onClick={() => {
+                  handleClickHistoria();
+                }}
               >
                 Quiz Historia
               </button>
@@ -260,7 +267,6 @@ export function User_profile() {
                     <img src="/images/cancelar.png" alt="" />
                     Fallos: {fallosHistoria}
                   </p>
-                  
                 </>
               ) : (
                 <h2 className="no-disponible">No disponible</h2>
@@ -284,6 +290,9 @@ export function User_profile() {
               <button
                 className="bton-quiz cultura"
                 disabled={porcCultura < 100}
+                onClick={() => {
+                  handleClickCultura();
+                }}
               >
                 Quiz Cultura
               </button>
@@ -321,7 +330,9 @@ export function User_profile() {
               <button
                 className="bton-quiz contribuciones"
                 disabled={porcContribuciones < 100}
-                onClick={() => {handleClick(); }}
+                onClick={() => {
+                  handleClickContribuciones();
+                }}
               >
                 Quiz Contribuciones
               </button>

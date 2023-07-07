@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../scss/quices_style.css";
 
-export function Quiz_contribuciones() {
+export function Quiz_cultura() {
   const username = sessionStorage.getItem("username");
   const [data, setData] = useState([]);
   const [preguntas, setPreguntas] = useState([]);
@@ -19,17 +19,17 @@ export function Quiz_contribuciones() {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const navigate = useNavigate();
 
-  const [aciertosContribuciones, setaciertosContribuciones] = useState(2);
-  const [fallosContribuciones, setfallosContribuciones] = useState(2);
+  const [aciertosCultura, setaciertosCultura] = useState(2);
+  const [fallosCultura, setfallosCultura] = useState(2);
 
   useEffect(() => {
     // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de contribuciones
     axios;
     api
-      .post("/china/get_valores_contribuciones/", { username })
+      .post("/china/get_valores_cultura/", { username })
       .then((response) => {
-        setaciertosContribuciones(response.data.aciertos_contribuciones);
-        setfallosContribuciones(response.data.fallos_contribuciones);
+        setaciertosCultura(response.data.aciertos_cultura);
+        setfallosCultura(response.data.fallos_cultura);
       })
       .catch((error) => {
         console.error(error);
@@ -37,8 +37,9 @@ export function Quiz_contribuciones() {
   });
 
   const envioAciertoFallos = () => {
-    let aciertos = aciertosContribuciones;
-    let fallos = fallosContribuciones;
+
+    let aciertos = aciertosCultura;
+    let fallos = fallosCultura;
 
     if (correctAnswersCount === 4) {
       aciertos += 1;
@@ -48,10 +49,10 @@ export function Quiz_contribuciones() {
 
     axios;
     api
-      .post("/china/update_valores_contribuciones/", {
+      .post("/china/update_valores_cultura/", {
         username: username,
-        aciertos_contribuciones: aciertos,
-        fallos_contribuciones: fallos,
+        aciertos_cultura: aciertos,
+        fallos_cultura: fallos,
       })
       .then((response) => {
         console.log("Se ha actualizado los fallos y aciertos");
@@ -63,6 +64,7 @@ export function Quiz_contribuciones() {
         console.error("Error al realizar el update", error);
       });
   };
+
 
   /**
    * Alternar la apertura y cierre de la barra lateral.
@@ -89,7 +91,7 @@ export function Quiz_contribuciones() {
 
   const fetchData = () => {
     api
-      .get("/china/preguntas_aportes/")
+      .get("/china/preguntas_cultura/")
       .then((response) => {
         setData(response.data);
         const shuffledPreguntas = shuffle(response.data);
@@ -172,7 +174,7 @@ export function Quiz_contribuciones() {
         className={`contenedor-perfil ${isSidebarOpen ? "open" : ""}`}
       >
         <div className="settings">
-          <h1 className="titulo-settings">Quiz Contribuciones</h1>
+          <h1 className="titulo-settings">Quiz Cultura</h1>
         </div>
 
         {quizCompleted ? (
@@ -181,13 +183,7 @@ export function Quiz_contribuciones() {
               Quiz completado. Has respondido correctamente{" "}
               {correctAnswersCount} preguntas.
             </p>
-            <button
-              onClick={() => {
-                restartQuiz();
-              }}
-            >
-              Volver al perfil
-            </button>
+            <button onClick={restartQuiz}>Volver al perfil</button>
           </div>
         ) : (
           <div className="tarjeta-preguntas mt-5">
@@ -294,7 +290,7 @@ export function Quiz_contribuciones() {
           </div>
         )}
         <Modal show={mensajeVisible} onHide={() => setMensajeVisible(false)}>
-          <Modal.Header>
+          <Modal.Header >
             <Modal.Title>Tu respuesta</Modal.Title>
           </Modal.Header>
           <Modal.Body>Tu respuesta es {opcion} </Modal.Body>
