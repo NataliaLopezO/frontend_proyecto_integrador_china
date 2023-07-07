@@ -146,9 +146,9 @@
   padding-right: 30px;
 }
 
-.encontrar-izq {
+/* .encontrar-izq {
   margin-left: 50px;
-}
+} */
 
 .encontrar-der {
   display: grid;
@@ -157,14 +157,14 @@
   height: auto;
 }
 
-.encontrar-arriba {
+/* .encontrar-arriba {
   padding-top: 25px;
   margin-right: 1px;
 }
 
 .encontrar-abajo {
   margin-top: 20px;
-}
+} */
 
 .quiz,
 .info,
@@ -196,4 +196,10 @@
   color: #ffffff;
   border: solid 2px #ff553b;
   cursor: context-menu;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 550px; /* Ajusta el tamaño deseado para las imágenes */
+  object-fit: cover; /* Ajusta el valor según tus necesidades (cover, contain, etc.) */
 }

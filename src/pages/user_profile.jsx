@@ -68,7 +68,6 @@ export function User_profile() {
           response.data.historia
         ).length;
         const historia = sumarValoresDiccionario(response.data.historia);
-
         const cultura = sumarValoresDiccionario(response.data.cultura);
         const cantidadTotalCultura = Object.keys(response.data.cultura).length;
 
@@ -255,17 +254,11 @@ export function User_profile() {
                 <>
                   <p className="acierto">
                     <img src="/images/comprobado.png" alt="" />
-                    Aciertos:
-                  </p>
-                  <p className="acierto">
-                    {aciertosHistoria}
+                    Aciertos: {aciertosHistoria}
                   </p>
                   <p className="fallos">
                     <img src="/images/cancelar.png" alt="" />
-                    Fallos:
-                  </p>
-                  <p className="fallos">
-                    {fallosHistoria}
+                    Fallos: {fallosHistoria}
                   </p>
                   
                 </>
@@ -298,17 +291,12 @@ export function User_profile() {
                 <>
                   <p className="acierto">
                     <img src="/images/comprobado.png" alt="" />
-                    Aciertos:
+                    Aciertos: {aciertosCultura}
                   </p>
-                  <p className="acierto">
-                    {aciertosCultura}
-                  </p>
+
                   <p className="fallos">
                     <img src="/images/cancelar.png" alt="" />
-                    Fallos:
-                  </p>
-                  <p className="fallos">
-                    {fallosCultura}
+                    Fallos: {fallosCultura}
                   </p>
                 </>
               ) : (
@@ -341,17 +329,11 @@ export function User_profile() {
                 <>
                   <p className="acierto">
                     <img src="/images/comprobado.png" alt="" />
-                    Aciertos:
-                  </p>
-                  <p className="acierto">
-                    {aciertosContribuciones}
+                    Aciertos: {aciertosContribuciones}
                   </p>
                   <p className="fallos">
                     <img src="/images/cancelar.png" alt="" />
-                    Fallos:
-                  </p>
-                  <p className="fallos">
-                    {fallosContribuciones}
+                    Fallos: {fallosContribuciones}
                   </p>
                 </>
               ) : (

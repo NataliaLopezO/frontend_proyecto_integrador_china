@@ -37,9 +37,9 @@ export function Page_init() {
   return (
     <>
       <Nav_bar />
-      <main className="inicio-design">
+      <main className="inicio-design row">
         {/* Div izquierdo */}
-        <div className="informacion">
+        <div className="informacion col-lg-6 col-md-12">
           <div className="titulo-container">
             <h1 className="titulo">
               DESCUBRE LA <br /> HISTORIA
@@ -103,21 +103,28 @@ export function Page_init() {
           </div>
         </div>
         {/* Div derecho */}
-        <div className="imagen-inicio">
+        <div className="imagen-inicio col-lg-6 col-md-12">
           <div className="contenedor-carousel">
             <Carousel indicators={false} prevIcon={null} nextIcon={null}>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
-                  src="/images/templo-carousel1.png"
+                  className="d-block w-100 carousel-image"
+                  src="/images/templo-carousel3.avif"
                   alt="First slide"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
+                  className="d-block w-100 carousel-image"
                   src="/images/templo-carousel2.jpg"
                   alt="Second slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 carousel-image"
+                  src="/images/templo-carousel4.jpg"
+                  alt="Third slide"
                 />
               </Carousel.Item>
             </Carousel>
