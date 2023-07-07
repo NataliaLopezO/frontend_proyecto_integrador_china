@@ -6,7 +6,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../scss/quices_style.css";
 
+/**
+ * Componente de React que representa un cuestionario de cultura.
+ * Proporciona una serie de preguntas con opciones de respuesta, permite al usuario seleccionar una opción
+ * y verifica si la respuesta es correcta. Al finalizar el cuestionario, muestra los resultados al usuario.
+ */
+
 export function Quiz_cultura() {
+  // Definición de estados utilizando el hook useState
   const username = sessionStorage.getItem("username");
   const [data, setData] = useState([]);
   const [preguntas, setPreguntas] = useState([]);
@@ -22,8 +29,13 @@ export function Quiz_cultura() {
   const [aciertosCultura, setaciertosCultura] = useState(2);
   const [fallosCultura, setfallosCultura] = useState(2);
 
+  /**
+   * Efecto secundario que se ejecuta al montar el componente.
+   * Realiza una solicitud POST al servidor para obtener los aciertos y fallos del quiz de cultura.
+   */
+
   useEffect(() => {
-    // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de contribuciones
+    // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de cultura
     axios;
     api
       .post("/china/get_valores_cultura/", { username })
@@ -36,8 +48,13 @@ export function Quiz_cultura() {
       });
   });
 
-  const envioAciertoFallos = () => {
+  /**
+   * Función que se encarga de enviar los aciertos y fallos al servidor.
+   * Actualiza los valores de aciertos y fallos en el estado y realiza una solicitud POST al servidor
+   * para guardar los cambios en la base de datos.
+   */
 
+  const envioAciertoFallos = () => {
     let aciertos = aciertosCultura;
     let fallos = fallosCultura;
 
@@ -65,7 +82,6 @@ export function Quiz_cultura() {
       });
   };
 
-
   /**
    * Alternar la apertura y cierre de la barra lateral.
    *
@@ -77,6 +93,13 @@ export function Quiz_cultura() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  /**
+   * Función que baraja el orden de los elementos en un array.
+   * Utiliza el algoritmo de Fisher-Yates para mezclar aleatoriamente los elementos del array.
+   * @param {Array} array - El array que se desea barajar.
+   * @returns {Array} - El array barajado.
+   */
+
   const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -85,11 +108,22 @@ export function Quiz_cultura() {
     return array;
   };
 
+  /**
+   * Efecto secundario que se ejecuta al montar el componente.
+   * Realiza una solicitud al servidor para obtener las preguntas de cultura.
+   */
+
   useEffect(() => {
     fetchData();
   }, []);
 
+  /**
+   * Función que realiza una solicitud al servidor para obtener las preguntas de cultura.
+   * Actualiza el estado 'preguntas' con las preguntas seleccionadas y barajadas.
+   */
+
   const fetchData = () => {
+    // Función para obtener los datos de las preguntas desde el servidor
     api
       .get("/china/preguntas_cultura/")
       .then((response) => {
@@ -103,6 +137,14 @@ export function Quiz_cultura() {
       });
   };
 
+  /**
+   * Función que se ejecuta al seleccionar una opción de respuesta.
+   * Actualiza el estado 'opcion' con la categoría de la opción seleccionada ('correcta' o 'incorrecta').
+   * Actualiza el estado 'opcionSeleccionada' con la opción seleccionada por el usuario ('a', 'b', o 'c').
+   * @param {boolean} esCorrecta - Indica si la opción seleccionada es la correcta.
+   * @param {string} opcionSeleccionada - La opción seleccionada por el usuario.
+   */
+
   const selectOption = (esCorrecta, opcionSeleccionada) => {
     if (esCorrecta) {
       setOpcion("correcta");
@@ -111,6 +153,14 @@ export function Quiz_cultura() {
     }
     setOpcionSeleccionada(opcionSeleccionada);
   };
+
+  /**
+   * Función que se ejecuta al verificar la respuesta seleccionada por el usuario.
+   * Muestra el mensaje de respuesta durante un tiempo determinado.
+   * Si la respuesta es correcta, incrementa el contador de respuestas correctas.
+   * Si es la última pregunta, muestra los resultados y envía los aciertos y fallos al servidor.
+   * En caso contrario, avanza a la siguiente pregunta.
+   */
 
   const verificarRespuesta = () => {
     setMensajeVisible(true);
@@ -140,6 +190,11 @@ export function Quiz_cultura() {
     }
   };
 
+  /**
+   * Función que reinicia el cuestionario.
+   * Restablece los estados y redirige al perfil del usuario.
+   */
+
   const restartQuiz = () => {
     setQuizCompleted(false);
     setPreguntas([]);
@@ -147,6 +202,11 @@ export function Quiz_cultura() {
     setCorrectAnswersCount(0);
     navigate("/profile");
   };
+
+  /**
+   * Función que muestra los resultados del cuestionario completado.
+   * Establece el estado 'quizCompleted' a true.
+   */
 
   const showResults = () => {
     setQuizCompleted(true);
@@ -290,7 +350,7 @@ export function Quiz_cultura() {
           </div>
         )}
         <Modal show={mensajeVisible} onHide={() => setMensajeVisible(false)}>
-          <Modal.Header >
+          <Modal.Header>
             <Modal.Title>Tu respuesta</Modal.Title>
           </Modal.Header>
           <Modal.Body>Tu respuesta es {opcion} </Modal.Body>

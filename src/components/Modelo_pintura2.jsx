@@ -1,8 +1,22 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
+/**
+ *
+ * Componente que muestra un modelo 3D de un dragón.
+ * Utiliza la biblioteca React Three Fiber y el formato glTF.
+ *
+ * @component
+ * @param {Object} props - Propiedades del componente.
+ * @returns {JSX.Element} Modelo 3D.
+ *
+ */
+
 export function Modelo_pintura2(props) {
+
+  // Carga el archivo glTF y obtiene los nodos y materiales del modelo
   const { nodes, materials } = useGLTF("/static/2_chinese_wedding_basket_1_tier.glb");
+
   return (
     <group {...props} dispose={null}>
       <group

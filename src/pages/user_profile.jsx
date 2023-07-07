@@ -22,6 +22,8 @@ export function User_profile() {
   const username = sessionStorage.getItem("username");
   const profilePic = sessionStorage.getItem("foto");
 
+// Definición de estados utilizando el hook useState
+
   const [porcHistoria, setPorcHistoria] = useState(0); // Ahora 'now' es un estado
   const [porcCultura, setPorcCultura] = useState(0);
   const [porcContribuciones, setPorcContribuciones] = useState(0);
@@ -179,10 +181,6 @@ export function User_profile() {
 
     return sumaTotal;
   }
-
-  /**
-   * Maneja el envío del formulario y actualiza la contraseña.
-   */
 
   return (
     <>
