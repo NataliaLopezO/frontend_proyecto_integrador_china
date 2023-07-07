@@ -6,7 +6,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../scss/quices_style.css";
 
+/**
+ * Componente de React que representa un cuestionario de contribuciones.
+ * Proporciona una serie de preguntas con opciones de respuesta, permite al usuario seleccionar una opción
+ * y verifica si la respuesta es correcta. Al finalizar el cuestionario, muestra los resultados al usuario.
+ */
+
 export function Quiz_contribuciones() {
+  // Definición de estados utilizando el hook useState
   const username = sessionStorage.getItem("username");
   const [data, setData] = useState([]);
   const [preguntas, setPreguntas] = useState([]);
@@ -22,6 +29,11 @@ export function Quiz_contribuciones() {
   const [aciertosContribuciones, setaciertosContribuciones] = useState(2);
   const [fallosContribuciones, setfallosContribuciones] = useState(2);
 
+  /**
+   * Efecto secundario que se ejecuta al montar el componente.
+   * Realiza una solicitud POST al servidor para obtener los aciertos y fallos del quiz de contribuciones.
+   */
+
   useEffect(() => {
     // Realiza una solicitud POST al servidor para los aciertos y fallos del quiz de contribuciones
     axios;
@@ -36,7 +48,14 @@ export function Quiz_contribuciones() {
       });
   });
 
+  /**
+   * Función que se encarga de enviar los aciertos y fallos al servidor.
+   * Actualiza los valores de aciertos y fallos en el estado y realiza una solicitud POST al servidor
+   * para guardar los cambios en la base de datos.
+   */
+
   const envioAciertoFallos = () => {
+    // Función para enviar aciertos y fallos al servidor
     let aciertos = aciertosContribuciones;
     let fallos = fallosContribuciones;
 
@@ -75,7 +94,15 @@ export function Quiz_contribuciones() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  /**
+   * Función que baraja el orden de los elementos en un array.
+   * Utiliza el algoritmo de Fisher-Yates para mezclar aleatoriamente los elementos del array.
+   * @param {Array} array - El array que se desea barajar.
+   * @returns {Array} - El array barajado.
+   */
+
   const shuffle = (array) => {
+    // Función para barajar el orden de los elementos en un array
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -83,11 +110,22 @@ export function Quiz_contribuciones() {
     return array;
   };
 
+  /**
+   * Efecto secundario que se ejecuta al montar el componente.
+   * Realiza una solicitud al servidor para obtener las preguntas de contribuciones.
+   */
+
   useEffect(() => {
     fetchData();
   }, []);
 
+  /**
+   * Función que realiza una solicitud al servidor para obtener las preguntas de contribuciones.
+   * Actualiza el estado 'preguntas' con las preguntas seleccionadas y barajadas.
+   */
+
   const fetchData = () => {
+    // Función para obtener los datos de las preguntas desde el servidor
     api
       .get("/china/preguntas_aportes/")
       .then((response) => {
@@ -101,6 +139,14 @@ export function Quiz_contribuciones() {
       });
   };
 
+  /**
+   * Función que se ejecuta al seleccionar una opción de respuesta.
+   * Actualiza el estado 'opcion' con la categoría de la opción seleccionada ('correcta' o 'incorrecta').
+   * Actualiza el estado 'opcionSeleccionada' con la opción seleccionada por el usuario ('a', 'b', o 'c').
+   * @param {boolean} esCorrecta - Indica si la opción seleccionada es la correcta.
+   * @param {string} opcionSeleccionada - La opción seleccionada por el usuario.
+   */
+
   const selectOption = (esCorrecta, opcionSeleccionada) => {
     if (esCorrecta) {
       setOpcion("correcta");
@@ -109,6 +155,14 @@ export function Quiz_contribuciones() {
     }
     setOpcionSeleccionada(opcionSeleccionada);
   };
+
+  /**
+   * Función que se ejecuta al verificar la respuesta seleccionada por el usuario.
+   * Muestra el mensaje de respuesta durante un tiempo determinado.
+   * Si la respuesta es correcta, incrementa el contador de respuestas correctas.
+   * Si es la última pregunta, muestra los resultados y envía los aciertos y fallos al servidor.
+   * En caso contrario, avanza a la siguiente pregunta.
+   */
 
   const verificarRespuesta = () => {
     setMensajeVisible(true);
@@ -138,6 +192,11 @@ export function Quiz_contribuciones() {
     }
   };
 
+  /**
+   * Función que reinicia el cuestionario.
+   * Restablece los estados y redirige al perfil del usuario.
+   */
+
   const restartQuiz = () => {
     setQuizCompleted(false);
     setPreguntas([]);
@@ -145,6 +204,11 @@ export function Quiz_contribuciones() {
     setCorrectAnswersCount(0);
     navigate("/profile");
   };
+
+  /**
+   * Función que muestra los resultados del cuestionario completado.
+   * Establece el estado 'quizCompleted' a true.
+   */
 
   const showResults = () => {
     setQuizCompleted(true);
