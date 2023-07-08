@@ -51,6 +51,7 @@ export function Historia() {
         className={`boton-toggler ${isSidebarOpen ? "open" : ""}`}
         style={{ marginLeft: isSidebarOpen ? "310px" : "5px" }}
         onClick={toggleSidebar}
+        data-testid="toggle-sidebar-button"
       >
         <span></span>
         <span></span>
@@ -59,7 +60,7 @@ export function Historia() {
       {isSidebarOpen && (
         <div>
           <Nav_bar_perfil />
-          <div className="sidebar-overlay" onClick={toggleSidebar}></div>
+          <div className="sidebar-overlay" data-testid="sidebar-overlay" onClick={toggleSidebar}></div>
         </div>
       )}
       <main
@@ -73,7 +74,7 @@ export function Historia() {
         <div className="contenido-historia">
           <h2 className="titulo-hist">Conociendo la Historia...</h2>
           <div className="contenedor-hijo-Hist-izq">
-            <img src="/images/Xia-dinasty.png" alt="" />
+            <img src="/images/Xia-dinasty.png" alt="Dinastía Xia" />
             <p>
               <b>1. Dinastía Xia:</b> La dinastía Xia, que se cree que gobernó desde el
               siglo XXI a.C. hasta el siglo XVI a.C., es la primera dinastía
@@ -84,7 +85,7 @@ export function Historia() {
           </div>
 
           <div className="contenedor-hijo-Hist-der">
-            <img src="/images/Chinashang.jpg" alt="" />
+            <img src="/images/Chinashang.jpg" alt="Dinastía Shang" />
             <p>
               <b>2. Dinastía Shang:</b> La dinastía Shang, que gobernó desde el siglo
               XVI a.C. hasta el siglo XI a.C., fue conocida por su uso de los
@@ -98,7 +99,7 @@ export function Historia() {
           </div>
 
           <div className="contenedor-hijo-Hist-izq">
-            <img src="/images/zhou-dinasty.png" alt="" />
+            <img src="/images/zhou-dinasty.png" alt="Dinastía Zhou" />
             <p>
               <b>3. Dinastía Zhou:</b> La dinastía Zhou, que gobernó desde el siglo XI
               a.C. hasta el 256 a.C., fue un período importante para el
@@ -110,7 +111,7 @@ export function Historia() {
           </div>
 
           <div className="contenedor-hijo-Hist-der">
-            <img src="/images/qin-dinasty.png" alt="" />
+            <img src="/images/qin-dinasty.png" alt="Dinastías Qin y Han" />
             <p>
               <b>4. Dinastía Qin y Han:</b> Estas dos dinastías están estrechamente
               relacionadas y se consideran un período de transición en la
@@ -135,64 +136,6 @@ export function Historia() {
               categoria = 'datos'
             />
 
-          {/*           <h2
-            className="titulo-hist"
-            style={{ marginTop: "1rem", marginBottom: "1rem" }}
-          >
-            Mas información sobre las dinastias
-          </h2> */}
-          {/*           <div className="botones-dinasty">
-            <button className="dinasty">
-              <span className="button-content">
-                <img
-                  src="/images/dinastia-icono.png"
-                  alt="Imagen"
-                  className="button-icon"
-                />
-                XIA
-              </span>
-            </button>
-            <button className="dinasty">
-              <span className="button-content">
-                <img
-                  src="/images/dinastia-icono.png"
-                  alt="Imagen"
-                  className="button-icon"
-                />
-                SHANG
-              </span>
-            </button>
-            <button className="dinasty">
-              <span className="button-content">
-                <img
-                  src="/images/dinastia-icono.png"
-                  alt="Imagen"
-                  className="button-icon"
-                />
-                ZHOU
-              </span>
-            </button>
-            <button className="dinasty">
-              <span className="button-content">
-                <img
-                  src="/images/dinastia-icono.png"
-                  alt="Imagen"
-                  className="button-icon"
-                />
-                QIN
-              </span>
-            </button>
-            <button className="dinasty">
-              <span className="button-content">
-                <img
-                  src="/images/dinastia-icono.png"
-                  alt="Imagen"
-                  className="button-icon"
-                />
-                HAN
-              </span>
-            </button>
-          </div> */}
         </div>
       </main>
     </>

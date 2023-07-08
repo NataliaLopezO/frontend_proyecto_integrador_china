@@ -170,6 +170,7 @@ export function Acupuntura() {
         <div
           className="next-back"
           style={{ display: "flex", justifyContent: "space-between" }}
+          data-testid="back-button"
         >
           <Boton_back
             nombre="Aportes"
@@ -177,6 +178,7 @@ export function Acupuntura() {
             identificador='contribuciones'
             categoria= 'acupuntura'
             href="/ver-contribuciones"
+            data-testid="back-button"
           />
         </div>
       </div>
