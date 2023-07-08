@@ -66,10 +66,11 @@ export function Festividades() {
                 className="imagen-fest"
                 src="/images/festival-primavera.jpg"
                 alt=""
+                data-testid="festival-image"
               />
             </div>
             <div className="col cont-fest">
-              <p className="parraf-fest">
+              <p className="parraf-fest" data-testid="festival-description">
                 <b>Festival de la Primavera:</b> El Festival de la Primavera,
                 también conocido como el Año Nuevo Chino, es la festividad más
                 importante en la cultura china. Se celebra en el primer día del
@@ -84,10 +85,11 @@ export function Festividades() {
                 className="imagen-fest"
                 src="/images/festival-faroles.jpg"
                 alt=""
+                data-testid="festival-image"
               />
             </div>
             <div className="col cont-fest">
-              <p className="parraf-fest">
+              <p className="parraf-fest" data-testid="festival-description">
                 <b>Festival de los Faroles: </b>
                 El Festival de los Faroles se celebra el decimoquinto día del
                 primer mes lunar y marca el final de las celebraciones del Año
@@ -103,10 +105,11 @@ export function Festividades() {
                 className="imagen-fest"
                 src="/images/fiesta-bote-del-dragon.jpg"
                 alt=""
+                data-testid="festival-image"
               />
             </div>
             <div className="col cont-fest">
-              <p className="parraf-fest">
+              <p className="parraf-fest" data-testid="festival-description">
                 <b>Festival del Bote del Dragón: </b>
                 El Festival del Bote del Dragón se celebra el quinto día del
                 quinto mes lunar y es una festividad dedicada a honrar al poeta
@@ -126,10 +129,11 @@ export function Festividades() {
                 className="imagen-fest"
                 src="/images/Festival-del-Medio-Otono.jpg"
                 alt=""
+                data-testid="festival-image"
               />
             </div>
             <div className="col cont-fest">
-              <p className="parraf-fest">
+              <p className="parraf-fest" data-testid="festival-description">
                 <b>Festival del Medio Otoño: </b>
                 El Festival del Medio Otoño se celebra el decimoquinto día del
                 octavo mes lunar y coincide con la luna llena. Esta festividad
@@ -146,6 +150,7 @@ export function Festividades() {
         <div
           className="next-back"
           style={{ display: "flex", justifyContent: "space-between" }}
+          data-testid="boton-next"
         >
           <Boton_back
             nombre="Artesanias"
@@ -160,6 +165,7 @@ export function Festividades() {
             identificador='cultura'
             href="/vestimenta"
             categoria= "festividades"
+            data-testid="boton-next"
           />
         </div>
       </main>

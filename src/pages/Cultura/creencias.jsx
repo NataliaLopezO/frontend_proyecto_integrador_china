@@ -295,6 +295,7 @@ export function Creencias() {
           <div
             className="next-back"
             style={{ display: "flex", justifyContent: "space-between" }}
+            data-testid="next-button"
           >
             <Boton_back
               nombre="Vestimenta"
@@ -309,6 +310,7 @@ export function Creencias() {
               identificador='cultura'
               href="/cultura"
               categoria='creencias'
+              data-testid="next-button"
             />
           </div>
         </div>

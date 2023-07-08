@@ -7,7 +7,8 @@ import "../scss/boton_toggler_style.css";
 import axios from "axios";
 import { api } from "../api/register_api";
 import { useNavigate } from "react-router-dom";
-import { Button, Modal } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
 
 /**
  * Componente User_profile.
