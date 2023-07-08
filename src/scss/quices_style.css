@@ -6,7 +6,7 @@
 }
 
 .tarjeta-header {
-  background-color: rgb(233, 199, 11);
+  background-color: #C07F00;
   border-left: 1px solid;
   border-right: 1px solid;
   border-left: 1px solid;
@@ -28,7 +28,7 @@
 }
 
 .tarjeta-body {
-  background-color: rgba(184, 181, 181, 0.7);
+  background-color: #FFF7D4;
   border-left: 1px solid;
   border-right: 1px solid;
   border-bottom: 1px solid;
@@ -48,7 +48,7 @@
 }
 
 .radio.selected {
-  background-color: rgb(250, 232, 128);
+  background-color: #FFD95A;
   border: none;
   border-radius: 10px;
   padding: 0.25rem;
@@ -70,14 +70,14 @@
 }
 
 .radio.selected:hover {
-  background-color: rgb(233, 199, 11);
+  background-color: #FFD95A;
   border: none;
   border-radius: 10px;
   padding: 0.25rem;
 }
 
 .btn-verificar {
-  background-color: rgb(134, 134, 134);
+  background-color: #4C3D3D;
   border-radius: 20px;
   color: #ffffff;
   font-size: 1.4rem;
@@ -107,7 +107,6 @@
   animation: tamano-result 7s ease-in-out infinite alternate;
 }
 
-
 @keyframes tamano-result {
   0% {
     scale: 1;
@@ -135,4 +134,21 @@
   background-color: #762626;
   color: #ffa8a8;
   transform: scale(1.05);
+}
+
+.page-quiz {
+  height: 100vh;
+}
+
+.page-quiz::before {
+  content: "";
+  position: fixed;
+  width: 300%;
+  height: 100%;
+  top: 60%;
+  left: 50%;
+  background-color: #C07F00;
+  border-radius: 50%;
+  transform: translateX(-50%) skew(0, -10deg);
+  z-index: -1;
 }
